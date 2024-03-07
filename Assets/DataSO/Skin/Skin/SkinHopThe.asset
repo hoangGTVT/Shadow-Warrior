@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac2f626a43d00604caf75a2dff2b6756, type: 3}
+  m_Name: SkinHopThe
+  m_EditorClassIdentifier: 
+  _id: 0
+  name: 
+  _icon: {fileID: 0}
+  _itemType: 2
+  _hp: 0
+  _enegy: 0
+  _def: 0
+  _critRate: 0
+  _critDMG: 0
+  _atk: 0
+  _stamina: 0
+  equipmentType: 0
+  _headIdle:
+  - {fileID: 21300000, guid: ea4acafc0b3c4e04a9a487780ee04125, type: 3}
+  _headRun:
+  - {fileID: 21300000, guid: f256c4f18752f2240ade155c398bb0d8, type: 3}
+  _bodyIdle:
+  - {fileID: 21300000, guid: 676cfc9d10bbc9d42a35f92159a7e4d2, type: 3}
+  _bodyRun:
+  - {fileID: 21300000, guid: 8104bda24dd252f4abb873fdfcf50844, type: 3}
+  - {fileID: 21300000, guid: 219bb6740830c4e4c9988989ec35d86d, type: 3}
+  - {fileID: 21300000, guid: fb5bc6c751e959e41a348a5631d94ccd, type: 3}
+  - {fileID: 21300000, guid: c992524dc96cd3c4cb7f34eeefbecd39, type: 3}
+  - {fileID: 21300000, guid: 897a61cd52f744c4b974be1d156fbd55, type: 3}
+  _bodyAttack:
+  - {fileID: 21300000, guid: 62e9a6a790b984c45935b6fd83bedbdc, type: 3}
+  - {fileID: 21300000, guid: 2004692bfcf3ccc43b99c3d40792f814, type: 3}
+  - {fileID: 21300000, guid: 4f1104dec0aa7e142b5a41a8f002861c, type: 3}
+  - {fileID: 21300000, guid: 121d0712cfb18f34c8f50d8f511512b8, type: 3}
+  - {fileID: 21300000, guid: 11be03debcfd9d84d96f840086652fcc, type: 3}
+  _bodySkill:
+  - {fileID: 21300000, guid: 29034a229df96c5499a8eb6870a2981a, type: 3}
+  - {fileID: 21300000, guid: 349f9bf0c2a4e5a498696de03d375fb1, type: 3}
+  - {fileID: 21300000, guid: 2960e2d64c0954a44af41ae502508108, type: 3}
+  _bodyBlock:
+  - {fileID: 21300000, guid: 82bd735c74010fc499b052522227f796, type: 3}
+  _bodyFly:
+  - {fileID: 21300000, guid: b7b319c0622a87346bb2e1cefadb8c70, type: 3}
+  _legIdle:
+  - {fileID: 21300000, guid: b091352d73ddd114f9a9a6ac17291ef6, type: 3}
+  _legRun:
+  - {fileID: 21300000, guid: ddfbeedc60c674840ba242c4aaa2c234, type: 3}
+  - {fileID: 21300000, guid: 69eb746a666d1634786c1739f5e44f1f, type: 3}
+  - {fileID: 21300000, guid: f7e43273eb3d38b4e9a85d13c8b4cf6d, type: 3}
+  - {fileID: 21300000, guid: 90b4fc1c9d16b4d4ab0536d3593f332b, type: 3}
+  - {fileID: 21300000, guid: 202455f033136fe409b613325bcd4190, type: 3}
+  _legAttack:
+  - {fileID: 21300000, guid: 870f37fe3076c79468cdfb342519cb77, type: 3}
+  - {fileID: 21300000, guid: c8b17ce219071604b9bc6441b343e06c, type: 3}
+  _legFly:
+  - {fileID: 21300000, guid: 5acd61c0c9c12da4dafc27aa92b31565, type: 3}
+  _legJump:
+  - {fileID: 21300000, guid: dbf7550e5da35b64a8414488759ea4ab, type: 3}
+  _backPack: []

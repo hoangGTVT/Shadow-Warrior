@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04851459257252f42b5aa1eb663f6114, type: 3}
+  m_Name: Skill10
+  m_EditorClassIdentifier: 
+  _id: 10
+  _name: Wings of the Celestial Dragon
+  _description: "G\xE2y s\xE1t th\u01B0\u01A1ng l\xEAn to\xE0n b\u1ED9 \u0111\u1ECBch
+    xung quanh m\u1EE5c ti\xEAu, k\u1EBFt li\u1EC5u t\u1EA5t c\xE3 n\u1EBFu hp c\u1EE7a
+    ch\xFAng d\u01B0\u1EDBi 10%"
+  _currentDMG: 1500
+  _percentDME: 60
+  _energy: 1200
+  _time: 200

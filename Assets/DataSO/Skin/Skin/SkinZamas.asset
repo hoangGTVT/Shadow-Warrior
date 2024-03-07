@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac2f626a43d00604caf75a2dff2b6756, type: 3}
+  m_Name: SkinZamas
+  m_EditorClassIdentifier: 
+  _id: 11
+  name: hghgh
+  _icon: {fileID: 21300000, guid: 37d3029180a097944bc7301215956969, type: 3}
+  _itemType: 2
+  _hp: 99
+  _enegy: 99
+  _def: 99
+  _critRate: 99
+  _critDMG: 99
+  _atk: 99
+  _stamina: 99
+  equipmentType: 0
+  _headIdle:
+  - {fileID: 21300000, guid: 20c132eb57f70ba498fc049799960da3, type: 3}
+  _headRun:
+  - {fileID: 21300000, guid: 4c5858c7b63fb52419e38aa2147c169a, type: 3}
+  _bodyIdle:
+  - {fileID: 21300000, guid: ef91977353a5d964c817a71bd4c86778, type: 3}
+  _bodyRun:
+  - {fileID: 21300000, guid: b855c35c301f87d4187352d3779ea3d3, type: 3}
+  - {fileID: 21300000, guid: f98cf49911208fb47ba776350ba42bed, type: 3}
+  - {fileID: 21300000, guid: 92e5c0efb63eb5640b0daae73a162b6b, type: 3}
+  - {fileID: 21300000, guid: 4bcb6c14879db2c479cbcb31fef4a7ed, type: 3}
+  - {fileID: 21300000, guid: c1eec35e52194af4a936ebcfc2a2b324, type: 3}
+  _bodyAttack:
+  - {fileID: 21300000, guid: 026943361c8313a4aa07d8ab02e85117, type: 3}
+  - {fileID: 21300000, guid: 8ac3d529e3162fe42ae60521587e9ac3, type: 3}
+  - {fileID: 21300000, guid: 3c9c22229b01d6a4ba425dcb7def9cfd, type: 3}
+  - {fileID: 21300000, guid: 24a5287d33f264c4b82f95a0c2c94624, type: 3}
+  - {fileID: 21300000, guid: e6f8331ff22342046b85a04fa16bccf3, type: 3}
+  _bodySkill:
+  - {fileID: 21300000, guid: 120ea5ea8e5dd3c40a757cfa3fbdd2cf, type: 3}
+  - {fileID: 21300000, guid: 367f7bcb22121aa41ab2887aa509918c, type: 3}
+  - {fileID: 21300000, guid: c937fdd008ea205409cecc9378209d24, type: 3}
+  _bodyBlock:
+  - {fileID: 21300000, guid: 99f706ee034f7714db52caf80965433e, type: 3}
+  _bodyFly:
+  - {fileID: 21300000, guid: d5b4e9ac7f910d94c90df187cd76767e, type: 3}
+  _legIdle:
+  - {fileID: 21300000, guid: 6ff229cc2a05a8446adf467259efb792, type: 3}
+  _legRun:
+  - {fileID: 21300000, guid: e500fa9357b97fa40b280bcf3eb61dd5, type: 3}
+  - {fileID: 21300000, guid: 5c59c480650a78742ba9312860ce9de4, type: 3}
+  - {fileID: 21300000, guid: 306d883ab593c0d4780f73c7bb043840, type: 3}
+  - {fileID: 21300000, guid: 51d611d85910c6846bb01cb7a79287ad, type: 3}
+  - {fileID: 21300000, guid: b4871960649868648a79faa2fdebd153, type: 3}
+  _legAttack:
+  - {fileID: 21300000, guid: bf090b4c63ee0904fb80f9a0d5f1cdab, type: 3}
+  - {fileID: 21300000, guid: 5d388e31bf86c72479414f4655767789, type: 3}
+  _legFly:
+  - {fileID: 21300000, guid: 0f7d96eb030e3eb499e15ddb32b620d2, type: 3}
+  _legJump:
+  - {fileID: 21300000, guid: 387ea91cd370a6f45974e043213ce60d, type: 3}
