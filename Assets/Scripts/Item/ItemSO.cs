@@ -16,23 +16,29 @@ public class ItemSO : ScriptableObject
     public new string name;
     public Sprite _icon;
     public ItemType _itemType;
-    public float _hp;
-    public float _enegy;
-    public float _def;
-    public float _critRate;
-    public float _critDMG;
-    public float _atk;
-    public float _stamina;
+    public int _hp;
+    public int _enegy;
+    public int _def;
+    public int _critRate;
+    public int _critDMG;
+    public int _atk;
+    public int _stamina;
+    public int _pricegold;
+    public int _priceDiamond;
 
-    public float GetID() { return _id; }
-    public string GetName { get { return name; } }
-    public float GetHP() { return _hp; }
-    public float Getenegy() { return _enegy; }
-    public float GetDef() { return _def; }
-    public float GetCritRate() { return _critRate; }
-    public float GetCritDMG() { return _critDMG; }
-    public float GetATK() { return _atk; }
-    public float GetStamina() { return _stamina; }
+    public Sprite GetSprite() { return _icon; }
+
+    public int GetID() { return _id; }
+    public string GetName()   { return name; } 
+    public int GetHP() { return _hp; }
+    public int Getenegy() { return _enegy; }
+    public int GetDef() { return _def; }
+    public int GetCritRate() { return _critRate; }
+    public int GetCritDMG() { return _critDMG; }
+    public int GetATK() { return _atk; }
+    public int GetStamina() { return _stamina; }
+    public int GetPriceGold() { return _pricegold; }
+    public int GetPriceDiamond() { return _priceDiamond; }
     public void OnEnable()
     {
         this.Update();

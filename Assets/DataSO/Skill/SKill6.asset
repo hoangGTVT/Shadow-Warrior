@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SKill6
   m_EditorClassIdentifier: 
   _id: 6
-  _name: (Raging Wind Blitz
+  _name: Raging Wind Blitz
   _description: "G\xE2y s\xE1t th\u01B0\u01A1ng l\xEAn m\u1EE5c ti\xEAu ch\xEDnh
     v\xE0 2 m\u1EE5c ti\xEAu ph\u1EE5"
   _currentDMG: 500

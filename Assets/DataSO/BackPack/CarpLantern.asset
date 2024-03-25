@@ -12,17 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02780d415ad788143a1e6c01f1700336, type: 3}
   m_Name: CarpLantern
   m_EditorClassIdentifier: 
-  _id: 0
-  name: 
-  _icon: {fileID: 0}
+  _id: 2
+  name: CarpLantern
+  _icon: {fileID: 21300000, guid: dd1bac61c8b378348a6a1be8c4332c17, type: 3}
   _itemType: 2
-  _hp: 0
-  _enegy: 0
-  _def: 0
-  _critRate: 0
-  _critDMG: 0
-  _atk: 0
-  _stamina: 0
+  _hp: 1000
+  _enegy: 2000
+  _def: 200
+  _critRate: 5
+  _critDMG: 20
+  _atk: 300
+  _stamina: 500
+  _pricegold: 55000
+  _priceDiamond: 5200
   equipmentType: 0
   _backPack:
-  - {fileID: 21300000, guid: 50bffd500de92e548b377b0893d18c1a, type: 3}
+  - {fileID: 21300000, guid: dd1bac61c8b378348a6a1be8c4332c17, type: 3}

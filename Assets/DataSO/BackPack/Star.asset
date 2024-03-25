@@ -12,16 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02780d415ad788143a1e6c01f1700336, type: 3}
   m_Name: Star
   m_EditorClassIdentifier: 
-  _id: 0
-  name: 
-  _icon: {fileID: 0}
-  _itemType: 0
-  _hp: 0
-  _enegy: 0
-  _def: 0
-  _critRate: 0
-  _critDMG: 0
-  _atk: 0
-  _stamina: 0
+  _id: 9
+  name: Star
+  _icon: {fileID: 21300000, guid: 03b44a300f599494b8738c2fde32a110, type: 3}
+  _itemType: 2
+  _hp: 1100
+  _enegy: 600
+  _def: 250
+  _critRate: 7
+  _critDMG: 30
+  _atk: 350
+  _stamina: 600
+  _pricegold: 105000
+  _priceDiamond: 7000
   equipmentType: 0
-  _backPack: []
+  _backPack:
+  - {fileID: 21300000, guid: 03b44a300f599494b8738c2fde32a110, type: 3}

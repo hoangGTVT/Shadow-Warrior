@@ -12,17 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02780d415ad788143a1e6c01f1700336, type: 3}
   m_Name: Lotus2
   m_EditorClassIdentifier: 
-  _id: 0
-  name: 
-  _icon: {fileID: 0}
+  _id: 7
+  name: Lotus2
+  _icon: {fileID: 21300000, guid: 106a100b4b65a7243817fcfa18b4d5c1, type: 3}
   _itemType: 2
-  _hp: 0
-  _enegy: 0
-  _def: 0
-  _critRate: 0
-  _critDMG: 0
-  _atk: 0
-  _stamina: 0
+  _hp: 1000
+  _enegy: 500
+  _def: 200
+  _critRate: 5
+  _critDMG: 20
+  _atk: 600
+  _stamina: 500
+  _pricegold: 95000
+  _priceDiamond: 7500
   equipmentType: 0
   _backPack:
-  - {fileID: 21300000, guid: 55d838de8c07ab7499fa06555105a3c8, type: 3}
+  - {fileID: 21300000, guid: 106a100b4b65a7243817fcfa18b4d5c1, type: 3}

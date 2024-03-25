@@ -12,17 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02780d415ad788143a1e6c01f1700336, type: 3}
   m_Name: KIte
   m_EditorClassIdentifier: 
-  _id: 0
-  name: 
-  _icon: {fileID: 0}
+  _id: 4
+  name: Kite
+  _icon: {fileID: 21300000, guid: d49a5cb5eb031eb4a961ee606ec96206, type: 3}
   _itemType: 2
-  _hp: 0
-  _enegy: 0
-  _def: 0
-  _critRate: 0
-  _critDMG: 0
-  _atk: 0
-  _stamina: 0
+  _hp: 1000
+  _enegy: 500
+  _def: 200
+  _critRate: 10
+  _critDMG: 20
+  _atk: 300
+  _stamina: 500
+  _pricegold: 70000
+  _priceDiamond: 6000
   equipmentType: 0
   _backPack:
-  - {fileID: 21300000, guid: b5a6597798e4ae14c9dfdb3b141289e6, type: 3}
+  - {fileID: 21300000, guid: d49a5cb5eb031eb4a961ee606ec96206, type: 3}

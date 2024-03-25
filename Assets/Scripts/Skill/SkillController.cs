@@ -22,11 +22,7 @@ public class SkillController : MonoBehaviour
     void Update()
     {
         CheckInPut();
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            CreateSkill(2);
-            
-        }
+        
 
 
     }
@@ -34,7 +30,6 @@ public class SkillController : MonoBehaviour
     public void CreateSkill(int skill)
     {
 
-        
         GameObject gameObject = Instantiate(_skill[skill], _skillPoint.position, Quaternion.identity);
         Rigidbody2D rigidbody = gameObject.GetComponent<Rigidbody2D>();
         Vector3 currentScale = gameObject.transform.localScale;

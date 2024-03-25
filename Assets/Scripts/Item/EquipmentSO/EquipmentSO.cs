@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum EquipmentType
 {
-    Skin,PUE
+    Skin,Clother
 }
 
 public class EquipmentSO : ItemSO

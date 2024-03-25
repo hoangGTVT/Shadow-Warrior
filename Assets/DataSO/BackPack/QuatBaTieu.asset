@@ -12,17 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02780d415ad788143a1e6c01f1700336, type: 3}
   m_Name: QuatBaTieu
   m_EditorClassIdentifier: 
-  _id: 0
-  name: 
-  _icon: {fileID: 0}
+  _id: 8
+  name: QuatBaTieu
+  _icon: {fileID: 21300000, guid: d20a542b4b4bde341b413102f950a747, type: 3}
   _itemType: 2
-  _hp: 0
-  _enegy: 0
-  _def: 0
-  _critRate: 0
-  _critDMG: 0
-  _atk: 0
-  _stamina: 0
+  _hp: 1000
+  _enegy: 500
+  _def: 200
+  _critRate: 5
+  _critDMG: 20
+  _atk: 300
+  _stamina: 700
+  _pricegold: 120000
+  _priceDiamond: 8600
   equipmentType: 0
   _backPack:
-  - {fileID: 21300000, guid: cd794c1a444784f41aaff36f9b93e47e, type: 3}
+  - {fileID: 21300000, guid: d20a542b4b4bde341b413102f950a747, type: 3}

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed81b4b775fae5448a69d035a2766fe3, type: 3}
+  m_Name: AoKameCap1
+  m_EditorClassIdentifier: 
+  _id: 1
+  name: "\xC1o Kame C\xE2p 1"
+  _icon: {fileID: 21300000, guid: 5f94d017ec1d9734f8b6a829f652368a, type: 3}
+  _itemType: 2
+  _hp: 0
+  _enegy: 0
+  _def: 50
+  _critRate: 0
+  _critDMG: 0
+  _atk: 0
+  _stamina: 0
+  equipmentType: 1

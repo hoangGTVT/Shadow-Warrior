@@ -27,8 +27,8 @@ public class SkinSO : EquipmentSO
     public Sprite[] _legFly;
     public Sprite[] _legJump;
 
-    [Header("BackPack")]
-    public Sprite[] _backPack;
+    /*[Header("BackPack")]
+    public Sprite[] _backPack;*/
 
     public override void Update()
     {
