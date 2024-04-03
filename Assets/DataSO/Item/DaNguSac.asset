@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65185e86ba3c70340a300c22a9e5a6ec, type: 3}
-  m_Name: New Enemy
+  m_Script: {fileID: 11500000, guid: c6023ce6604dd444e94d25d98697adbf, type: 3}
+  m_Name: DaNguSac
   m_EditorClassIdentifier: 
-  _id: 0
-  _name: 
-  _exp: 0
-  _hp: 0
-  _atk: 0
+  name: "\u0110\xE1 Ng\u0169 S\u1EAFc"
+  icon: {fileID: 21300000, guid: 5d0e35667c8765240a8c9ef06e3653d7, type: 3}
+  id: 0
+  priceGold: 5000
+  priceDiamond: 300

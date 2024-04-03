@@ -31,7 +31,7 @@ public class ItemSO : ScriptableObject
     public int GetID() { return _id; }
     public string GetName()   { return name; } 
     public int GetHP() { return _hp; }
-    public int Getenegy() { return _enegy; }
+    public int GetKI() { return _enegy; }
     public int GetDef() { return _def; }
     public int GetCritRate() { return _critRate; }
     public int GetCritDMG() { return _critDMG; }

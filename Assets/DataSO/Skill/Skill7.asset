@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Skill7
   m_EditorClassIdentifier: 
   _id: 7
-  _name: Divine Dragon Awakens
+  _name: "Th\u1EA7n Long T\u1EC9nh Gi\u1EA5c"
   _description: "G\xE2y s\xE1t th\u01B0\u01A1ng c\u1EF1c l\u1EDBn l\xEAn m\u1ED9t
     m\u1EE5c ti\xEAu"
   _currentDMG: 700
-  _percentDME: 50
-  _energy: 300
+  _percentDMG: 0
+  _energy: 1000
   _time: 60

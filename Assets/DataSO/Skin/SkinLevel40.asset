@@ -16,13 +16,15 @@ MonoBehaviour:
   name: 
   _icon: {fileID: 0}
   _itemType: 2
-  _hp: 0
-  _enegy: 0
-  _def: 0
-  _critRate: 0
-  _critDMG: 0
-  _atk: 0
-  _stamina: 0
+  _hp: 999
+  _enegy: 888
+  _def: 777
+  _critRate: 12
+  _critDMG: 30
+  _atk: 300
+  _stamina: 299
+  _pricegold: 0
+  _priceDiamond: 0
   equipmentType: 0
   _headIdle:
   - {fileID: 21300000, guid: 84165934feb696844b71b812f414af12, type: 3}
@@ -65,4 +67,3 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ff4b644be44059c4aa60eba29f944912, type: 3}
   _legJump:
   - {fileID: 21300000, guid: e9f7c67fa9223c647b67df10ad6f1bf4, type: 3}
-  _backPack: []

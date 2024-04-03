@@ -11,15 +11,13 @@ public class PlayerSkinController : KameScript
     [SerializeField] private PlayerAura _playerAura;
     [SerializeField] private PlayerMoment _playerMoment;
     [Header("Thay đổi trang phục khi mặc trang bị")]
-    [SerializeField] ItemSO[] skinSO;
+    [SerializeField] public ItemSO[] skinSO;
     public int skinIndex = 0;
-    [Header("Thay đổi Vật phẩm đeo lưng")]
-    [SerializeField] ItemSO[] backPack;
-    public int backPackIndex = 0;
+    
     private void Awake()
     {
         skinIndex = 0;
-        backPackIndex = 0;
+        
     }
     private void OnValidate()
     {
@@ -29,61 +27,14 @@ public class PlayerSkinController : KameScript
         //_backPack = GetComponentInChildren<BackPack>();
         _playerAura = GetComponentInChildren<PlayerAura>();
         _playerMoment = GetComponent<PlayerMoment>();
-        LoadSkinSO();
-        LoadBackPackSO();
+        
     }
     
-    protected virtual void LoadSkinSO()
-    {
-       if (skinSO != null)
-        {
-            GameObject gameObject = GameObject.Find("GameData");
-            if (gameObject != null)
-            {
-                
-                GameData gamedata= gameObject.GetComponent<GameData>();
-                int len;
-                if (gamedata != null)
-                {
-                    len = gamedata._skinSO.Length;
-                    skinSO = new ItemSO[len];
-
-                }
-                for(int i = 0; i < gamedata._skinSO.Length; i++)
-                {
-                    skinSO[i]= gamedata._skinSO[i];
-                }
-            }
-        }
-    }
-
-    protected virtual void LoadBackPackSO()
-    {
-        if (skinSO != null)
-        {
-            GameObject gameObject = GameObject.Find("GameData");
-            if (gameObject != null)
-            {
-
-                GameData gamedata = gameObject.GetComponent<GameData>();
-                int len;
-                if (gamedata != null)
-                {
-                    len = gamedata._backPackSO.Length;
-                    backPack = new ItemSO[len];
-
-                }
-                for (int i = 0; i < gamedata._backPackSO.Length; i++)
-                {
-                    backPack[i] = gamedata._backPackSO[i]; 
-                }
-            }
-        }
-    }
+ 
     void Update()
     {
         ChangeSkin();
-        ChangeBackPack();
+       
         TurnOnAura();
         if (Input.GetKeyDown(KeyCode.G))
         {
@@ -102,11 +53,7 @@ public class PlayerSkinController : KameScript
             }
             
         }
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            backPackIndex++;
-
-        }
+        
         
     }
 
@@ -122,13 +69,7 @@ public class PlayerSkinController : KameScript
         }
   
     }
-    public void ChangeBackPack()
-    {
-        if (backPack != null)
-        {
-            PlayerCustomization(_backPack.backpack, backPack[backPackIndex].GetSpriteHeadIdle);
-        }
-    }
+    
     public void ChangeSkin()
     {
         if (skinSO != null)

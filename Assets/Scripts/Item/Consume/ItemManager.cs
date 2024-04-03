@@ -11,6 +11,7 @@ public class ItemManager : MonoBehaviour
     public ItemController controller;
     public ItemConsumeSO[] itemConsumeSOs;
     public GameObject[] texts;
+   
     public int indexItem;
     public Vector3 vector3;
     public float checkRadius = 5f; 
@@ -40,7 +41,7 @@ public class ItemManager : MonoBehaviour
     {
 
         GameObject pos = Instantiate(texts[index], vector3, quaternion.identity);
-        pos.GetComponentInChildren<TextMeshPro>().text = "+" + number;
+        pos.GetComponentInChildren<TextMeshProUGUI>().text = "+" + number;
         Destroy(pos,0.7f);
     }
 
@@ -53,7 +54,8 @@ public class ItemManager : MonoBehaviour
             // Kiểm tra tag của đối tượng
             if (collider.CompareTag("Player01"))
             {
-                 vector3 = new Vector3(collider.transform.position.x,collider.transform.position.y,collider.transform.position.z);
+                GameObject point= GameObject.Find("PonitPopUP");
+                 vector3 = new Vector3(point.transform.position.x,point.transform.position.y,point.transform.position.z);
                 
                 controller = collider.GetComponentInChildren<ItemController>();
                 playerLife=collider.GetComponentInChildren<PlayerLife>();

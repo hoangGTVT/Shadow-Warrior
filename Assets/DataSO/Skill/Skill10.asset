@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Skill10
   m_EditorClassIdentifier: 
   _id: 10
-  _name: Wings of the Celestial Dragon
+  _name: "\u0110\xF4i C\xE1nh C\u1EE7a Thi\xEAn Long"
   _description: "G\xE2y s\xE1t th\u01B0\u01A1ng l\xEAn to\xE0n b\u1ED9 \u0111\u1ECBch
     xung quanh m\u1EE5c ti\xEAu, k\u1EBFt li\u1EC5u t\u1EA5t c\xE3 n\u1EBFu hp c\u1EE7a
     ch\xFAng d\u01B0\u1EDBi 10%"
   _currentDMG: 1500
-  _percentDME: 60
-  _energy: 1200
+  _percentDMG: 0
+  _energy: 120000
   _time: 200

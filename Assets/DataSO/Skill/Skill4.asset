@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Skill4
   m_EditorClassIdentifier: 
   _id: 4
-  _name: Eternal Phoenix
+  _name: " H\u01A1i Th\u1EDF Ph\u01B0\u1EE3ng Ho\xE0ng"
   _description: "G\xE2y s\xE1t th\u01B0\u01A1ng \u0111\u01A1n m\u1EE5c ti\xEAu"
   _currentDMG: 150
-  _percentDME: 7
+  _percentDMG: 0
   _energy: 25
   _time: 3

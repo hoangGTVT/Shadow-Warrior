@@ -16,13 +16,15 @@ MonoBehaviour:
   name: SkinLevel10
   _icon: {fileID: 21300000, guid: b68e9b909f975a741846673d5c1e2f62, type: 3}
   _itemType: 2
-  _hp: 1
-  _enegy: 1
-  _def: 1
-  _critRate: 1
-  _critDMG: 1
-  _atk: 1
-  _stamina: 1
+  _hp: 90
+  _enegy: 90
+  _def: 90
+  _critRate: 90
+  _critDMG: 90
+  _atk: 90
+  _stamina: 90
+  _pricegold: 0
+  _priceDiamond: 0
   equipmentType: 0
   _headIdle:
   - {fileID: 21300000, guid: 8c8b34784e4213146aba5a4f9fd44a7c, type: 3}
@@ -65,4 +67,3 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e71f600b3491a65469478f32a97ee376, type: 3}
   _legJump:
   - {fileID: 21300000, guid: 880df335b91df384c9dc4c15118e96df, type: 3}
-  _backPack: []

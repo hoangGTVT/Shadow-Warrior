@@ -16,13 +16,15 @@ MonoBehaviour:
   name: hghgh
   _icon: {fileID: 21300000, guid: 37d3029180a097944bc7301215956969, type: 3}
   _itemType: 2
-  _hp: 99
-  _enegy: 99
-  _def: 99
-  _critRate: 99
-  _critDMG: 99
-  _atk: 99
-  _stamina: 99
+  _hp: 50
+  _enegy: 50
+  _def: 50
+  _critRate: 10
+  _critDMG: 50
+  _atk: 40
+  _stamina: 50
+  _pricegold: 0
+  _priceDiamond: 0
   equipmentType: 0
   _headIdle:
   - {fileID: 21300000, guid: 20c132eb57f70ba498fc049799960da3, type: 3}

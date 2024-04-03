@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Unity.Mathematics;
+
 
 public class UIBarPlayer : MonoBehaviour
 {
     public static UIBarPlayer Instance;
     public Slider[] _slide;
+    public GameObject[] _textPopUp;
 
     private void Awake()
     {
@@ -15,6 +19,7 @@ public class UIBarPlayer : MonoBehaviour
             Instance = this;
         }
     }
+    
 
     public void SetHP(int hp)
     {

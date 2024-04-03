@@ -19,10 +19,12 @@ MonoBehaviour:
   _hp: 299
   _enegy: 99
   _def: 99
-  _critRate: 99
+  _critRate: 10
   _critDMG: 99
   _atk: 120
   _stamina: 99
+  _pricegold: 0
+  _priceDiamond: 0
   equipmentType: 0
   _headIdle:
   - {fileID: 21300000, guid: 84165934feb696844b71b812f414af12, type: 3}
@@ -65,4 +67,3 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f8ef12cae0f0e5742812b18a174855a0, type: 3}
   _legJump:
   - {fileID: 21300000, guid: 7c52226d0416f7c40b9d82fea15c3dcb, type: 3}
-  _backPack: []

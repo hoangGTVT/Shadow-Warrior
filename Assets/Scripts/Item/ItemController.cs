@@ -20,6 +20,7 @@ public class ItemController : MonoBehaviour
     public int _dathachanh;
     public int _dashaphia;
     public int _dalucbao;
+    public int _danngusac;
 
 
     //GetItem
@@ -40,6 +41,7 @@ public class ItemController : MonoBehaviour
     public int GetDaThachAnh() { return _dathachanh; }
     public int GetDaShaphia() { return _dashaphia; }
     public int GetDaLucBao() { return _dalucbao; }  
+    public int GetDaNguSac() { return _danngusac; }
     //SetItem
 
     public void SetGold(int index) { _gold=index;}  
@@ -58,6 +60,7 @@ public class ItemController : MonoBehaviour
     public void SetDaThachAnh(int index) { _dathachanh = index;}
     public void SetDaShaphia(int index) { _dashaphia = index;}
     public void SetDaLucBao(int index) { _dalucbao = index;}
+    public void SetDaNguSac(int index) { _danngusac = index;}
 
     //plusItem
     public void PlusGold(int index) { _gold += index; }
@@ -76,6 +79,7 @@ public class ItemController : MonoBehaviour
     public void PlusDaThachAnh(int index) { _dathachanh += index; }
     public void PlusDaShaphia(int index) { _dashaphia += index; }
     public void PlusDaLucBao(int index) { _dalucbao += index; }
+    public void PlusDaNguSac(int index) { _danngusac += index; }
 
 
     //MinusItem
@@ -157,6 +161,11 @@ public class ItemController : MonoBehaviour
     {
         if (!(_dalucbao >= index)) return;
         _dalucbao -= index;
+    }
+    public void MinusDaNguSac(int index)
+    {
+        if (!(_danngusac >= index)) return;
+        _danngusac -= index;
     }
 
     void Start()

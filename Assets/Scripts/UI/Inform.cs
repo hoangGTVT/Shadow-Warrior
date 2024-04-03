@@ -28,10 +28,10 @@ public class Inform : MonoBehaviour
     {
         
     }
-    public void ShowInform(string text)
+    public void ShowInform(string number,string text)
     {
         _inform.SetActive(true);
-        _informText.text = text;
+        _informText.text = number+" "+text;
         Invoke("TurnOffInForm", 2f);
     }
 

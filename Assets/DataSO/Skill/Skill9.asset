@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Skill9
   m_EditorClassIdentifier: 
   _id: 9
-  _name: Savage Tiger
+  _name: "Ti\u1EBFng G\u1EA7m H\u1ED5 B\u1EA1c"
   _description: "G\xE2y s\xE1t th\u01B0\u01A1ng to\xE0n b\u1ED9 \u0111\u1ECBch tr\xEAn
     \u0111\u01B0\u1EDDng bay"
   _currentDMG: 300
-  _percentDME: 30
-  _energy: 150
+  _percentDMG: 0
+  _energy: 7500
   _time: 70

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Skill5
   m_EditorClassIdentifier: 
   _id: 5
-  _name: Fire Dragon Assassin
+  _name: "R\u1ED3ng l\u1EEDa tr\u1ED7i d\u1EADy"
   _description: "G\xE2y s\xE1t th\u01B0\u01A1ng \u0111\u01A1n m\u1EE5c ti\xEAu"
   _currentDMG: 300
-  _percentDME: 10
-  _energy: 50
+  _percentDMG: 0
+  _energy: 100
   _time: 10

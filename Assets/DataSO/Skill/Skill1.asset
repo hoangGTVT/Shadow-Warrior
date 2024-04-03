@@ -17,6 +17,6 @@ MonoBehaviour:
   _description: "T\u1EA5n c\xF4ng m\u1ED9t m\u1EE5c ti\xEAu v\u1EDBi ATK B\u1EA3n
     th\xE2n"
   _currentDMG: 0
-  _percentDME: 0
-  _energy: 0
+  _percentDMG: 0
+  _energy: 10
   _time: 1
