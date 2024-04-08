@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SkinWish
   m_EditorClassIdentifier: 
   _id: 0
-  name: 
-  _icon: {fileID: 0}
+  name: "C\u1EA3i trang Wish"
+  _icon: {fileID: 21300000, guid: 1516234d7b6aa3445a36e6640b4a7ff2, type: 3}
   _itemType: 2
   _hp: 50
   _enegy: 50

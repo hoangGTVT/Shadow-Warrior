@@ -14,15 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 7
   name: 
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: e063b56c81d9ba24d9139feaf04537e0, type: 3}
   _itemType: 2
-  _hp: 0
-  _enegy: 0
-  _def: 0
-  _critRate: 0
-  _critDMG: 0
-  _atk: 0
-  _stamina: 0
+  _hp: 30
+  _enegy: 30
+  _def: 30
+  _critRate: 15
+  _critDMG: 30
+  _atk: 30
+  _stamina: 30
+  _pricegold: 0
+  _priceDiamond: 0
   equipmentType: 0
   _headIdle:
   - {fileID: 21300000, guid: e063b56c81d9ba24d9139feaf04537e0, type: 3}
@@ -65,4 +67,3 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4795d5bdb4d30b248ab1819d3dfd80aa, type: 3}
   _legJump:
   - {fileID: 21300000, guid: e02189f171f6d3745ac723792a345437, type: 3}
-  _backPack: []

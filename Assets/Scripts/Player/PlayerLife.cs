@@ -159,14 +159,15 @@ public class PlayerLife : MonoBehaviour
     public void SetEXPCurrent(int index) { _hpCurrent = index; }
     public void PlusLevel()
     {
-        if (GetExpCurrent() >= GetExpLevel())
-        {
-            _expCurrent = GetExpCurrent() - GetExpLevel();
-            _level++;
-            SetEXPLevel();
-        }
+            while (GetExpCurrent() >= GetExpLevel())
+            {
+                _expCurrent = GetExpCurrent() - GetExpLevel();
+                _level++;
+                SetEXPLevel();
+            }
+        
     }
-    public void PlusEXPCurrent(int index) { _expLevel = index; }
+    public void PlusEXPCurrent(int index) { _expCurrent += index; }
 
 
     //HP
@@ -176,7 +177,7 @@ public class PlayerLife : MonoBehaviour
     public void SetHPDP(int index) { _hpDP = index; }
     public void SetHPStar(int index) { _hpStart = index; }
     public void SetHPTotal() { _hpTotal = (GetHpLevel() + GetHpEquip() + GetHPBackPack() + GetHPDp()); if (!((GetHPStar() > 0) || (GetHpSkin() > 0))) return; _hpTotal += (_hpTotal * (GetHPStar() + GetHpSkin()) / 100); }
-    public void SetHPCurrent() { _hpCurrent = GetHPTotal(); }
+    public void SetHPCurrent(int index) { _hpCurrent = index; }
     public void PlusHPCurrent(int index)
     {
         if (_hpCurrent < GetHPTotal())
@@ -184,7 +185,7 @@ public class PlayerLife : MonoBehaviour
             _hpCurrent += index;
             if(_hpCurrent> GetHPTotal())
             {
-                SetHPCurrent();
+                SetHPCurrent(GetHPTotal());
             }
         }
         else { return; }
@@ -212,15 +213,15 @@ public class PlayerLife : MonoBehaviour
     public void SetKIDP(int index) { _kiDP = index; }
     public void SetKIStar(int index) { _kiStart = index; }
     public void SetKITotal() { _kiTotal = GetKILevel() + GetKIEquip() + GetKiBackPack() + GetKIDp(); if (!(GetKiSkin() > 0 || GetKIStar() > 0)) return; _kiTotal += (_kiTotal * (GetKIStar() + GetKiSkin()) / 100); }
-    public void SetKICurrent() { _kiCurrent = GetKITotal(); }
+    public void SetKICurrent(int index) { _kiCurrent = index; }
     public void PlusKICurrent(int index)
     {
-        if (_kiCurrent < GetHPTotal())
+        if (_kiCurrent < GetKITotal())
         {
             _kiCurrent += index;
             if (_kiCurrent > GetKITotal())
             {
-                SetKICurrent();
+                SetKICurrent(GetKITotal());
             }
             
         }
@@ -278,7 +279,7 @@ public class PlayerLife : MonoBehaviour
     public void SetStaDP(int index) { _staDP = index; }
     public void SetStaStar(int index) { _staStart = index; }
     public void SetStaTotal() { _staTotal = GetStaminaLevel() + GetStaminaEquip() + GetStaminaBackPack() + GetStaminaDp(); if (!((GetStaminaSkin()>0|| GetStaminaStar() > 0))) return; _staTotal += (_staTotal * (GetStaminaSkin()+ GetStaminaStar()) / 100); }
-    public void SetStaCurrent() { _staCurrent = GetKITotal(); }
+    public void SetStaCurrent() { _staCurrent = GetStaminaTotal(); }
     public void PlusStaCurrent(int index)
     {
         if (_staCurrent < GetHPTotal())

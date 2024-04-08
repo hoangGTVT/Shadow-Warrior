@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class DotPhaController : MonoBehaviour
 {
+
+    public PlayerManager playerManager;
     [Header("TextDotPha")]
     public TextMeshProUGUI[] text1;
     public Image[] spriteinfo;
@@ -57,6 +59,7 @@ public class DotPhaController : MonoBehaviour
     public List<string> names = new List<string>() { "1 sao", "2 sao", "3 sao", "4 sao", "5 sao","6 sao", "7 sao" };
     public Sprite[] sprites;
     public int indexDotPha;
+   
     private const int _maxLevel = 50;
 
     //GetValue
@@ -269,6 +272,8 @@ public class DotPhaController : MonoBehaviour
                 PlusGoldHP();
                 PlusBuaDo();
                 PlusDiamondHP();
+                playerManager.SetData();
+                playerManager.SetTotalData();
                 break;
             case 1:
                 PlusLevelKI();
@@ -276,6 +281,8 @@ public class DotPhaController : MonoBehaviour
                 PlusGoldKI();
                 PlusBuaXanhDuong();
                 PlusDiamondKI();
+                playerManager.SetData();
+                playerManager.SetTotalData();
                 break;
             case 2:
                 PlusLevelATK();
@@ -283,6 +290,8 @@ public class DotPhaController : MonoBehaviour
                 PlusGoldATK();
                 PlusBuaTim();
                 PlusDiamondATK();
+                playerManager.SetData();
+                playerManager.SetTotalData();
                 break;
             case 3:
                 PlusLevelDEF();
@@ -290,6 +299,8 @@ public class DotPhaController : MonoBehaviour
                 PlusGoldDEF();
                 PlusBuaXam();
                 PlusDiamondDEF();
+                playerManager.SetData();
+                playerManager.SetTotalData();
                 break;
             case 4:
                 PlusLevelCrit();
@@ -297,6 +308,8 @@ public class DotPhaController : MonoBehaviour
                 PlusGoldCrit();
                 PlusBuaVang();
                 PlusDiamondCrit();
+                playerManager.SetData();
+                playerManager.SetTotalData();
                 break;
             case 5:
                 PlusLevelCritDMG();
@@ -304,6 +317,8 @@ public class DotPhaController : MonoBehaviour
                 PlusGoldCritDMG();
                 PlusBuaCam();
                 PlusDiamondCrit();
+                playerManager.SetData();
+                playerManager.SetTotalData();
                 break;
             case 6:
                 PlusLevelStamina();
@@ -311,6 +326,8 @@ public class DotPhaController : MonoBehaviour
                 PlusGoldStamina();
                 PlusBuaXanhLa();
                 PlusDiamondStamina();
+                playerManager.SetData();
+                playerManager.SetTotalData();
                 break;
 
         }

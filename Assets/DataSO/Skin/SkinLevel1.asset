@@ -14,15 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 1
   name: SkinLevel1
-  _icon: {fileID: 21300000, guid: 34f4cda3e9f637843b15c05b923085ad, type: 3}
+  _icon: {fileID: 21300000, guid: 8c8b34784e4213146aba5a4f9fd44a7c, type: 3}
   _itemType: 2
-  _hp: 99
-  _enegy: 99
-  _def: 99
-  _critRate: 99
-  _critDMG: 99
-  _atk: 99
-  _stamina: 99
+  _hp: 0
+  _enegy: 0
+  _def: 0
+  _critRate: 0
+  _critDMG: 0
+  _atk: 0
+  _stamina: 0
+  _pricegold: 0
+  _priceDiamond: 0
   equipmentType: 0
   _headIdle:
   - {fileID: 21300000, guid: 8c8b34784e4213146aba5a4f9fd44a7c, type: 3}

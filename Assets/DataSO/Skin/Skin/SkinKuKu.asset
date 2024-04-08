@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SkinKuKu
   m_EditorClassIdentifier: 
   _id: 0
-  name: 
-  _icon: {fileID: 0}
+  name: "C\u1EA3i trang KUKU"
+  _icon: {fileID: 21300000, guid: 7e9d02b786d9b404f8dbf8fb9b283417, type: 3}
   _itemType: 2
   _hp: 0
   _enegy: 0
@@ -23,6 +23,8 @@ MonoBehaviour:
   _critDMG: 0
   _atk: 0
   _stamina: 0
+  _pricegold: 0
+  _priceDiamond: 0
   equipmentType: 0
   _headIdle:
   - {fileID: 21300000, guid: 7e9d02b786d9b404f8dbf8fb9b283417, type: 3}
@@ -65,4 +67,3 @@ MonoBehaviour:
   - {fileID: 21300000, guid: bf06a8a19dbe0564c908af56c90d4814, type: 3}
   _legJump:
   - {fileID: 21300000, guid: 55b000da00fd8da42818cd0222dec3d5, type: 3}
-  _backPack: []

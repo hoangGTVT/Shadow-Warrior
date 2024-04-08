@@ -22,7 +22,10 @@ public class PlayerController : KameScript
     public bool IsFly() { return _isFly; }
     public bool IsSkill() { return _isSkill; }
 
-
+    private void OnEnable()
+    {
+        CallCoroutine();
+    }
     private void OnValidate()
     {
         this._playAnimation = GetComponentInChildren<PlayerAnimation>();
@@ -56,6 +59,7 @@ public class PlayerController : KameScript
     private void Update()
     {
         PlayerActive();
+        
     }
 
     protected virtual void PlayerActive()
@@ -88,20 +92,20 @@ public class PlayerController : KameScript
             }
             else
             {
-                if (!(_moveHorizontal == 0))
+                if (!(_moveHorizontal == 0)&& _playerLife.GetKICurrent()>0)
                 {
                     
                     PlayerFly();
 
                 }
-                else if (_moveVertical == 0)
+                else if (_moveVertical == 0||_playerLife.GetKICurrent()<=0)
                 {
                     
                     PlayerFall();
                 }
             }
         }
-        if (_moveVertical > 0.3 && _isSkill == false)
+        if (_moveVertical > 0.3 && _isSkill == false&& _playerLife.GetKICurrent() > 0)
         {
             PlayerJump();
         }
@@ -151,13 +155,13 @@ public class PlayerController : KameScript
     {
         while (true)
         {
-            if (!_playerMoment.IsGrounded())
+            if (!_playerMoment.IsGrounded2())
             {
-                _playerManager.minusKI(5);
+                _playerManager.minusKI(1);
             }
             
 
-            yield return new WaitForSeconds(.5f);
+            yield return new WaitForSeconds(2f);
         }
 
     }
@@ -165,6 +169,7 @@ public class PlayerController : KameScript
     {
         while (true)
         {
+            
             _playerManager.HealKi(_playerLife.GetKITotal() / 50);
             yield return new WaitForSeconds(15f);
         }

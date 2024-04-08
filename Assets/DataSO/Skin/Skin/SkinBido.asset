@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SkinBido
   m_EditorClassIdentifier: 
   _id: 0
-  name: 
-  _icon: {fileID: 0}
+  name: "C\u1EA3i trang Bido"
+  _icon: {fileID: 21300000, guid: 2bb03428690d9034dad04b798dcc761f, type: 3}
   _itemType: 2
   _hp: 0
   _enegy: 0
@@ -23,6 +23,8 @@ MonoBehaviour:
   _critDMG: 0
   _atk: 0
   _stamina: 0
+  _pricegold: 0
+  _priceDiamond: 0
   equipmentType: 0
   _headIdle:
   - {fileID: 21300000, guid: 2bb03428690d9034dad04b798dcc761f, type: 3}
@@ -65,4 +67,3 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 221f8df08711d1f4babd189258a1e411, type: 3}
   _legJump:
   - {fileID: 21300000, guid: 7b2a8d1d51e74034a8779e2d0a65ed01, type: 3}
-  _backPack: []

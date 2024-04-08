@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: SkinZamas
   m_EditorClassIdentifier: 
   _id: 11
-  name: hghgh
-  _icon: {fileID: 21300000, guid: 37d3029180a097944bc7301215956969, type: 3}
+  name: "C\u1EA3i trang zalma"
+  _icon: {fileID: 21300000, guid: 20c132eb57f70ba498fc049799960da3, type: 3}
   _itemType: 2
-  _hp: 50
+  _hp: 60
   _enegy: 50
   _def: 50
   _critRate: 10

@@ -18,6 +18,15 @@ public class Diamond : ItemManager
         //base.DestroyItem(7);
     }
 
+    /*public void FindPlayer()
+    {
+        GameObject gameObject = GameObject.Find("Player");
+        if (gameObject != null)
+        {
+
+        }
+    }*/
+
     protected void OnMouseDown()
     {
 

@@ -173,34 +173,34 @@ public class SkillController : MonoBehaviour
         switch (index)
         {
             case 0:
-                if (levelSkill1 < levelmax) { levelSkill1++; } else tb[1].SetActive(true);
+                if (levelSkill1 < levelmax) { levelSkill1++; } else tb[2].SetActive(true);
                 break;
             case 1:
-                if (levelSkill2 < levelmax) { levelSkill2++; } else tb[1].SetActive(true);
+                if (levelSkill2 < levelmax) { levelSkill2++; } else tb[2].SetActive(true);
                 break;
             case 2:
-                if (levelSkill3 < levelmax) { levelSkill3++; } else tb[1].SetActive(true);
+                if (levelSkill3 < levelmax) { levelSkill3++; } else tb[2].SetActive(true);
                 break;
             case 3:
-                if (levelSkill4 < levelmax) { levelSkill4++; } else tb[1].SetActive(true);
+                if (levelSkill4 < levelmax) { levelSkill4++; } else tb[2].SetActive(true);
                 break;
             case 4:
-                if (levelSkill5 < levelmax) { levelSkill5++; } else tb[1].SetActive(true);
+                if (levelSkill5 < levelmax) { levelSkill5++; } else tb[2].SetActive(true);
                 break;
             case 5:
-                if (levelSkill6 < levelmax) { levelSkill6++; } else tb[1].SetActive(true);
+                if (levelSkill6 < levelmax) { levelSkill6++; } else tb[2].SetActive(true);
                 break;
             case 6:
-                if (levelSkill7 < levelmax) { levelSkill7++; } else tb[1].SetActive(true);
+                if (levelSkill7 < levelmax) { levelSkill7++; } else tb[2].SetActive(true);
                 break;
             case 7:
-                if (levelSkill8 < levelmax) { levelSkill8++; } else tb[1].SetActive(true);
+                if (levelSkill8 < levelmax) { levelSkill8++; } else tb[2].SetActive(true);
                 break;
             case 8:
-                if (levelSkill9 < levelmax) { levelSkill9++; } else tb[1].SetActive(true);
+                if (levelSkill9 < levelmax) { levelSkill9++; } else tb[3].SetActive(true);
                 break;
             case 9:
-                if (levelSkill10 < levelmax) { levelSkill10++; } else tb[1] .SetActive(true);
+                if (levelSkill10 < levelmax) { levelSkill10++; } else tb[3] .SetActive(true);
                 break;
 
         }
@@ -315,28 +315,32 @@ public class SkillController : MonoBehaviour
         {
             int index = (int)InputManager.instance.CheckInput();
             GetTimeCool(index);
-           
-            if (timeSkill <= 0 && (playerLife.GetKICurrent() >= GetKISkill(index)))
+            if (playerLife.GetKICurrent() >= GetKISkill(index))
             {
-                if (index > 1)
+                if (timeSkill <= 0)
                 {
-                    playerAnimation.SetStateSkill(true);
-                    playerAnimation.SetAnimationState("Skill");
-                    playerAnimation._skillID = index;
+                    if (index > 1)
+                    {
+                        playerAnimation.SetStateSkill(true);
+                        playerAnimation.SetAnimationState("Skill");
+                        playerAnimation._skillID = index;
 
 
+                    }
+                    else if (index == 1)
+                    {
+                        SetTimeCoolDown(1);
+                        GetTimeCool(1);
+                        uibar.setMaxValue(timeSkill, 1);
+                        playerManager.minusKI(GetKISkill(1));
+                        Invoke("TurnOffSkill2", 5);
+                        _skill[1].SetActive(true);
+                    }
                 }
-                else if (index == 1)
-                {
-                    SetTimeCoolDown(1);
-                    GetTimeCool(1);
-                    uibar.setMaxValue(timeSkill, 1);
-                    playerManager.minusKI(GetKISkill(1));
-                    Invoke("TurnOffSkill2", 5);
-                    _skill[1].SetActive(true);
-                }
+                else TurnOnTB(0);
             }
-            else tb[1].SetActive(true); Invoke("TurnOnTB", 1f);
+
+            else TurnOnTB(1);
 
 
 
@@ -349,22 +353,21 @@ public class SkillController : MonoBehaviour
             {
 
                 GetTimeCool(0);
-               
-                if (timeSkill <= 0 && playerLife.GetKICurrent() >= GetKISkill(0))
+                if(playerLife.GetKICurrent() >= GetKISkill(0))
                 {
-                    SetTimeCoolDown(0);
-                    GetTimeCool(0);
-                    uibar.setMaxValue(timeSkill, 0);
-                    playerAnimation.SetStateSkill(true);
-                    playerManager.minusKI(GetKISkill(0));
-                    playerAnimation.SetAnimationState("Attack");
-                    playerAnimation.SetStateSkill(false);
-                    
-                }
-                else
-                {
-                    tb[1].SetActive(true); Invoke("TurnOnTB", 1f);
-                }
+                    if (timeSkill <= 0  )
+                    {
+                        SetTimeCoolDown(0);
+                        GetTimeCool(0);
+                        uibar.setMaxValue(timeSkill, 0);
+                        playerAnimation.SetStateSkill(true);
+                        playerManager.minusKI(GetKISkill(0));
+                        playerAnimation.SetAnimationState("Attack");
+                        playerAnimation.SetStateSkill(false);
+
+                    }
+                    else TurnOnTB(0);
+                }else TurnOnTB(1);
 
             }
 
@@ -381,44 +384,49 @@ public class SkillController : MonoBehaviour
     public void Skill1()
     {
         GetTimeCool(0);
-        GetKISkill(0);
-        if (timeSkill <= 0 &&playerLife.GetKICurrent() >= GetKISkill(0))
+        if (playerLife.GetKICurrent() >= GetKISkill(0))
         {
-            playerAnimation.SetStateSkill(true);
-            SetTimeCoolDown(0);
-            GetTimeCool(0);
-            uibar.setMaxValue(timeSkill, 0);
-            playerAnimation.SetAnimationState("Attack");
-            playerManager.minusKI(GetKISkill(0));
-            playerAnimation.SetStateSkill(false);
+            if (timeSkill <= 0)
+            {
+                playerAnimation.SetStateSkill(true);
+                SetTimeCoolDown(0);
+                GetTimeCool(0);
+                uibar.setMaxValue(timeSkill, 0);
+                playerAnimation.SetAnimationState("Attack");
+                playerManager.minusKI(GetKISkill(0));
+                playerAnimation.SetStateSkill(false);
+            }
+            else return;
         }
-        else tb[1].SetActive(true); Invoke("TurnOnTB", 1f);
-
+        else TurnOnTB(1);
     }
 
     public void SetSkill(int index)
     {
         GetTimeCool(index);
-        GetKISkill(index);
-        if (timeSkill <= 0 && playerLife.GetKICurrent() >= GetKISkill(index))
+        if (playerLife.GetKICurrent() >= GetKISkill(index))
         {
-            if (index > 1)
+            if (timeSkill <= 0)
             {
-                playerAnimation.SetAnimationState("Skill");
-                playerAnimation._skillID = index;
-                playerAnimation.SetStateSkill(true);
-            }
-            else if (index == 1)
-            {
-                SetTimeCoolDown(1);
-                GetTimeCool(1);
-                uibar.setMaxValue(timeSkill, 1);
-                playerManager.minusKI(GetKISkill(1));
-                _skill[1].SetActive(true);
-                Invoke("TurnOffSkill2", 5);
-            }
+                if (index > 1)
+                {
+                    playerAnimation.SetAnimationState("Skill");
+                    playerAnimation._skillID = index;
+                    playerAnimation.SetStateSkill(true);
+                }
+                else if (index == 1)
+                {
+                    SetTimeCoolDown(1);
+                    GetTimeCool(1);
+                    uibar.setMaxValue(timeSkill, 1);
+                    playerManager.minusKI(GetKISkill(1));
+                    _skill[1].SetActive(true);
+                    Invoke("TurnOffSkill2", 5);
+                }
+            }else TurnOnTB(0);
         }
-        else tb[1].SetActive(true); Invoke("TurnOnTB", 0.7f);
+
+        else TurnOnTB(1);
 
 
     }
@@ -428,8 +436,9 @@ public class SkillController : MonoBehaviour
         _skill[1].SetActive(false);
     }
 
-    public void TurnOnTB() {
-        tb[1].SetActive(false);
+    public void TurnOnTB(int index) {
+        GameObject tt = Instantiate(tb[index], transform.position, Quaternion.identity);
+        Destroy(tt,0.7f);
     }
 
 

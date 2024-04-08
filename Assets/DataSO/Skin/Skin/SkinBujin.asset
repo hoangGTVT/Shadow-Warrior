@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SkinBujin
   m_EditorClassIdentifier: 
   _id: 0
-  name: 
-  _icon: {fileID: 0}
+  name: "C\u1EA3i tang Bujin"
+  _icon: {fileID: 21300000, guid: 90e3d9f5166fc994d94a58dd68d8eb05, type: 3}
   _itemType: 2
   _hp: 0
   _enegy: 0
@@ -23,6 +23,8 @@ MonoBehaviour:
   _critDMG: 0
   _atk: 0
   _stamina: 0
+  _pricegold: 0
+  _priceDiamond: 0
   equipmentType: 0
   _headIdle:
   - {fileID: 21300000, guid: 90e3d9f5166fc994d94a58dd68d8eb05, type: 3}
@@ -65,4 +67,3 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 515a30278ee4c584aa61e3290da8e3a4, type: 3}
   _legJump:
   - {fileID: 21300000, guid: 2a420309b2ffe68458f72e2045f9395c, type: 3}
-  _backPack: []

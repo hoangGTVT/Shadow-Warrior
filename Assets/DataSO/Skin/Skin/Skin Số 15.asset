@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: "Skin S\u1ED1 15"
   m_EditorClassIdentifier: 
   _id: 0
-  name: 
-  _icon: {fileID: 0}
+  name: "C\u1EA3i trang S\u1ED1 15"
+  _icon: {fileID: 21300000, guid: 0ff4997bca6118849b8ea9a397367694, type: 3}
   _itemType: 2
   _hp: 0
   _enegy: 0
@@ -23,6 +23,8 @@ MonoBehaviour:
   _critDMG: 0
   _atk: 0
   _stamina: 0
+  _pricegold: 0
+  _priceDiamond: 0
   equipmentType: 0
   _headIdle:
   - {fileID: 21300000, guid: 0ff4997bca6118849b8ea9a397367694, type: 3}
@@ -65,4 +67,3 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 26d181f1c5bc0064abe5eda95d3825c7, type: 3}
   _legJump:
   - {fileID: 21300000, guid: 3e46866a71490b34c8c586d2829fa9ce, type: 3}
-  _backPack: []

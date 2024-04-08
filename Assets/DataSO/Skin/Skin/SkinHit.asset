@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SkinHit
   m_EditorClassIdentifier: 
   _id: 0
-  name: 
-  _icon: {fileID: 0}
+  name: "C\u1EA3i trang Hit"
+  _icon: {fileID: 21300000, guid: 95e46de446238ea4b80edbc688698cca, type: 3}
   _itemType: 2
   _hp: 0
   _enegy: 0
@@ -23,6 +23,8 @@ MonoBehaviour:
   _critDMG: 0
   _atk: 0
   _stamina: 0
+  _pricegold: 0
+  _priceDiamond: 0
   equipmentType: 0
   _headIdle:
   - {fileID: 21300000, guid: 95e46de446238ea4b80edbc688698cca, type: 3}
@@ -65,4 +67,3 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b4d98cb4871b29f429a70a0ec1cdd116, type: 3}
   _legJump:
   - {fileID: 21300000, guid: e1bee62e24affbb49b307f629bf68942, type: 3}
-  _backPack: []

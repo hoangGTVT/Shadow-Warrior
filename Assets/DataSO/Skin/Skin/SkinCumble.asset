@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SkinCumble
   m_EditorClassIdentifier: 
   _id: 0
-  name: 
-  _icon: {fileID: 0}
+  name: "C\u1EA3i trang Cumber"
+  _icon: {fileID: 21300000, guid: 671c88035a2de4b4d90137fdd724fd3e, type: 3}
   _itemType: 2
   _hp: 0
   _enegy: 0
@@ -23,6 +23,8 @@ MonoBehaviour:
   _critDMG: 0
   _atk: 0
   _stamina: 0
+  _pricegold: 0
+  _priceDiamond: 0
   equipmentType: 0
   _headIdle:
   - {fileID: 21300000, guid: 671c88035a2de4b4d90137fdd724fd3e, type: 3}
@@ -65,4 +67,3 @@ MonoBehaviour:
   - {fileID: 21300000, guid: cd9d4ffce42ab524582dd89c0082cc2c, type: 3}
   _legJump:
   - {fileID: 21300000, guid: 92f6842d7f282ec4cb564e11b39374d0, type: 3}
-  _backPack: []

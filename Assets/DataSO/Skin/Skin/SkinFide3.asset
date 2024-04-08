@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SkinFide3
   m_EditorClassIdentifier: 
   _id: 0
-  name: 
-  _icon: {fileID: 0}
+  name: "C\u1EA3i trang Fide"
+  _icon: {fileID: 21300000, guid: e53be3038e3104c4db7fe6bf2439902e, type: 3}
   _itemType: 2
   _hp: 0
   _enegy: 0
@@ -23,6 +23,8 @@ MonoBehaviour:
   _critDMG: 0
   _atk: 0
   _stamina: 0
+  _pricegold: 0
+  _priceDiamond: 0
   equipmentType: 0
   _headIdle:
   - {fileID: 21300000, guid: e53be3038e3104c4db7fe6bf2439902e, type: 3}
@@ -65,4 +67,3 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3d77d953a222b7e46936635d026a3c0e, type: 3}
   _legJump:
   - {fileID: 21300000, guid: a40d46e8f5eab1f41a2d8bb1d46aeaac, type: 3}
-  _backPack: []

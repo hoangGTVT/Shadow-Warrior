@@ -6,12 +6,23 @@ public class BackPack : MonoBehaviour
 {
     public GameObject[] backpack;
     public BackPackSO[] backPackSOs;
+    public PlayerManager playerManager;
     public int indexBackPack;
+    public bool isBackPack;
 
     private void Awake()
     {
         indexBackPack = 0;
     }
+    public void SetBackPack(int index)
+    {
+        SetIsBackPack(true);
+        SetIndexBP(index);
+        playerManager.SetData();
+        playerManager.SetTotalData();
+    }
+    public bool GetIsBackPack() { return isBackPack; }
+    public void SetIsBackPack(bool bp) { isBackPack = bp; }
     public void SetIndexBP(int index) { indexBackPack = index; }
     public int GetIndexBP() {  return indexBackPack; }
 
@@ -31,6 +42,7 @@ public class BackPack : MonoBehaviour
         if (backpack != null)
         {
             PlayerCustomization(backpack, backPackSOs[indexBackPack].GetSpriteHeadIdle);
+            if (GetIsBackPack() == true) { backpack[0].SetActive(true); } else { backpack[0].SetActive(false);}
         }
     }
     private void PlayerCustomization(GameObject[] outfits, Sprite[] sprites)
@@ -62,6 +74,10 @@ public class BackPack : MonoBehaviour
             else { indexBackPack=0; }
             
 
+        }
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            SetBackPack(7);
         }
     }
 }

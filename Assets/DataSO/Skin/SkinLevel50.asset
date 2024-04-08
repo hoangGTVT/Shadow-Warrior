@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 6
   name: 
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: e063b56c81d9ba24d9139feaf04537e0, type: 3}
   _itemType: 2
-  _hp: 2000
-  _enegy: 2030
-  _def: 254
-  _critRate: 15
-  _critDMG: 23
-  _atk: 238
-  _stamina: 200
+  _hp: 25
+  _enegy: 25
+  _def: 25
+  _critRate: 10
+  _critDMG: 20
+  _atk: 25
+  _stamina: 25
   _pricegold: 0
   _priceDiamond: 0
   equipmentType: 0

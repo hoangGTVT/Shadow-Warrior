@@ -22,5 +22,7 @@ MonoBehaviour:
   _critRate: 5
   _critDMG: 10
   _atk: 0
-  _stamina: 0
+  _stamina: 100
+  _pricegold: 0
+  _priceDiamond: 0
   equipmentType: 1

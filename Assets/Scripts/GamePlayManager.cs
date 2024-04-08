@@ -1,62 +1,53 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GamePlayManager : MonoBehaviour
 {
-    public SkillController skillController;
+    public GameObject textboxPlayerDeath;
+    public GameObject player;
+    public PlayerLife playerLife;
+    public ItemController itemController;
+    public MapController mapController;
+    public GameObject textTb;
     void Start()
     {
-        GameObject _player = GameObject.FindGameObjectWithTag("Player01");
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        GameObject _player = GameObject.FindGameObjectWithTag("Player01");
-        skillController = _player.GetComponentInChildren<SkillController>();
+        
+
     }
 
-
-    public void Skill1()
+    public void Revival()
     {
-        skillController.Skill1();
+        if (itemController.GetDiamond() >= 300)
+        {
+            itemController.MinusDiamond(300);
+            player.SetActive(true);
+            playerLife.SetHPCurrent(playerLife.GetHPTotal());
+            playerLife.SetKICurrent(playerLife.GetKITotal());
+            textboxPlayerDeath.SetActive(false);
+        }
+        else
+        {
+            return;
+        }
+        
     }
 
-    public void Skill2()
+    public void GoHome()
     {
-        skillController.SetSkill(1);
-    }
-    public void Skill3()
-    {
-        skillController.SetSkill(2);
-    }
-    public void Skill4()
-    {
-        skillController.SetSkill(3);
-    }
-    public void Skill5()
-    {
-        skillController.SetSkill(4);
-    }
-    public void Skill6()
-    {
-        skillController.SetSkill(5);
-    }
-    public void Skill7()
-    {
-        skillController.SetSkill(6);
-    }
-    public void Skill8()
-    {
-        skillController.SetSkill(7);
-    }
-    public void Skill9()
-    {
-        skillController.SetSkill(8);
-    }
-    public void Skill10()
-    {
-        skillController.SetSkill(9);
+        mapController.SetMapGoHome();
+        playerLife.SetHPCurrent(playerLife.GetHPTotal());
+        playerLife.SetKICurrent(playerLife.GetKITotal());
     }
 }
+
+
+    

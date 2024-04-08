@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SkinBlackGokuRose
   m_EditorClassIdentifier: 
   _id: 0
-  name: 
-  _icon: {fileID: 0}
+  name: "C\u1EA3i trang BlackGoku Rose"
+  _icon: {fileID: 21300000, guid: 43e6fdd7121f47c41a4734a81a90ec7b, type: 3}
   _itemType: 2
   _hp: 0
   _enegy: 0
@@ -23,6 +23,8 @@ MonoBehaviour:
   _critDMG: 0
   _atk: 0
   _stamina: 0
+  _pricegold: 0
+  _priceDiamond: 0
   equipmentType: 0
   _headIdle:
   - {fileID: 21300000, guid: 43e6fdd7121f47c41a4734a81a90ec7b, type: 3}
@@ -65,4 +67,3 @@ MonoBehaviour:
   - {fileID: 21300000, guid: cc6ed511979bcd34bbc5498632063f72, type: 3}
   _legJump:
   - {fileID: 21300000, guid: c5c96f90bd3a5b1419d3d380d5761025, type: 3}
-  _backPack: []

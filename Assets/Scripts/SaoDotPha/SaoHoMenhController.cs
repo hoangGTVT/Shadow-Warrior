@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class SaoHoMenhController : MonoBehaviour
 {
+    public PlayerManager playerManager;
     [Header("TextDotPha")]
     public TextMeshProUGUI[] text1;
     public Image[] spriteinfo;
@@ -365,6 +366,8 @@ public class SaoHoMenhController : MonoBehaviour
                 PlusDaThachAnhHP();
                 PlusGoldHP();
                 PlusDiamondHP();
+                playerManager.SetData();
+                playerManager.SetTotalData();
                 break;
             case 1:
                 PlusLevelKI();
@@ -374,6 +377,8 @@ public class SaoHoMenhController : MonoBehaviour
                 PlusDaShaphiaKI();
                 PlusGoldKI();
                 PlusDiamondKI();
+                playerManager.SetData();
+                playerManager.SetTotalData();
                 break;
             case 2:
                 PlusLevelATK();
@@ -383,6 +388,8 @@ public class SaoHoMenhController : MonoBehaviour
                 PlusDaLucBaoATK();
                 PlusGoldATK();
                 PlusDiamondATK();
+                playerManager.SetData();
+                playerManager.SetTotalData();
                 break;
             case 3:
                 PlusLevelDEF();
@@ -392,6 +399,8 @@ public class SaoHoMenhController : MonoBehaviour
                 PlusDaLucBaoDEF();
                 PlusGoldDEF();
                 PlusDiamondDEF();
+                playerManager.SetData();
+                playerManager.SetTotalData();
                 break;
             case 4:
                 PlusLevelCrit();
@@ -401,6 +410,8 @@ public class SaoHoMenhController : MonoBehaviour
                 PlusDaLucBaoCrit();
                 PlusGoldCrit();
                 PlusDiamondCrit();
+                playerManager.SetData();
+                playerManager.SetTotalData();
                 break;
             case 5:
                 PlusLevelCritDMG();
@@ -410,6 +421,8 @@ public class SaoHoMenhController : MonoBehaviour
                 PlusDaLucBaoCritDMG();
                 PlusGoldCritDMG();
                 PlusDiamondCritDMG();
+                playerManager.SetData();
+                playerManager.SetTotalData();
                 break;
             case 6:
                 PlusLevelStamina();
@@ -419,6 +432,8 @@ public class SaoHoMenhController : MonoBehaviour
                 PlusDaShaphiaSta();
                 PlusGoldStamina();
                 PlusDiamondStamina();
+                playerManager.SetData();
+                playerManager.SetTotalData();
                 break;
         }
     }

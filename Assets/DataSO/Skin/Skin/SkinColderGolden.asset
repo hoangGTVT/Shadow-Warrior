@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SkinColderGolden
   m_EditorClassIdentifier: 
   _id: 0
-  name: 
-  _icon: {fileID: 0}
+  name: "C\u1EA3i trang Colder Golden"
+  _icon: {fileID: 21300000, guid: 557c0a41e4a9da649bb9413a25b31267, type: 3}
   _itemType: 2
   _hp: 0
   _enegy: 0
@@ -23,6 +23,8 @@ MonoBehaviour:
   _critDMG: 0
   _atk: 0
   _stamina: 0
+  _pricegold: 0
+  _priceDiamond: 0
   equipmentType: 0
   _headIdle:
   - {fileID: 21300000, guid: 557c0a41e4a9da649bb9413a25b31267, type: 3}
@@ -65,4 +67,3 @@ MonoBehaviour:
   - {fileID: 21300000, guid: eae42d25eb3fccb4b8d8d817d921eae1, type: 3}
   _legJump:
   - {fileID: 21300000, guid: afcb93315870ac74db4546840d3ad549, type: 3}
-  _backPack: []

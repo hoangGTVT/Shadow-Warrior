@@ -14,8 +14,11 @@ public class PlayerManager : MonoBehaviour
     public DotPhaController dotPha;
     public PlayerLife playerLife;
     public BackPack backPack;
+    public PlayerAura playerAura;
+    [Header("GameObject")]
     public GameObject[] _textPopUp;
     public Transform pointPopUP;
+    public GameObject textBoxDeath;
     [Header("Laymark")]
     public LayerMask item;
     public LayerMask boss;
@@ -27,9 +30,9 @@ public class PlayerManager : MonoBehaviour
         IgnorePlayer();
         SetData();
         SetTotalData();
-        playerLife.SetHPCurrent();
-        playerLife.SetKICurrent();
-
+        playerLife.SetHPCurrent(playerLife.GetHPTotal());
+        playerLife.SetKICurrent(playerLife.GetKITotal());
+       
     }
     private void OnValidate()
     {
@@ -39,13 +42,15 @@ public class PlayerManager : MonoBehaviour
         skin=GetComponentInChildren<PlayerSkinController>();
         hoMenh=GetComponentInChildren<SaoHoMenhController>();
         dotPha=GetComponentInChildren<DotPhaController>();
+        playerAura = GetComponentInChildren<PlayerAura>();
     }
     public void SetTotalData()
     {
-        playerLife.SetHPTotal();
-       
-        playerLife.SetKITotal();
         
+        playerLife.SetHPTotal();
+        playerLife.SetKITotal();
+        if (playerLife.GetHPTotal() < playerLife.GetHPCurrent()) { playerLife.SetHPCurrent(playerLife.GetHPTotal()); }
+        if (playerLife.GetKITotal() < playerLife.GetKICurrent()) { playerLife.SetKICurrent(playerLife.GetKITotal()); }
         playerLife.SetATKTotal();
         playerLife.SetDEFTotal();
         playerLife.SetCritTotal();
@@ -53,70 +58,148 @@ public class PlayerManager : MonoBehaviour
         playerLife.SetStaTotal();
         playerLife.SetStaCurrent();
         playerLife.GetSM();
-        /*UIBarPlayer.Instance.SetMaxHP(playerLife.GetHPTotal());
+        UIBarPlayer.Instance.SetMaxHP(playerLife.GetHPTotal());
 
-        UIBarPlayer.Instance.SetMaxKI(playerLife.GetKITotal());*/
+        UIBarPlayer.Instance.SetMaxKI(playerLife.GetKITotal());
     }
     public void SetData()
     {
-        //HP
+        //Skin
+       
+        
+        if (skin.GetIsSkin() == true)
+        {
+            playerLife.SetHPSkin(skin.skinSO[skin.skinIndexLevel].GetHP() + skin.skinSO[skin.skinIndex].GetHP());
+            playerLife.SetKISkin(skin.skinSO[skin.skinIndexLevel].GetKI()+ skin.skinSO[skin.skinIndex].GetKI());
+            playerLife.SetATKSkin(skin.skinSO[skin.skinIndexLevel].GetATK() + skin.skinSO[skin.skinIndex].GetATK());
+            playerLife.SetDEFSkin(skin.skinSO[skin.skinIndexLevel].GetDef() + skin.skinSO[skin.skinIndex].GetDef());
+            playerLife.SetCritSkin(skin.skinSO[skin.skinIndexLevel].GetCritRate() + skin.skinSO[skin.skinIndex].GetCritRate());
+            playerLife.SetCritDMGSkin(skin.skinSO[skin.skinIndexLevel].GetCritDMG() + skin.skinSO[skin.skinIndex].GetCritDMG());
+            playerLife.SetStaminaSkin(skin.skinSO[skin.skinIndexLevel].GetStamina() + skin.skinSO[skin.skinIndex].GetStamina());
+        }
+        else { 
+            playerLife.SetHPSkin(skin.skinSO[skin.skinIndexLevel].GetHP());
+            playerLife.SetKISkin(skin.skinSO[skin.skinIndexLevel].GetKI());
+            playerLife.SetATKSkin(skin.skinSO[skin.skinIndexLevel].GetATK());
+            playerLife.SetDEFSkin(skin.skinSO[skin.skinIndexLevel].GetDef());
+            playerLife.SetCritSkin(skin.skinSO[skin.skinIndexLevel].GetCritRate());
+            playerLife.SetCritDMGSkin(skin.skinSO[skin.skinIndexLevel].GetCritDMG());
+            playerLife.SetStaminaSkin(skin.skinSO[skin.skinIndexLevel].GetStamina());
+        }
+        //equip
+        //Ao
+        if (clothers.GetIsAo() == true)
+        {
+            playerLife.SetDEFEquip(clothers.GetDefAo());
+        }else { playerLife.SetDEFEquip(0); }
+        //Quan
+        if (clothers.GetIsQuan() == true) { playerLife.SetHPEquip(clothers.GetHPQuan()); } else { playerLife.SetHPEquip(0); }
+        //Gang
+        if(clothers.GetIsGang() == true) { playerLife.SetATKEquip(clothers.GetATKGang()); } else { playerLife.SetATKEquip(0); }
+        //Giay
+        if(clothers.GetIsGiay()==true) { playerLife.SetKIEquip(clothers.GetKIGiay()); } else { playerLife.SetKIEquip(0); }
+        //rada
+        if(clothers.GetIsRaDa() == true)
+        {
+            playerLife.SetCritEquip(clothers.GetCritRada());
+            playerLife.SetCritDMGEquip(clothers.GetCritDMGRada());
+            playerLife.SetStaEquip(clothers.GetStaminaRaDa());
+        }
+        else
+        {
+            playerLife.SetCritEquip(0);
+            playerLife.SetCritDMGEquip(0);
+            playerLife.SetStaEquip(0);
+
+        }
+        //backpack
+        if (backPack.GetIsBackPack() == true)
+        {
+            playerLife.SetHPBaclPack(backPack.GetHP());
+            playerLife.SetKIBaclPack(backPack.GetKI());
+            playerLife.SetATKBaclPack(backPack.GetATK());
+            playerLife.SetDEFBaclPack(backPack.GetDEF());
+            playerLife.SetCritBaclPack(backPack.GetCrit());
+            playerLife.SetCritDMGBaclPack(backPack.GetCritDMG());
+            playerLife.SetStaBackPack(backPack.GetSta());
+        }
+        else {
+            playerLife.SetHPBaclPack(0);
+            playerLife.SetKIBaclPack(0);
+            playerLife.SetATKBaclPack(0);
+            playerLife.SetDEFBaclPack(0);
+            playerLife.SetCritBaclPack(0);
+            playerLife.SetCritDMGBaclPack(0);
+            playerLife.SetStaBackPack(0);
+        }
+        //DotPha
+
         playerLife.SetHPDP(dotPha.GetHpDotPha());
         playerLife.SetHPStar(hoMenh.GetHpSaoHoMenh());
-        playerLife.SetHPSkin(skin.skinSO[skin.skinIndex].GetHP());
-        playerLife.SetHPBaclPack(backPack.GetHP());
-        playerLife.SetHPEquip(clothers.GetHPQuan());
+
         //KI
         playerLife.SetKIDP(dotPha.GetKiDotPha());
         playerLife.SetKIStar(hoMenh.GetKiSaoHoMenh());
-        playerLife.SetKISkin(skin.skinSO[skin.skinIndex].GetKI());
-        playerLife.SetKIBaclPack(backPack.GetKI());
-        playerLife.SetKIEquip(clothers.GetKIGiay());
+       
         //ATK\
         playerLife.SetATKDP(dotPha.GetAtkDotPha());
         playerLife.SetATKStar(hoMenh.GetAtkSaoHoMenh());
-        playerLife.SetATKSkin(skin.skinSO[skin.skinIndex].GetATK());
-        playerLife.SetATKBaclPack(backPack.GetATK());
-        playerLife.SetATKEquip(clothers.GetATKGang());
         //DEF
         playerLife.SetDEFDP(dotPha.GetDefDotPha());
         playerLife.SetDEFStar(hoMenh.GetDefSaoHoMenh());
-        playerLife.SetDEFSkin(skin.skinSO[skin.skinIndex].GetDef());
-        playerLife.SetDEFBaclPack(backPack.GetDEF());
-        playerLife.SetDEFEquip(clothers.GetDefAo());
         //Crit
         playerLife.SetCritDP(dotPha.GetCritDotPha());
         playerLife.SetCritStar(hoMenh.GetCritSaoHoMenh());
-        playerLife.SetCritSkin(skin.skinSO[skin.skinIndex].GetCritRate());
-        playerLife.SetCritBaclPack(backPack.GetCrit());
-        playerLife.SetCritEquip(clothers.GetCritRada());
         //CritDMG
         playerLife.SetCritDMGDP(dotPha.GetCritDMGDotPha());
         playerLife.SetCritDMGStar(hoMenh.GetCritDMGSaoHoMenh());
-        playerLife.SetCritDMGSkin(skin.skinSO[skin.skinIndex].GetCritDMG());
-        playerLife.SetCritDMGBaclPack(backPack.GetCritDMG());
-        playerLife.SetCritDMGEquip(clothers.GetCritDMGRada());
         //Stamina
         playerLife.SetStaDP(dotPha.GetStaminaDotPha());
         playerLife.SetStaStar(hoMenh.GetStaminaSaoHoMenh());
-        playerLife.SetStaminaSkin(skin.skinSO[skin.skinIndex].GetStamina());
-        playerLife.SetStaBackPack(backPack.GetSta());
-        playerLife.SetStaEquip(clothers.GetStaminaRaDa());
+        //exp
+        playerLife.SetEXPLevel();
     }
 
 
 
     void Update()
     {
-        SetData();
-        SetTotalData();
+        /*SetData();
+        SetTotalData();*/
         if (Input.GetKeyDown(KeyCode.K))
         {
-            PlayerTakeDamage(2000);
+            PlayerTakeDamage(20000);
         }
         if (Input.GetKeyDown(KeyCode.L))
         {
             HealHP(200);
+            
         }
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            PlayerDeath();
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            PlayerTakeEXP(5000);
+
+        }
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            clothers.SetIsAo(true);
+            clothers.SetIsQuan(true);
+            clothers.SetIsGang(true);
+            clothers.SetIsGiay(true);
+            clothers.SetIsRaDa(true);
+            backPack.SetIsBackPack(true);
+            SetData();
+            SetTotalData();
+
+        }
+
+
 
     }
 
@@ -135,24 +218,136 @@ public class PlayerManager : MonoBehaviour
     {
         playerLife.MinusHPCurrent(damage);
         CreateTextPopUp(0, playerLife.HPMinus(damage),"-");
+        if (playerLife.GetHPCurrent() <= 0)
+        {
+            PlayerDeath();
+        }
+    }
+
+    public void PlayerTakeEXP(int exp)
+    {
+        if (playerLife.GetLevel() < 100)
+        {
+            playerLife.PlusEXPCurrent(exp);
+            CreateTextPopUp(2, exp, "EXP + ");
+            playerLife.PlusLevel();
+
+            SetData();
+            SetTotalData();
+            int level = playerLife.GetLevel() / 10;
+            switch (level)
+            {
+                case 0:
+                    skin.SetSkinIndexLevel(0);
+                    if (skin.GetIsSkin() == false) { skin.SetSkinIndex(0); }
+                    
+                    SetData();
+                    SetTotalData();
+                    break;
+                case 1:
+                    skin.SetSkinIndexLevel(1);
+                    if (skin.GetIsSkin() == false) { skin.SetSkinIndex(1); }
+                    SetData();
+                    SetTotalData();
+                    break;
+                case 2:
+                    skin.SetSkinIndexLevel(2);
+                    if (skin.GetIsSkin() == false) { skin.SetSkinIndex(2); }
+                    
+                    SetData();
+                    SetTotalData();
+                    playerAura.SetIndexAura(0);
+                    playerAura.SetIsAura(true);
+                    break;
+                case 3:
+                    skin.SetSkinIndexLevel(3);
+                    if (skin.GetIsSkin() == false) { skin.SetSkinIndex(3); }
+                    SetData();
+                    SetTotalData();
+                    break;
+                case 4:
+                    skin.SetSkinIndexLevel(4);
+                    if (skin.GetIsSkin() == false) { skin.SetSkinIndex(4); }
+                    SetData();
+                    SetTotalData();
+                    playerAura.SetIndexAura(1);
+                    playerAura.SetIsAura(true);
+                    break;
+                case 5:
+                    skin.SetSkinIndexLevel(5);
+                    if (skin.GetIsSkin() == false) { skin.SetSkinIndex(5); }
+                    SetData();
+                    SetTotalData();
+                    break;
+                case 6:
+                    skin.SetSkinIndexLevel(6);
+                    if (skin.GetIsSkin() == false) { skin.SetSkinIndex(6); }
+                    SetData();
+                    SetTotalData();
+                    playerAura.SetIndexAura(2);
+                    playerAura.SetIsAura(true);
+                    break;
+                case 7:
+                    skin.SetSkinIndexLevel(7);
+                    if (skin.GetIsSkin() == false) { skin.SetSkinIndex(7); }
+                    SetData();
+                    SetTotalData();
+                    break;
+                case 8:
+                    skin.SetSkinIndexLevel(8);
+                    if (skin.GetIsSkin() == false) { skin.SetSkinIndex(8); }
+                    SetData();
+                    SetTotalData();
+                    playerAura.SetIndexAura(3);
+                    playerAura.SetIsAura(true);
+                    break;
+                case 9:
+                    skin.SetSkinIndexLevel(9);
+                    if (skin.GetIsSkin() == false) { skin.SetSkinIndex(9); }
+                    SetData();
+                    SetTotalData();
+                    break;
+                case 10:
+                    skin.SetSkinIndexLevel(10);
+                    if (skin.GetIsSkin() == false) { skin.SetSkinIndex(10); }
+                    SetData();
+                    SetTotalData();
+                    playerAura.SetIndexAura(4);
+                    playerAura.SetIsAura(true);
+                    break;
+
+
+            }
+        }
+       
     }
 
     public void HealHP(int index)
     {
-        playerLife.PlusHPCurrent(index);
-        CreateTextPopUp(0, index, "+");
+        if (playerLife.GetHPCurrent() < playerLife.GetHPTotal())
+        {
+            playerLife.PlusHPCurrent(index);
+            CreateTextPopUp(0, index, "+");
+        }
+        else return;
 
     }
 
     public void HealKi(int index)
     {
-        playerLife.PlusKICurrent(index);
-        CreateTextPopUp(1, index, "+");
+        if (playerLife.GetKICurrent() < playerLife.GetKITotal())
+        {
+            playerLife.PlusKICurrent(index);
+            CreateTextPopUp(1, index, "+");
+
+        }
+        else return;
+        
     }
     public void minusKI(int index)
     {
         playerLife.MinusKICurrent(index);
-        CreateTextPopUp(1, index, "-");
+       
     }
     public void CreateTextPopUp(int index, int number, string t)
     {
@@ -161,6 +356,12 @@ public class PlayerManager : MonoBehaviour
         pos.GetComponentInChildren<TextMeshProUGUI>().text = t + number;
         Destroy(pos, 0.7f);
         
+    }
+
+    public void PlayerDeath()
+    {
+        textBoxDeath.SetActive(true);
+        gameObject.SetActive(false);
     }
     
 

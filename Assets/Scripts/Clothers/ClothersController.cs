@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class ClothersController : MonoBehaviour
 {
+    public PlayerManager playerManager;
     [Header("Áo")]
     public ClothesSO[] clothesSOs;
     [Header("Quan")]
@@ -21,7 +22,63 @@ public class ClothersController : MonoBehaviour
     public int indexgang;
     public int indexgiay;
     public int indexrada;
-    
+
+    public bool isAo;
+    public bool isGang;
+    public bool isQuan;
+    public bool isGiay;
+    public bool isRaDa;
+    //
+    public bool GetIsAo() { return isAo; }
+    public bool GetIsGang() {  return isGang; }
+    public bool GetIsQuan() { return isQuan; }
+    public bool GetIsGiay() { return isGiay; }
+
+    public bool GetIsRaDa() { return isRaDa; }
+
+    public void SetIsAo(bool ao) { isAo = ao; }
+    public void SetIsGang(bool ao) { isGang = ao; }
+    public void SetIsQuan(bool ao) { isQuan = ao; }
+    public void SetIsGiay(bool ao) { isGiay = ao; }
+    public void SetIsRaDa(bool ao) { isRaDa = ao; }
+
+    //Set
+    public void SetAo(int index)
+    {
+        SetIndexClother(index);
+        SetIsAo(true);
+        playerManager.SetData();
+        playerManager.SetTotalData();
+    }
+    public void SetQuan(int index)
+    {
+        SetIndexQuan(index);
+        SetIsQuan(true);
+        playerManager.SetData();
+        playerManager.SetTotalData();
+    }
+    public void SetGang(int index)
+    {
+        SetIndexgang(index);
+        SetIsGang(true);
+        playerManager.SetData();
+        playerManager.SetTotalData();
+    }
+    public void SetGiay(int index)
+    {
+        SetIndexgiay(index);
+        SetIsGiay(true);
+        playerManager.SetData();
+        playerManager.SetTotalData();
+    }
+    public void SetRada(int index)
+    {
+        SetIndexRada(index);
+        SetIsRaDa(true);
+        playerManager.SetData();
+        playerManager.SetTotalData();
+    }
+
     //ao
     public Sprite GetSpriteAo() { return clothesSOs[indexClothers].GetSprite(); }
     public int GetIDAo() { return clothesSOs[indexClothers].GetID(); }
@@ -86,6 +143,15 @@ public class ClothersController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            indexClothers++;
+            indexgang++;
+            indexgiay++;
+            indexquan++;
+            indexrada++;
+            playerManager.SetData();
+            playerManager.SetTotalData();
+        }
     }
 }

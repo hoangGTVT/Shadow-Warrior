@@ -29,7 +29,7 @@ public class UIBarPlayer : MonoBehaviour
     public void SetMaxHP(int hp)
     {
         _slide[0].maxValue = hp;
-        _slide[0].value=hp;
+       
     }
 
     public void SetKI(int hp)
@@ -40,6 +40,6 @@ public class UIBarPlayer : MonoBehaviour
     public void SetMaxKI(int hp)
     {
         _slide[1].maxValue = hp;
-        _slide[1].value = hp;
+        
     }
 }

@@ -30,6 +30,9 @@ public class ShowInfoPlayer : MonoBehaviour
         UIBarPlayer.Instance.SetKI(playerLife.GetKICurrent());
         ShowInfoPlayer1();
         ShowInfoPlayer2();
+        UIBarPlayer.Instance.SetMaxHP(playerLife.GetHPTotal());
+
+        UIBarPlayer.Instance.SetMaxKI(playerLife.GetKITotal());
     }
 
     public void ChangeIcon(Sprite sp) { sprite.sprite = sp; }

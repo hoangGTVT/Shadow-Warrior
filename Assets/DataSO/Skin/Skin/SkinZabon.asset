@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SkinZabon
   m_EditorClassIdentifier: 
   _id: 0
-  name: 
-  _icon: {fileID: 0}
+  name: "C\u1EA3i trang Zabon"
+  _icon: {fileID: 21300000, guid: 6850b865372b2d145a0ded10c2b66dc7, type: 3}
   _itemType: 2
   _hp: 20
   _enegy: 20

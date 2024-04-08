@@ -79,11 +79,11 @@ public class PlayerMoment : KameScript
 
     public bool IsGrounded()
     {
-        return Physics2D.BoxCast(_boxCollider.bounds.center, _boxCollider.bounds.size, 0f, Vector2.down, .1f, _jumpableGround[0]);
+        return Physics2D.BoxCast(_boxCollider.bounds.center, _boxCollider.bounds.size, 0f, Vector2.down, .3f, _jumpableGround[0]);
     }
     public bool IsGrounded2()
     {
-        return Physics2D.BoxCast(_boxCollider.bounds.center, _boxCollider.bounds.size, 0f, Vector2.down, 2f, _jumpableGround[1]);
+        return Physics2D.BoxCast(_boxCollider.bounds.center, _boxCollider.bounds.size, 0f, Vector2.down, .1f, _jumpableGround[1]);
     }
 
     

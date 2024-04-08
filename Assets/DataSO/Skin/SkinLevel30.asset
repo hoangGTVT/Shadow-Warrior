@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 4
   name: SkinLevel20
-  _icon: {fileID: 21300000, guid: 8b44490c0f5b6d649baea4a41cb306b9, type: 3}
+  _icon: {fileID: 21300000, guid: 84165934feb696844b71b812f414af12, type: 3}
   _itemType: 2
-  _hp: 299
-  _enegy: 99
-  _def: 99
-  _critRate: 10
-  _critDMG: 99
-  _atk: 120
-  _stamina: 99
+  _hp: 15
+  _enegy: 15
+  _def: 15
+  _critRate: 5
+  _critDMG: 10
+  _atk: 15
+  _stamina: 15
   _pricegold: 0
   _priceDiamond: 0
   equipmentType: 0

@@ -7,24 +7,30 @@ public class PlayerAura : MonoBehaviour
 {
     public GameObject[] aura;
     public int _auraIndex;
+    public bool isAura;
     public int _preIndex;
-    private void Awake()
-    {
-        _auraIndex = 0;
-    }
+    
     void Start()
     {
-        //CheckAua();
+        SetIsAura(false);
     }
 
     // Update is called once per frame
     void Update()
     {
        
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-             ChangeAura();
-        }
+        
+    }
+
+    public bool GetIsAura() { return isAura; }
+    public void SetIsAura(bool Aura) { isAura = Aura; }
+    public void SetIndexAura(int index)
+    {
+        _auraIndex=index;
+        TurnOnAura();
+        if (index > 0) { TurnOffAura(index - 1); }
+        
+
     }
 
     public void ChangeAura()
@@ -37,8 +43,8 @@ public class PlayerAura : MonoBehaviour
         else _auraIndex = 0;
 
 
-        SetAura();
-        TurnOffAura();
+        
+        
     }
     /*public void CheckAua()
     {
@@ -55,23 +61,20 @@ public class PlayerAura : MonoBehaviour
             }
         }
     }*/
-    public void SetAura() {
-        if (aura[_auraIndex].activeSelf)
-        {
-            return;
-        }else
-        aura[_auraIndex].SetActive(true);
-        
-    }
+    
 
-    public void TurnOffAura()
+    public void TurnOffAura(int index)
     {
-        aura[_preIndex].SetActive(false);
+        aura[index].SetActive(false);
     }
-
     public void TurnOffAura1()
     {
         aura[_auraIndex].SetActive(false);
+    }
+
+    public void TurnOnAura()
+    {
+        aura[_auraIndex].SetActive(true);
     }
 
 }

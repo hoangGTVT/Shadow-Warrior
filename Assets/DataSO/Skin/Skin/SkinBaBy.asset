@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SkinBaBy
   m_EditorClassIdentifier: 
   _id: 10
-  name: SkinBaby
-  _icon: {fileID: 21300000, guid: f136c537b78457e449d054f399896164, type: 3}
+  name: "C\u1EA3i trang Baby"
+  _icon: {fileID: 21300000, guid: e04a2126f1a9d024b9bde0388c83e71a, type: 3}
   _itemType: 2
   _hp: 99
   _enegy: 99
@@ -23,6 +23,8 @@ MonoBehaviour:
   _critDMG: 99
   _atk: 99
   _stamina: 99
+  _pricegold: 0
+  _priceDiamond: 0
   equipmentType: 0
   _headIdle:
   - {fileID: 21300000, guid: e04a2126f1a9d024b9bde0388c83e71a, type: 3}
