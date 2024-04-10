@@ -16,13 +16,13 @@ MonoBehaviour:
   name: Lotus2
   _icon: {fileID: 21300000, guid: 106a100b4b65a7243817fcfa18b4d5c1, type: 3}
   _itemType: 2
-  _hp: 1000
-  _enegy: 500
-  _def: 200
-  _critRate: 5
+  _hp: 3000
+  _enegy: 7000
+  _def: 350
+  _critRate: 10
   _critDMG: 20
-  _atk: 600
-  _stamina: 500
+  _atk: 900
+  _stamina: 800
   _pricegold: 95000
   _priceDiamond: 7500
   equipmentType: 0

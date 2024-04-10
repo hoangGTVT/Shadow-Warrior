@@ -16,14 +16,14 @@ MonoBehaviour:
   name: Lantern
   _icon: {fileID: 21300000, guid: 68354cc3cff005749987c60d1c5f3952, type: 3}
   _itemType: 2
-  _hp: 1000
-  _enegy: 500
+  _hp: 5000
+  _enegy: 4000
   _def: 200
   _critRate: 5
   _critDMG: 50
-  _atk: 300
-  _stamina: 500
-  _pricegold: 100000
+  _atk: 900
+  _stamina: 700
+  _pricegold: 120000
   _priceDiamond: 6000
   equipmentType: 0
   _backPack:

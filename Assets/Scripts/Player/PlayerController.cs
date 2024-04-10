@@ -17,6 +17,8 @@ public class PlayerController : KameScript
     public bool _isSkill;
     public float _moveHorizontal;
     public float _moveVertical;
+    public float _timecoolDow;
+    public float _timecoolDow2;
 
     public bool IsJump() { return _isJump; }
     public bool IsFly() { return _isFly; }
@@ -55,10 +57,13 @@ public class PlayerController : KameScript
         StartCoroutine(CallMinusKI());
         StartCoroutine(CallPlusHP());
         StartCoroutine(CallPlusKI());
+        StartCoroutine(CallMinusStamina());
     }
     private void Update()
     {
         PlayerActive();
+        _timecoolDow  += Time.deltaTime;
+        _timecoolDow2 += Time.deltaTime;
         
     }
 
@@ -155,13 +160,28 @@ public class PlayerController : KameScript
     {
         while (true)
         {
-            if (!_playerMoment.IsGrounded2())
-            {
-                _playerManager.minusKI(1);
-            }
             
+            if (!_playerMoment.IsGrounded2()&& _timecoolDow2>=1f)
+            {
+                _playerManager.MinusKI(1);
+                _timecoolDow2 = 0;
+            }
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(.1f);
+
+        }
+
+    }
+    IEnumerator CallMinusStamina()
+    {
+        while (true)
+        {
+            if (_timecoolDow >= 10f)
+            {
+                _playerManager.MinusStamina(2);
+                _timecoolDow = 0;
+            }
+            yield return new WaitForSeconds(.1f);
         }
 
     }

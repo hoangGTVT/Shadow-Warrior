@@ -6,6 +6,8 @@ using UnityEngine;
 public class SkillManager : MonoBehaviour
 {
     public SkillController skillController;
+    public ItemController itemController;
+    public GameObject upfail;
     public int skillId;
     public int skillIndex;
     [Header("Text")]
@@ -50,7 +52,7 @@ public class SkillManager : MonoBehaviour
     public int goldUP;
     public int diamondUP;
     public int dangusacUP;
-
+   
 
     public void SetSkillIndex(int index) { skillIndex = index; }
     //GetValue
@@ -89,14 +91,20 @@ public class SkillManager : MonoBehaviour
     public int GetDaNguSac9() {  return dangusacSkill9 = skillController.GetLevelSkill9() * dangusacUP; }
     public int GetDaNguSac10() { return dangusacSkill10 = skillController.GetLevelSkill10() * dangusacUP; }
     //UP level
-    
-    
+
+    private void Start()
+    {
+        
+    }
     void Update()
     {
         ShowTimeCoolDown();
         ShowLevel();  
         ShowName();
+
     }
+
+
 
     public void ShowName()
     {
@@ -195,7 +203,71 @@ public class SkillManager : MonoBehaviour
 
     public void PlusLevel()
     {
-        skillController.PlusLevel(skillIndex);
+        switch (skillIndex)
+        {
+            case 0:
+                if (CheckSkill1() == true)
+                {
+                    skillController.PlusLevel(skillIndex);
+                   
+                }
+                break;
+            case 1:
+                if (CheckSkill2() == true)
+                {
+                    skillController.PlusLevel(skillIndex);
+                }
+                break;
+            case 2:
+                if (CheckSkill3() == true)
+                {
+                    skillController.PlusLevel(skillIndex);
+                }
+                break;
+            case 3:
+                if (CheckSkill4() == true)
+                {
+                    skillController.PlusLevel(skillIndex);
+                }
+                break;
+            case 4:
+                if (CheckSkill5() == true)
+                {
+                    skillController.PlusLevel(skillIndex);
+                }
+                break;
+            case 5:
+                if (CheckSkill6() == true)
+                {
+                    skillController.PlusLevel(skillIndex);
+                }
+                break;
+            case 6:
+                if (CheckSkill7() == true)
+                {
+                    skillController.PlusLevel(skillIndex);
+                }
+                break;
+            case 7:
+                if (CheckSkill8() == true)
+                {
+                    skillController.PlusLevel(skillIndex);
+                }
+                break;
+            case 8:
+                if (CheckSkill9() == true)
+                {
+                    skillController.PlusLevel(skillIndex);
+                }
+                break;
+            case 9:
+                if (CheckSkill10() == true)
+                {
+                    skillController.PlusLevel(skillIndex);
+                }
+                break;
+        }
+        
     }
     public void ShowTimeCoolDown()
     {
@@ -246,5 +318,87 @@ public class SkillManager : MonoBehaviour
                 skillController.SetSkill(9);
                 break;
         }
+    }
+
+
+    public bool CheckSkill1()
+    {
+        if (itemController.GetGold() >= GetGoldSkill1() && itemController.GetDiamond() >= GetDiamondSkill1() && itemController.GetDaNguSac() >= GetDaNguSac1())
+        {
+            return true;
+        }
+        else upfail.SetActive(true); return false;
+    }
+    public bool CheckSkill2()
+    {
+        if (itemController.GetGold() >= GetGoldSkill2() && itemController.GetDiamond() >= GetDiamondSkill2() && itemController.GetDaNguSac() >= GetDaNguSac2())
+        {
+            return true;
+        }
+        else upfail.SetActive(true); return false;
+    }
+    public bool CheckSkill3()
+    {
+        if (itemController.GetGold() >= GetGoldSkill3() && itemController.GetDiamond() >= GetDiamondSkill3() && itemController.GetDaNguSac() >= GetDaNguSac3())
+        {
+            return true;
+        }
+        else upfail.SetActive(true); return false;
+    }
+    public bool CheckSkill4()
+    {
+        if (itemController.GetGold() >= GetGoldSkill4() && itemController.GetDiamond() >= GetDiamondSkill4() && itemController.GetDaNguSac() >= GetDaNguSac4())
+        {
+            return true;
+        }
+        else upfail.SetActive(true); return false;
+    }
+    public bool CheckSkill5()
+    {
+        if (itemController.GetGold() >= GetGoldSkill5() && itemController.GetDiamond() >= GetDiamondSkill5() && itemController.GetDaNguSac() >= GetDaNguSac5())
+        {
+            return true;
+        }
+        else upfail.SetActive(true); return false;
+    }
+    public bool CheckSkill6()
+    {
+        if (itemController.GetGold() >= GetGoldSkill6() && itemController.GetDiamond() >= GetDiamondSkill6() && itemController.GetDaNguSac() >= GetDaNguSac6())
+        {
+            return true;
+        }
+        else upfail.SetActive(true); return false;
+    }
+    public bool CheckSkill7()
+    {
+        if (itemController.GetGold() >= GetGoldSkill7() && itemController.GetDiamond() >= GetDiamondSkill7() && itemController.GetDaNguSac() >= GetDaNguSac7())
+        {
+            return true;
+        }
+        else upfail.SetActive(true); return false;
+    }
+    public bool CheckSkill8()
+    {
+        if (itemController.GetGold() >= GetGoldSkill8() && itemController.GetDiamond() >= GetDiamondSkill8() && itemController.GetDaNguSac() >= GetDaNguSac8())
+        {
+            return true;
+        }
+        else upfail.SetActive(true); return false;
+    }
+    public bool CheckSkill9()
+    {
+        if (itemController.GetGold() >= GetGoldSkill9() && itemController.GetDiamond() >= GetDiamondSkill9() && itemController.GetDaNguSac() >= GetDaNguSac9())
+        {
+            return true;
+        }
+        else upfail.SetActive(true); return false;
+    }
+    public bool CheckSkill10()
+    {
+        if (itemController.GetGold() >= GetGoldSkill10() && itemController.GetDiamond() >= GetDiamondSkill10() && itemController.GetDaNguSac() >= GetDaNguSac10())
+        {
+            return true;
+        }
+        else upfail.SetActive(true); return false;
     }
 }

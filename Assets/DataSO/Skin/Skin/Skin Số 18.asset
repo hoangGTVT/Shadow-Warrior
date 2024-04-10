@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: "Skin S\u1ED1 18"
   m_EditorClassIdentifier: 
   _id: 0
-  name: "C\u1EA3i trang S\u1ED1 3"
+  name: "C\u1EA3i trang S\u1ED1 18"
   _icon: {fileID: 21300000, guid: e18959a86cfe0174e83f8fd7bfffec64, type: 3}
   _itemType: 2
-  _hp: 0
-  _enegy: 0
-  _def: 0
-  _critRate: 0
-  _critDMG: 0
-  _atk: 0
-  _stamina: 0
-  _pricegold: 0
-  _priceDiamond: 0
+  _hp: 20
+  _enegy: 20
+  _def: 20
+  _critRate: 8
+  _critDMG: 15
+  _atk: 20
+  _stamina: 20
+  _pricegold: 90000
+  _priceDiamond: 9000
   equipmentType: 0
   _headIdle:
   - {fileID: 21300000, guid: e18959a86cfe0174e83f8fd7bfffec64, type: 3}

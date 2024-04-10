@@ -16,15 +16,15 @@ MonoBehaviour:
   name: "C\u1EA3i trang Dodori"
   _icon: {fileID: 21300000, guid: c7f3f06866aa1ca4d8b556680d7d5d8f, type: 3}
   _itemType: 2
-  _hp: 0
-  _enegy: 0
-  _def: 0
-  _critRate: 0
-  _critDMG: 0
-  _atk: 0
-  _stamina: 0
-  _pricegold: 0
-  _priceDiamond: 0
+  _hp: 9
+  _enegy: 9
+  _def: 9
+  _critRate: 9
+  _critDMG: 9
+  _atk: 9
+  _stamina: 9
+  _pricegold: 55555
+  _priceDiamond: 5555
   equipmentType: 0
   _headIdle:
   - {fileID: 21300000, guid: c7f3f06866aa1ca4d8b556680d7d5d8f, type: 3}

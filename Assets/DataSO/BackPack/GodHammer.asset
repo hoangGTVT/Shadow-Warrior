@@ -16,15 +16,15 @@ MonoBehaviour:
   name: GodHammer
   _icon: {fileID: 21300000, guid: bb3e6e81f9d509f409101711cbe556cb, type: 3}
   _itemType: 2
-  _hp: 1000
-  _enegy: 500
-  _def: 4000
-  _critRate: 5
+  _hp: 6000
+  _enegy: 6000
+  _def: 400
+  _critRate: 10
   _critDMG: 20
-  _atk: 300
+  _atk: 1000
   _stamina: 500
-  _pricegold: 60000
-  _priceDiamond: 5500
+  _pricegold: 100000
+  _priceDiamond: 7000
   equipmentType: 0
   _backPack:
   - {fileID: 21300000, guid: bb3e6e81f9d509f409101711cbe556cb, type: 3}

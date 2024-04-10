@@ -6,9 +6,6 @@ using UnityEngine;
 public class NPCBarock : MonoBehaviour
 {
     [Header("Text")]
-    public TextMeshProUGUI textMeshPro;
-
-    public string[] text;
     public GameObject[] textbox;
     public float radius = 5f;
     public GameObject player;

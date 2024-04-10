@@ -91,22 +91,7 @@ public class SkillController : MonoBehaviour
 
     }
 
-    /*public void GetKISkill1(int index)
-    {
-        switch (index)
-        {
-            case 0: kiSkill = GetTimeCoolDowLevel1(); break;
-            case 1: kiSkill = GetTimeCoolDowLevel2(); break;
-            case 2: kiSkill = GetTimeCoolDowLevel3(); break;
-            case 3: kiSkill = GetTimeCoolDowLevel4(); break;
-            case 4: kiSkill = GetTimeCoolDowLevel5(); break;
-            case 5: kiSkill = GetTimeCoolDowLevel6(); break;
-            case 6: kiSkill = GetTimeCoolDowLevel7(); break;
-            case 7: kiSkill = GetTimeCoolDowLevel8(); break;
-            case 8: kiSkill = GetTimeCoolDowLevel9(); break;
-            case 9: kiSkill = GetTimeCoolDowLevel10(); break;
-        }
-    }*/
+    
     //level
     public int GetLevelSkill1() { return levelSkill1; }
     public int GetLevelSkill2() { return levelSkill2; }
@@ -288,7 +273,7 @@ public class SkillController : MonoBehaviour
         SetTimeCoolDown(skill);
         GetTimeCool(skill);
         uibar.setMaxValue(timeSkill, skill);
-        playerManager.minusKI(GetKISkill(skill));
+        playerManager.MinusKI(GetKISkill(skill));
         GameObject gameObject = Instantiate(_skill[skill], _skillPoint.position, Quaternion.identity);
         Rigidbody2D rigidbody = gameObject.GetComponent<Rigidbody2D>();
         Vector3 currentScale = gameObject.transform.localScale;
@@ -315,12 +300,13 @@ public class SkillController : MonoBehaviour
         {
             int index = (int)InputManager.instance.CheckInput();
             GetTimeCool(index);
-            if (playerLife.GetKICurrent() >= GetKISkill(index))
+            if (playerLife.GetKICurrent() >= GetKISkill(index) && playerLife.GetStaminaCurrent() > 0)
             {
                 if (timeSkill <= 0)
                 {
                     if (index > 1)
                     {
+                        playerManager.MinusStamina(playerLife.GetStaminaTotal() / 50);
                         playerAnimation.SetStateSkill(true);
                         playerAnimation.SetAnimationState("Skill");
                         playerAnimation._skillID = index;
@@ -329,10 +315,11 @@ public class SkillController : MonoBehaviour
                     }
                     else if (index == 1)
                     {
+                        playerManager.MinusStamina(playerLife.GetStaminaTotal() / 50);
                         SetTimeCoolDown(1);
                         GetTimeCool(1);
                         uibar.setMaxValue(timeSkill, 1);
-                        playerManager.minusKI(GetKISkill(1));
+                        playerManager.MinusKI(GetKISkill(1));
                         Invoke("TurnOffSkill2", 5);
                         _skill[1].SetActive(true);
                     }
@@ -353,15 +340,16 @@ public class SkillController : MonoBehaviour
             {
 
                 GetTimeCool(0);
-                if(playerLife.GetKICurrent() >= GetKISkill(0))
+                if(playerLife.GetKICurrent() >= GetKISkill(0) && playerLife.GetStaminaCurrent() > 0)
                 {
                     if (timeSkill <= 0  )
                     {
+                        playerManager.MinusStamina(playerLife.GetStaminaTotal() / 50);
                         SetTimeCoolDown(0);
                         GetTimeCool(0);
                         uibar.setMaxValue(timeSkill, 0);
                         playerAnimation.SetStateSkill(true);
-                        playerManager.minusKI(GetKISkill(0));
+                        playerManager.MinusKI(GetKISkill(0));
                         playerAnimation.SetAnimationState("Attack");
                         playerAnimation.SetStateSkill(false);
 
@@ -384,16 +372,17 @@ public class SkillController : MonoBehaviour
     public void Skill1()
     {
         GetTimeCool(0);
-        if (playerLife.GetKICurrent() >= GetKISkill(0))
+        if (playerLife.GetKICurrent() >= GetKISkill(0) && playerLife.GetStaminaCurrent() > 0)
         {
             if (timeSkill <= 0)
             {
+                playerManager.MinusStamina(playerLife.GetStaminaTotal() / 50);
                 playerAnimation.SetStateSkill(true);
                 SetTimeCoolDown(0);
                 GetTimeCool(0);
                 uibar.setMaxValue(timeSkill, 0);
                 playerAnimation.SetAnimationState("Attack");
-                playerManager.minusKI(GetKISkill(0));
+                playerManager.MinusKI(GetKISkill(0));
                 playerAnimation.SetStateSkill(false);
             }
             else return;
@@ -404,22 +393,24 @@ public class SkillController : MonoBehaviour
     public void SetSkill(int index)
     {
         GetTimeCool(index);
-        if (playerLife.GetKICurrent() >= GetKISkill(index))
+        if (playerLife.GetKICurrent() >= GetKISkill(index)&& playerLife.GetStaminaCurrent()>0)
         {
             if (timeSkill <= 0)
             {
                 if (index > 1)
                 {
+                    playerManager.MinusStamina(playerLife.GetStaminaTotal() / 50);
                     playerAnimation.SetAnimationState("Skill");
                     playerAnimation._skillID = index;
                     playerAnimation.SetStateSkill(true);
                 }
                 else if (index == 1)
                 {
+                    playerManager.MinusStamina(playerLife.GetStaminaTotal() / 50);
                     SetTimeCoolDown(1);
                     GetTimeCool(1);
                     uibar.setMaxValue(timeSkill, 1);
-                    playerManager.minusKI(GetKISkill(1));
+                    playerManager.MinusKI(GetKISkill(1));
                     _skill[1].SetActive(true);
                     Invoke("TurnOffSkill2", 5);
                 }

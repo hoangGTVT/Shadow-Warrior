@@ -16,15 +16,15 @@ MonoBehaviour:
   name: "C\u1EA3i trang Baby"
   _icon: {fileID: 21300000, guid: e04a2126f1a9d024b9bde0388c83e71a, type: 3}
   _itemType: 2
-  _hp: 99
-  _enegy: 99
-  _def: 99
-  _critRate: 99
-  _critDMG: 99
-  _atk: 99
-  _stamina: 99
-  _pricegold: 0
-  _priceDiamond: 0
+  _hp: 50
+  _enegy: 50
+  _def: 40
+  _critRate: 6
+  _critDMG: 20
+  _atk: 50
+  _stamina: 30
+  _pricegold: 130000
+  _priceDiamond: 13000
   equipmentType: 0
   _headIdle:
   - {fileID: 21300000, guid: e04a2126f1a9d024b9bde0388c83e71a, type: 3}

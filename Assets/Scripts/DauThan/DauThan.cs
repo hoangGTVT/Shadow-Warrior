@@ -49,6 +49,7 @@ public class DauThan : MonoBehaviour
     {
         playerManager.HealHP(playerLife.GetHPTotal()/5);
         playerManager.HealKi(playerLife.GetKITotal() / 5);
+        playerManager.HealStamina(playerLife.GetStaminaTotal());
         timecool = 60;
         dauthan.SetActive(true);
     }

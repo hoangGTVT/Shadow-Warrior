@@ -117,7 +117,7 @@ public class ItemController : MonoBehaviour
         if (!(_buatim >= index)) return;
         _buatim -= index;
     }
-    public void MinusXanhla(int index)
+    public void MinusXanhLa(int index)
     {
         if (!(_buaxanhla >= index)) return;
         _buaxanhla -= index;

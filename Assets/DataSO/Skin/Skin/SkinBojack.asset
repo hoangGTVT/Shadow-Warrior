@@ -16,15 +16,15 @@ MonoBehaviour:
   name: "C\u1EA3i trang Bojack"
   _icon: {fileID: 21300000, guid: 763ec1d88a0e05143976589dce148513, type: 3}
   _itemType: 2
-  _hp: 0
-  _enegy: 0
-  _def: 0
-  _critRate: 0
-  _critDMG: 0
-  _atk: 0
-  _stamina: 0
-  _pricegold: 0
-  _priceDiamond: 0
+  _hp: 15
+  _enegy: 15
+  _def: 15
+  _critRate: 1
+  _critDMG: 1
+  _atk: 1
+  _stamina: 1
+  _pricegold: 55000
+  _priceDiamond: 4000
   equipmentType: 0
   _headIdle:
   - {fileID: 21300000, guid: 763ec1d88a0e05143976589dce148513, type: 3}

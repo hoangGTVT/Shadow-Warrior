@@ -16,15 +16,15 @@ MonoBehaviour:
   name: "C\u1EA3i trang CumberSS"
   _icon: {fileID: 21300000, guid: e079b069b9be8f5409b6d0f2ca4dc829, type: 3}
   _itemType: 2
-  _hp: 0
-  _enegy: 0
-  _def: 0
-  _critRate: 0
-  _critDMG: 0
-  _atk: 0
-  _stamina: 0
-  _pricegold: 0
-  _priceDiamond: 0
+  _hp: 100
+  _enegy: 20
+  _def: 60
+  _critRate: 10
+  _critDMG: 30
+  _atk: 100
+  _stamina: 30
+  _pricegold: 175000
+  _priceDiamond: 17500
   equipmentType: 0
   _headIdle:
   - {fileID: 21300000, guid: e079b069b9be8f5409b6d0f2ca4dc829, type: 3}

@@ -16,15 +16,15 @@ MonoBehaviour:
   name: "C\u1EA3i trang Lavender"
   _icon: {fileID: 21300000, guid: 0a8f6370645df3649a3b6cf35842f8dc, type: 3}
   _itemType: 2
-  _hp: 0
-  _enegy: 0
-  _def: 0
-  _critRate: 0
-  _critDMG: 0
-  _atk: 0
-  _stamina: 0
-  _pricegold: 0
-  _priceDiamond: 0
+  _hp: 45
+  _enegy: 45
+  _def: 24
+  _critRate: 7
+  _critDMG: 22
+  _atk: 55
+  _stamina: 55
+  _pricegold: 140000
+  _priceDiamond: 13000
   equipmentType: 0
   _headIdle:
   - {fileID: 21300000, guid: 0a8f6370645df3649a3b6cf35842f8dc, type: 3}

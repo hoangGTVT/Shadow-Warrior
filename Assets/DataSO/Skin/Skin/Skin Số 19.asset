@@ -16,15 +16,15 @@ MonoBehaviour:
   name: "C\u1EA3i trang S\u1ED1 19"
   _icon: {fileID: 21300000, guid: 343faa21a53f83c4cbd9164942a71d5f, type: 3}
   _itemType: 2
-  _hp: 0
-  _enegy: 0
-  _def: 0
-  _critRate: 0
-  _critDMG: 0
-  _atk: 0
-  _stamina: 0
-  _pricegold: 0
-  _priceDiamond: 0
+  _hp: 15
+  _enegy: 5
+  _def: 5
+  _critRate: 3
+  _critDMG: 3
+  _atk: 10
+  _stamina: 40
+  _pricegold: 80000
+  _priceDiamond: 7000
   equipmentType: 0
   _headIdle:
   - {fileID: 21300000, guid: 343faa21a53f83c4cbd9164942a71d5f, type: 3}

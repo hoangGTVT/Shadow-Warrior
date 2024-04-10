@@ -62,6 +62,7 @@ public class Diamond : ItemManager
             case 2:
                 playerLife.PlusHPCurrent(playerLife.GetHPTotal());
                 playerLife.PlusKICurrent(playerLife.GetKITotal());
+                playerLife.PlusStaCurrent(playerLife.GetStaminaTotal());
                 base.CreateTextPopUp(0, base.GetPos(), playerLife.GetHPTotal());
                 base.CreateTextPopUp(0, base.GetPos(), playerLife.GetKITotal());
                 Inform.instance.ShowInform("", base.GetName(2));

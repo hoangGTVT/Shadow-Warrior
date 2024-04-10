@@ -21,23 +21,23 @@ public class UIBarPlayer : MonoBehaviour
     }
     
 
-    public void SetHP(int hp)
+    public void SetHP(long hp)
     {
         _slide[0].value = hp;
     }
 
-    public void SetMaxHP(int hp)
+    public void SetMaxHP(long hp)
     {
         _slide[0].maxValue = hp;
        
     }
 
-    public void SetKI(int hp)
+    public void SetKI(long hp)
     {
         _slide[1].value = hp;
     }
 
-    public void SetMaxKI(int hp)
+    public void SetMaxKI(long hp)
     {
         _slide[1].maxValue = hp;
         

@@ -16,15 +16,15 @@ MonoBehaviour:
   name: "C\u1EA3i trang Beerus"
   _icon: {fileID: 21300000, guid: 5cf0878d2a16db045a3cae85eb8c3e9a, type: 3}
   _itemType: 2
-  _hp: 0
-  _enegy: 0
-  _def: 0
-  _critRate: 0
-  _critDMG: 0
-  _atk: 0
-  _stamina: 0
-  _pricegold: 0
-  _priceDiamond: 0
+  _hp: 100
+  _enegy: 100
+  _def: 60
+  _critRate: 10
+  _critDMG: 30
+  _atk: 100
+  _stamina: 60
+  _pricegold: 200000
+  _priceDiamond: 20000
   equipmentType: 0
   _headIdle:
   - {fileID: 21300000, guid: 5cf0878d2a16db045a3cae85eb8c3e9a, type: 3}

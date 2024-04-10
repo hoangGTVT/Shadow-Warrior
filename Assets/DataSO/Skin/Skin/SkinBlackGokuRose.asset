@@ -16,15 +16,15 @@ MonoBehaviour:
   name: "C\u1EA3i trang BlackGoku Rose"
   _icon: {fileID: 21300000, guid: 43e6fdd7121f47c41a4734a81a90ec7b, type: 3}
   _itemType: 2
-  _hp: 0
-  _enegy: 0
-  _def: 0
-  _critRate: 0
-  _critDMG: 0
-  _atk: 0
-  _stamina: 0
-  _pricegold: 0
-  _priceDiamond: 0
+  _hp: 100
+  _enegy: 20
+  _def: 40
+  _critRate: 2
+  _critDMG: 2
+  _atk: 10
+  _stamina: 20
+  _pricegold: 145000
+  _priceDiamond: 13000
   equipmentType: 0
   _headIdle:
   - {fileID: 21300000, guid: 43e6fdd7121f47c41a4734a81a90ec7b, type: 3}

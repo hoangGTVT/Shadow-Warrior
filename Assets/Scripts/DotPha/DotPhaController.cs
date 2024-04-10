@@ -9,6 +9,9 @@ public class DotPhaController : MonoBehaviour
 {
 
     public PlayerManager playerManager;
+    public ItemController itemController;
+    public GameObject upFinish;
+    public GameObject upfail;
     [Header("TextDotPha")]
     public TextMeshProUGUI[] text1;
     public Image[] spriteinfo;
@@ -60,7 +63,7 @@ public class DotPhaController : MonoBehaviour
     public Sprite[] sprites;
     public int indexDotPha;
    
-    private const int _maxLevel = 50;
+    private const int _maxLevel = 20;
 
     //GetValue
     public int GetLevelHP() { return _levelHP; }
@@ -113,14 +116,14 @@ public class DotPhaController : MonoBehaviour
     public void PlusLevelCrit() { _levelCrit++; }
     public void PlusLevelCritDMG() { _levelCritDMG++; }
     public void PlusLevelStamina() { _levelStamina++; }
-    public void PlusHP() { _hpDotPha += 1000; }
-    public void PlusKi() { _kiDotPha += 1000; }
-    public void PlusATK() { _atkDotPha += 50; }
-    public void PlusDef() { _defDotPha += 15; }
+    public void PlusHP() { if (_hpDotPha < 1) { _hpDotPha = 1000; }else _hpDotPha += (_hpDotPha*50/100); }
+    public void PlusKi() { if (_kiDotPha < 1) { _kiDotPha = 1000; }else _kiDotPha += (_kiDotPha*50/100); }
+    public void PlusATK() { if (_atkDotPha < 1) { _atkDotPha = 100; }else _atkDotPha += (_atkDotPha * 50 / 100); }
+    public void PlusDef() { _defDotPha += 25; }
     
     public void PlusCrit() {   _critDotPha += 1; }
-    public void PlusCritDMG() { _critDMGDotPha += 10; }
-    public void PlusStamina() { _staminaDotPha += 50; }
+    public void PlusCritDMG() { _critDMGDotPha += 2; }
+    public void PlusStamina() { _staminaDotPha += 250; }
     
 
     public void PlusBuaDo() { _buadoDP+=30; }
@@ -157,9 +160,10 @@ public class DotPhaController : MonoBehaviour
                 spriteinfo[0].sprite = sprites[0];
                 spriteinfo[1].sprite = bua[0];
                 text1[0].text = "Cấp " + GetLevelHP();
-                text1[1].text=GetBuaDoDP().ToString();
-                text1[2].text=GetGoldHP().ToString();
-                text1[3].text=GetDiamondHP().ToString();
+                text1[1].text = GetBuaDoDP().ToString();
+                text1[2].text = GetGoldHP().ToString();
+                text1[3].text = GetDiamondHP().ToString();
+
                 break;
             case 1:
                 spriteinfo[0].sprite = sprites[1];
@@ -267,69 +271,209 @@ public class DotPhaController : MonoBehaviour
         switch (indexDotPha)
         {
             case 0:
-                PlusLevelHP();
-                PlusHP();
-                PlusGoldHP();
-                PlusBuaDo();
-                PlusDiamondHP();
-                playerManager.SetData();
-                playerManager.SetTotalData();
+                if (CheckHP()==true) {
+                    PlusLevelHP();
+                    PlusHP();
+                    PlusGoldHP();
+                    PlusBuaDo();
+                    PlusDiamondHP();
+                    playerManager.SetData();
+                    playerManager.SetTotalData();
+                }
+                
                 break;
             case 1:
-                PlusLevelKI();
-                PlusKi();
-                PlusGoldKI();
-                PlusBuaXanhDuong();
-                PlusDiamondKI();
-                playerManager.SetData();
-                playerManager.SetTotalData();
+                if (CheckKI() == true)
+                {
+                    PlusLevelKI();
+                    PlusKi();
+                    PlusGoldKI();
+                    PlusBuaXanhDuong();
+                    PlusDiamondKI();
+                    playerManager.SetData();
+                    playerManager.SetTotalData();
+                }
+                
                 break;
             case 2:
-                PlusLevelATK();
-                PlusATK();
-                PlusGoldATK();
-                PlusBuaTim();
-                PlusDiamondATK();
-                playerManager.SetData();
-                playerManager.SetTotalData();
+                if (CheckATK() == true)
+                {
+                    PlusLevelATK();
+                    PlusATK();
+                    PlusGoldATK();
+                    PlusBuaTim();
+                    PlusDiamondATK();
+                    playerManager.SetData();
+                    playerManager.SetTotalData();
+                }
+                
                 break;
             case 3:
-                PlusLevelDEF();
-                PlusDef();
-                PlusGoldDEF();
-                PlusBuaXam();
-                PlusDiamondDEF();
-                playerManager.SetData();
-                playerManager.SetTotalData();
+                if (CheckDEF() == true)
+                {
+                    PlusLevelDEF();
+                    PlusDef();
+                    PlusGoldDEF();
+                    PlusBuaXam();
+                    PlusDiamondDEF();
+                    playerManager.SetData();
+                    playerManager.SetTotalData();
+                }
+                
                 break;
             case 4:
-                PlusLevelCrit();
-                PlusCrit();
-                PlusGoldCrit();
-                PlusBuaVang();
-                PlusDiamondCrit();
-                playerManager.SetData();
-                playerManager.SetTotalData();
+                if (CheckCrit() == true)
+                {
+                    PlusLevelCrit();
+                    PlusCrit();
+                    PlusGoldCrit();
+                    PlusBuaVang();
+                    PlusDiamondCrit();
+                    playerManager.SetData();
+                    playerManager.SetTotalData();
+                }
+                
                 break;
             case 5:
-                PlusLevelCritDMG();
-                PlusCritDMG();
-                PlusGoldCritDMG();
-                PlusBuaCam();
-                PlusDiamondCrit();
-                playerManager.SetData();
-                playerManager.SetTotalData();
+                if (CheckCritDMG() == true)
+                {
+                    PlusLevelCritDMG();
+                    PlusCritDMG();
+                    PlusGoldCritDMG();
+                    PlusBuaCam();
+                    PlusDiamondCrit();
+                    playerManager.SetData();
+                    playerManager.SetTotalData();
+                }
+                
                 break;
             case 6:
-                PlusLevelStamina();
-                PlusStamina();
-                PlusGoldStamina();
-                PlusBuaXanhLa();
-                PlusDiamondStamina();
-                playerManager.SetData();
-                playerManager.SetTotalData();
+                if (CheckStamina() == true)
+                {
+                    PlusLevelStamina();
+                    PlusStamina();
+                    PlusGoldStamina();
+                    PlusBuaXanhLa();
+                    PlusDiamondStamina();
+                    playerManager.SetData();
+                    playerManager.SetTotalData();
+                }
+                
                 break;
 
+        }
+    }
+
+    public bool CheckHP()
+    {
+        if (GetLevelHP() < _maxLevel && itemController.GetGold() >= GetGoldHP() && itemController.GetDiamond() >= GetDiamondHP() && itemController.GetBuaDo() >= GetBuaDoDP())
+        {
+            itemController.MinusBuaDo(GetBuaDoDP());
+            itemController.MinusGold(GetGoldHP());
+            itemController.MinusDiamond(GetDiamondHP());
+            upFinish.SetActive(true);
+            return true;
+        }
+        else
+        {
+            upfail.SetActive(true);
+            return false;
+        }
+    }
+    public bool CheckKI()
+    {
+        if (GetLevelKI() < _maxLevel && itemController.GetGold() >= GetGoldKI() && itemController.GetDiamond() >= GetDiamondKI() && itemController.GetBuaXanhDuong() >= GetBuaXanhDuongDP())
+        {
+            itemController.MinusXanhDuong(GetBuaXanhDuongDP());
+            itemController.MinusGold(GetGoldKI());
+            itemController.MinusDiamond(GetDiamondKI());
+            upFinish.SetActive(true);
+            return true;
+        }
+        else
+        {
+            upfail.SetActive(true);
+            return false;
+        }
+    }
+    public bool CheckATK()
+    {
+        if (GetLevelATK() < _maxLevel && itemController.GetGold() >= GetGoldATK() && itemController.GetDiamond() >= GetDiamondATK() && itemController.GetBuaTim() >= GetBuaTimDP())
+        {
+            itemController.MinusBuaTim(GetBuaTimDP());
+            itemController.MinusGold(GetGoldATK());
+            itemController.MinusDiamond(GetDiamondATK());
+            upFinish.SetActive(true);
+            return true;
+        }
+        else
+        {
+            upfail.SetActive(true);
+            return false;
+        }
+    }
+    public bool CheckDEF()
+    {
+        if (GetLevelDEF() < _maxLevel && itemController.GetGold() >= GetGoldDEF() && itemController.GetDiamond() >= GetDiamondDEF() && itemController.GetBuaXam() >= GetBuaXamDP())
+        {
+            itemController.MinusBuaxam(GetBuaXamDP());
+            itemController.MinusGold(GetGoldDEF());
+            itemController.MinusDiamond(GetDiamondDEF());
+            upFinish.SetActive(true);
+            return true;
+        }
+        else
+        {
+            upfail.SetActive(true);
+            return false;
+        }
+    }
+    public bool CheckCrit()
+    {
+        if (GetLevelCrit() < _maxLevel && itemController.GetGold() >= GetGoldCrit() && itemController.GetDiamond() >= GetDiamondCrit() && itemController.GetBuaVang() >= GetBuaVangDP())
+        {
+            itemController.MinusBuaVang(GetBuaVangDP());
+            itemController.MinusGold(GetGoldCrit());
+            itemController.MinusDiamond(GetDiamondCrit());
+            upFinish.SetActive(true);
+            return true;
+        }
+        else
+        {
+            upfail.SetActive(true);
+            return false;
+        }
+    }
+    public bool CheckCritDMG()
+    {
+        if (GetLevelCritDMG() < _maxLevel && itemController.GetGold() >= GetGoldCritDMG() && itemController.GetDiamond() >= GetDiamondCritDMG() && itemController.GetBuaCam() >= GetBuaCamDP())
+        {
+            itemController.MinusBuacam(GetBuaCamDP());
+            itemController.MinusGold(GetGoldCritDMG());
+            itemController.MinusDiamond(GetDiamondCritDMG());
+            upFinish.SetActive(true);
+            return true;
+        }
+        else
+        {
+            upfail.SetActive(true);
+            return false;
+        }
+    }
+    public bool CheckStamina()
+    {
+        if (GetLevelStamina() < _maxLevel && itemController.GetGold() >= GetGoldStamina() && itemController.GetDiamond() >= GetDiamondStamina() && itemController.GetBuaxanhla() >= GetBuaXanhLaDP())
+        {
+            itemController.MinusXanhLa(GetBuaXanhLaDP());
+            itemController.MinusGold(GetGoldStamina());
+            itemController.MinusDiamond(GetDiamondStamina());
+            upFinish.SetActive(true);
+            return true;
+        }
+        else
+        {
+            upfail.SetActive(true);
+            return false;
         }
     }
 }

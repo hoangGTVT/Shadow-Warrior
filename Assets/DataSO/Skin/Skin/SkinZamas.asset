@@ -20,11 +20,11 @@ MonoBehaviour:
   _enegy: 50
   _def: 50
   _critRate: 10
-  _critDMG: 50
+  _critDMG: 30
   _atk: 40
   _stamina: 50
-  _pricegold: 0
-  _priceDiamond: 0
+  _pricegold: 145000
+  _priceDiamond: 14000
   equipmentType: 0
   _headIdle:
   - {fileID: 21300000, guid: 20c132eb57f70ba498fc049799960da3, type: 3}

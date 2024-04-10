@@ -12,6 +12,9 @@ public class ShowInfoPlayer : MonoBehaviour
     public TextMeshProUGUI[] tex2;
     public PlayerManager playerManager;
     public PlayerLife playerLife;
+    public ItemController itemController;
+    public TextMeshProUGUI[] item;
+    
     
     void Start()
     {
@@ -25,11 +28,12 @@ public class ShowInfoPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     
+        
         UIBarPlayer.Instance.SetHP(playerLife.GetHPCurrent());
         UIBarPlayer.Instance.SetKI(playerLife.GetKICurrent());
         ShowInfoPlayer1();
         ShowInfoPlayer2();
+        /*ShowItem();*/
         UIBarPlayer.Instance.SetMaxHP(playerLife.GetHPTotal());
 
         UIBarPlayer.Instance.SetMaxKI(playerLife.GetKITotal());
@@ -51,16 +55,20 @@ public class ShowInfoPlayer : MonoBehaviour
         tex2[1].text = playerLife.GetSM().ToString("#,#");
         tex2[2].text = playerLife.GetLevel().ToString();
         tex2[3].text = playerLife.GetStaminaCurrent().ToString("#,#");
-        tex2[4].text = playerLife.GetHPCurrent().ToString("#,#");
-        tex2[5].text = "/"+playerLife.GetHPTotal().ToString("#,#");
-        tex2[6].text = playerLife.GetKICurrent().ToString("#,#");
-        tex2[7].text = "/"+playerLife.GetKITotal().ToString("#,#");
-        tex2[8].text = playerLife.GetExpCurrent().ToString("#,#");
-        tex2[9].text = "/" + playerLife.GetExpLevel().ToString("#,#");
-        tex2[10].text = playerLife.GetATKTotal().ToString();
-        tex2[11].text = playerLife.GetDEFTotal().ToString();
-        tex2[12].text = playerLife.GetCritTotal().ToString()+"%";
-        tex2[13].text = playerLife.GetCritDMGTotal().ToString()+"%";
+        tex2[4].text = playerLife.GetHPTotal().ToString("#,#");
+        tex2[5].text = playerLife.GetKITotal().ToString("#,#");
+        tex2[6].text = playerLife.GetExpCurrent().ToString("#,#");
+        tex2[7].text = "/" + playerLife.GetExpLevel().ToString("#,#");
+        tex2[8].text = playerLife.GetATKTotal().ToString();
+        tex2[9].text = playerLife.GetDEFTotal().ToString();
+        tex2[10].text = playerLife.GetCritTotal().ToString()+"%";
+        tex2[11].text = playerLife.GetCritDMGTotal().ToString()+"%";
         
+    }
+
+    public void ShowItem()
+    {
+        item[0].text=itemController.GetGold().ToString();
+        item[1].text=itemController.GetDiamond().ToString();
     }
 }

@@ -39,6 +39,7 @@ public class MenuPlayer : MonoBehaviour
     public TextMeshProUGUI Stamina;
 
     public GameObject showInfoSkin;
+    public GameObject ShowInfoClother;
     public int indexRemove;
    
     void Update()
@@ -48,43 +49,68 @@ public class MenuPlayer : MonoBehaviour
 
     public void ShowAo()
     {
-        iconClother.sprite = clothersController.GetSpriteAo();
-        nameClother.text = clothersController.GetNameAo().ToString();
-        descriptionClother[1].text= "DEF + "+clothersController.GetDefAo().ToString();
-        descriptionClother[0].text = "";
-        descriptionClother[2].text = "";
+        if(clothersController.isAo==true)
+        {
+            ShowInfoClother.SetActive(true);
+            iconClother.sprite = clothersController.GetSpriteAo();
+            nameClother.text = clothersController.GetNameAo().ToString();
+            descriptionClother[1].text = "DEF + " + clothersController.GetDefAo().ToString();
+            descriptionClother[0].text = "";
+            descriptionClother[2].text = "";
+        }
+        
     }
     public void ShowQuan()
     {
-        iconClother.sprite = clothersController.GetSpriteQuan();
-        nameClother.text = clothersController.GetNameQuan().ToString();
-        descriptionClother[1].text = "HP + " + clothersController.GetHPQuan().ToString();
-        descriptionClother[0].text = "";
-        descriptionClother[2].text = "";
+        if (clothersController.isQuan == true)
+        {
+            ShowInfoClother.SetActive(true);
+            iconClother.sprite = clothersController.GetSpriteQuan();
+            nameClother.text = clothersController.GetNameQuan().ToString();
+            descriptionClother[1].text = "HP + " + clothersController.GetHPQuan().ToString();
+            descriptionClother[0].text = "";
+            descriptionClother[2].text = "";
+        }
+        
     }
     public void ShowGang()
     {
-        iconClother.sprite = clothersController.GetSpriteGang();
-        nameClother.text = clothersController.GetNameGang().ToString();
-        descriptionClother[1].text = "ATK + " + clothersController.GetATKGang().ToString();
-        descriptionClother[0].text = "";
-        descriptionClother[2].text = "";
+        if (clothersController.isGang == true)
+        {
+            ShowInfoClother.SetActive(true);
+            iconClother.sprite = clothersController.GetSpriteGang();
+            nameClother.text = clothersController.GetNameGang().ToString();
+            descriptionClother[1].text = "ATK + " + clothersController.GetATKGang().ToString();
+            descriptionClother[0].text = "";
+            descriptionClother[2].text = "";
+        }
+       
     }
     public void ShowGiay()
     {
-        iconClother.sprite = clothersController.GetSpriteGiay();
-        nameClother.text = clothersController.GetNameGiay().ToString();
-        descriptionClother[1].text = "KI + " + clothersController.GetKIGiay().ToString();
-        descriptionClother[0].text = "";
-        descriptionClother[2].text = "";
+        if (clothersController.isGiay == true)
+        {
+            ShowInfoClother.SetActive(true);
+            iconClother.sprite = clothersController.GetSpriteGiay();
+            nameClother.text = clothersController.GetNameGiay().ToString();
+            descriptionClother[1].text = "KI + " + clothersController.GetKIGiay().ToString();
+            descriptionClother[0].text = "";
+            descriptionClother[2].text = "";
+        }
+       
     }
     public void ShowRada()
     {
-        iconClother.sprite = clothersController.GetSpriteRaDa();
-        nameClother.text = clothersController.GetNameRaDa().ToString();
-        descriptionClother[0].text = "Crit + " + clothersController.GetCritRada().ToString();
-        descriptionClother[1].text = "CritDMG + " + clothersController.GetCritDMGRada().ToString();
-        descriptionClother[2].text = "Stamina + " + clothersController.GetStaminaRaDa().ToString();
+        if (clothersController.isRaDa == true)
+        {
+            ShowInfoClother.SetActive(true);
+            iconClother.sprite = clothersController.GetSpriteRaDa();
+            nameClother.text = clothersController.GetNameRaDa().ToString();
+            descriptionClother[0].text = "Crit + " + clothersController.GetCritRada().ToString();
+            descriptionClother[1].text = "CritDMG + " + clothersController.GetCritDMGRada().ToString();
+            descriptionClother[2].text = "Stamina + " + clothersController.GetStaminaRaDa().ToString();
+        }
+        
     }
 
     public void ShowSkin()
@@ -237,16 +263,20 @@ public class MenuPlayer : MonoBehaviour
 
     public void ShowBackPack()
     {
-        showInfoSkin.SetActive(true);
-        iconskin.sprite = backpack.GetSprite();
-        nameSkin.text = backpack.GetName();
-        atk.text = "ATK + " + backpack.GetATK();
-        def.text = "DEF + " + backpack.GetDEF();
-        hp.text = "HP + " + backpack.GetHP();
-        ki.text = "KI + " +backpack.GetKI();
-        crit.text = "Crit + " + backpack.GetCrit() ;
-        critDMG.text = "CritDMG + " + backpack.GetCritDMG();
-        Stamina.text = "Stamina + " + backpack.GetSta();
+        if (backpack.isBackPack == true)
+        {
+            showInfoSkin.SetActive(true);
+            iconskin.sprite = backpack.GetSprite();
+            nameSkin.text = backpack.GetName();
+            atk.text = "ATK + " + backpack.GetATK();
+            def.text = "DEF + " + backpack.GetDEF();
+            hp.text = "HP + " + backpack.GetHP();
+            ki.text = "KI + " + backpack.GetKI();
+            crit.text = "Crit + " + backpack.GetCrit();
+            critDMG.text = "CritDMG + " + backpack.GetCritDMG();
+            Stamina.text = "Stamina + " + backpack.GetSta();
+        }
+       
     }
 
 }

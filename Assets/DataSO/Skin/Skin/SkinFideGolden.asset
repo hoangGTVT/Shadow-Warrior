@@ -16,15 +16,15 @@ MonoBehaviour:
   name: "C\u1EA3i trang Golden Fide"
   _icon: {fileID: 21300000, guid: 32f45210f92b032409d035cc7464cc6b, type: 3}
   _itemType: 2
-  _hp: 0
-  _enegy: 0
-  _def: 0
-  _critRate: 0
-  _critDMG: 0
-  _atk: 0
-  _stamina: 0
-  _pricegold: 0
-  _priceDiamond: 0
+  _hp: 44
+  _enegy: 44
+  _def: 44
+  _critRate: 4
+  _critDMG: 4
+  _atk: 44
+  _stamina: 44
+  _pricegold: 99999
+  _priceDiamond: 9999
   equipmentType: 0
   _headIdle:
   - {fileID: 21300000, guid: 32f45210f92b032409d035cc7464cc6b, type: 3}

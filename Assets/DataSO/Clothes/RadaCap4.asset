@@ -17,10 +17,12 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: 5f7656bfdc838264d83babf3af32d579, type: 3}
   _itemType: 2
   _hp: 0
-  _enegy: 1000
+  _enegy: 0
   _def: 0
-  _critRate: 11
-  _critDMG: 50
+  _critRate: 16
+  _critDMG: 32
   _atk: 0
-  _stamina: 0
+  _stamina: 800
+  _pricegold: 70000
+  _priceDiamond: 6500
   equipmentType: 1

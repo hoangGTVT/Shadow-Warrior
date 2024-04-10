@@ -11,6 +11,7 @@ public class ItemConsumeSO : ScriptableObject
     public int priceGold;
     public int priceDiamond;
 
+    public Sprite GetSprite() { return icon; }
     public string GetName() { return name; }
     public int GetID() { return id; }
     public int GetPriceGold() {  return priceGold; }

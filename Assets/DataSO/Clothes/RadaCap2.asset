@@ -14,13 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 22
   name: "Rada C\u1EA5p 2"
-  _icon: {fileID: 21300000, guid: 561db10e8bda3b545ae7154c344d76e4, type: 3}
+  _icon: {fileID: 21300000, guid: 31242f6e2dd833b43a567de759074f1e, type: 3}
   _itemType: 2
   _hp: 0
-  _enegy: 200
+  _enegy: 0
   _def: 0
-  _critRate: 7
-  _critDMG: 30
+  _critRate: 8
+  _critDMG: 16
   _atk: 0
-  _stamina: 0
+  _stamina: 400
+  _pricegold: 18000
+  _priceDiamond: 1800
   equipmentType: 1

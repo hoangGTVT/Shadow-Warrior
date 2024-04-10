@@ -10,6 +10,7 @@ public class ItemManager : MonoBehaviour
     public PlayerLife playerLife;
     public ItemController controller;
     public ItemConsumeSO[] itemConsumeSOs;
+    
     public GameObject[] texts;
    
     public int indexItem;
@@ -25,6 +26,7 @@ public class ItemManager : MonoBehaviour
         pricediamond = GetPriceDiamond(index);
         sprite = GetSprite(index);
     }
+    
     public string GetName(int index) { return itemConsumeSOs[index].GetName(); }
     public int GetPriceGold(int index) { return itemConsumeSOs[index].priceGold; }
     public int GetPriceDiamond(int index) { return itemConsumeSOs[index].priceDiamond; }
@@ -37,7 +39,7 @@ public class ItemManager : MonoBehaviour
         indexItem = index;
     }
     
-    protected virtual void CreateTextPopUp(int index,Vector3 vector3, int number)
+    protected virtual void CreateTextPopUp(int index,Vector3 vector3, long number)
     {
 
         GameObject pos = Instantiate(texts[index], vector3, quaternion.identity);

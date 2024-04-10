@@ -19,11 +19,7 @@ public class PlayerManager : MonoBehaviour
     public GameObject[] _textPopUp;
     public Transform pointPopUP;
     public GameObject textBoxDeath;
-    [Header("Laymark")]
-    public LayerMask item;
-    public LayerMask boss;
-    public LayerMask enemy;
-    public LayerMask player;
+    
 
     private void Awake()
     {
@@ -164,8 +160,7 @@ public class PlayerManager : MonoBehaviour
 
     void Update()
     {
-        /*SetData();
-        SetTotalData();*/
+       
         if (Input.GetKeyDown(KeyCode.K))
         {
             PlayerTakeDamage(20000);
@@ -183,7 +178,7 @@ public class PlayerManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.B))
         {
-            PlayerTakeEXP(5000);
+            PlayerTakeEXP(10000);
 
         }
         if (Input.GetKeyDown(KeyCode.V))
@@ -194,6 +189,19 @@ public class PlayerManager : MonoBehaviour
             clothers.SetIsGiay(true);
             clothers.SetIsRaDa(true);
             backPack.SetIsBackPack(true);
+            SetData();
+            SetTotalData();
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            clothers.SetAo(1);
+            clothers.SetGiay(2);
+            clothers.SetGang(3);
+            clothers.SetGiay(4);
+            clothers.SetRada(3);
+            backPack.SetBackPack(5);
             SetData();
             SetTotalData();
 
@@ -234,7 +242,7 @@ public class PlayerManager : MonoBehaviour
 
             SetData();
             SetTotalData();
-            int level = playerLife.GetLevel() / 10;
+            long level = playerLife.GetLevel() / 10;
             switch (level)
             {
                 case 0:
@@ -321,8 +329,16 @@ public class PlayerManager : MonoBehaviour
         }
        
     }
-
-    public void HealHP(int index)
+    public void HealStamina(long index)
+    {
+        if (playerLife.GetStaminaCurrent() < playerLife.GetStaminaTotal())
+        {
+            playerLife.PlusStaCurrent(index);
+            CreateTextPopUp(2, index, "+");
+        }
+        else return;
+    }
+    public void HealHP(long index)
     {
         if (playerLife.GetHPCurrent() < playerLife.GetHPTotal())
         {
@@ -333,7 +349,7 @@ public class PlayerManager : MonoBehaviour
 
     }
 
-    public void HealKi(int index)
+    public void HealKi(long index)
     {
         if (playerLife.GetKICurrent() < playerLife.GetKITotal())
         {
@@ -344,12 +360,17 @@ public class PlayerManager : MonoBehaviour
         else return;
         
     }
-    public void minusKI(int index)
+    public void MinusKI(long index)
     {
         playerLife.MinusKICurrent(index);
        
     }
-    public void CreateTextPopUp(int index, int number, string t)
+
+    public void MinusStamina(long index)
+    {
+        playerLife.MinusStaCurrent(index);
+    }
+    public void CreateTextPopUp(int index, long number, string t)
     {
 
         GameObject pos = Instantiate(_textPopUp[index], new Vector3(pointPopUP.transform.position.x,pointPopUP.transform.position.y, pointPopUP.transform.position.z), quaternion.identity);

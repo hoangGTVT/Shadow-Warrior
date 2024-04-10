@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: QuatBaTieu
   m_EditorClassIdentifier: 
   _id: 8
-  name: QuatBaTieu
+  name: "Qu\u1EA1t Ba Ti\xEAu"
   _icon: {fileID: 21300000, guid: d20a542b4b4bde341b413102f950a747, type: 3}
   _itemType: 2
-  _hp: 1000
-  _enegy: 500
-  _def: 200
-  _critRate: 5
+  _hp: 2500
+  _enegy: 2500
+  _def: 500
+  _critRate: 20
   _critDMG: 20
-  _atk: 300
-  _stamina: 700
+  _atk: 3000
+  _stamina: 1000
   _pricegold: 120000
   _priceDiamond: 8600
   equipmentType: 0

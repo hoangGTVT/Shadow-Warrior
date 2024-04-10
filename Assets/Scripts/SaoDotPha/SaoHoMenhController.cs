@@ -8,6 +8,9 @@ using UnityEngine.UI;
 public class SaoHoMenhController : MonoBehaviour
 {
     public PlayerManager playerManager;
+    public ItemController itemController;
+    public GameObject upFinish;
+    public GameObject upFail;
     [Header("TextDotPha")]
     public TextMeshProUGUI[] text1;
     public Image[] spriteinfo;
@@ -81,7 +84,7 @@ public class SaoHoMenhController : MonoBehaviour
     public List<string> names = new List<string>() { "Đỏ", "Xanh Dương", "Tím", "Hồng", "Vàng", "Cam", "Xanh Lá" };
     public Sprite[] sprites;
     public int indexSaoHoMenh;
-    private const int _maxLevel = 50;
+    private const int _maxLevel = 20;
 
     //GetValue
     public int GetLevelHP() { return _levelHP; }
@@ -155,9 +158,9 @@ public class SaoHoMenhController : MonoBehaviour
     public void PlusLevelCrit() { _levelCrit++; }
     public void PlusLevelCritDMG() { _levelCritDMG++; }
     public void PlusLevelStamina() { _levelStamina++; }
-    public void PlusHP() { _hpSaoHoMenh += 2; }
-    public void PlusKi() { _kiSaoHoMenh += 2; }
-    public void PlusATK() { _atkSaoHoMenh += 2; }
+    public void PlusHP() { _hpSaoHoMenh += 4; }
+    public void PlusKi() { _kiSaoHoMenh += 4; }
+    public void PlusATK() { _atkSaoHoMenh += 4; }
     public void PlusDef() { _defSaoHoMenh += 2; }
     public void PlusCrit() { _critSaoHoMenh += 1; }
     public void PlusCritDMG() { _critDMGSaoHoMenh += 2; }
@@ -359,84 +362,244 @@ public class SaoHoMenhController : MonoBehaviour
         switch (indexSaoHoMenh)
         {
             case 0:
-                PlusLevelHP();
-                PlusHP();
-                PlusDaRubyHP();
-                PlusDaTiTanHP();
-                PlusDaThachAnhHP();
-                PlusGoldHP();
-                PlusDiamondHP();
-                playerManager.SetData();
-                playerManager.SetTotalData();
+                if (CheckHP()==true)
+                {
+                    PlusLevelHP();
+                    PlusHP();
+                    PlusDaRubyHP();
+                    PlusDaTiTanHP();
+                    PlusDaThachAnhHP();
+                    PlusGoldHP();
+                    PlusDiamondHP();
+                    playerManager.SetData();
+                    playerManager.SetTotalData();
+                }
+                
                 break;
             case 1:
-                PlusLevelKI();
-                PlusKi();
-                PlusDaRubyKI();
-                PlusDaTiTanKI();
-                PlusDaShaphiaKI();
-                PlusGoldKI();
-                PlusDiamondKI();
-                playerManager.SetData();
-                playerManager.SetTotalData();
+                if (CheckKI() == true)
+                {
+                    PlusLevelKI();
+                    PlusKi();
+                    PlusDaRubyKI();
+                    PlusDaTiTanKI();
+                    PlusDaShaphiaKI();
+                    PlusGoldKI();
+                    PlusDiamondKI();
+                    playerManager.SetData();
+                    playerManager.SetTotalData();
+                }
+                
                 break;
             case 2:
-                PlusLevelATK();
-                PlusATK();
-                PlusDaThachAnhATK();
-                PlusDaShaphiaATK();
-                PlusDaLucBaoATK();
-                PlusGoldATK();
-                PlusDiamondATK();
-                playerManager.SetData();
-                playerManager.SetTotalData();
+                if (CheckATK() == true)
+                {
+                    PlusLevelATK();
+                    PlusATK();
+                    PlusDaThachAnhATK();
+                    PlusDaShaphiaATK();
+                    PlusDaLucBaoATK();
+                    PlusGoldATK();
+                    PlusDiamondATK();
+                    playerManager.SetData();
+                    playerManager.SetTotalData();
+                }
+               
                 break;
             case 3:
-                PlusLevelDEF();
-                PlusDef();
-                PlusDaRubyDEF();
-                PlusDaThachAnhDEF();
-                PlusDaLucBaoDEF();
-                PlusGoldDEF();
-                PlusDiamondDEF();
-                playerManager.SetData();
-                playerManager.SetTotalData();
+                if (CheckDEF() == true)
+                {
+                    PlusLevelDEF();
+                    PlusDef();
+                    PlusDaRubyDEF();
+                    PlusDaThachAnhDEF();
+                    PlusDaLucBaoDEF();
+                    PlusGoldDEF();
+                    PlusDiamondDEF();
+                    playerManager.SetData();
+                    playerManager.SetTotalData();
+                }
+                
                 break;
             case 4:
-                PlusLevelCrit();
-                PlusCrit();
-                PlusDaRubyCrit();
-                PlusDaShaphiaCrit();
-                PlusDaLucBaoCrit();
-                PlusGoldCrit();
-                PlusDiamondCrit();
-                playerManager.SetData();
-                playerManager.SetTotalData();
+                if (CheckCrit() == true)
+                {
+                    PlusLevelCrit();
+                    PlusCrit();
+                    PlusDaRubyCrit();
+                    PlusDaShaphiaCrit();
+                    PlusDaLucBaoCrit();
+                    PlusGoldCrit();
+                    PlusDiamondCrit();
+                    playerManager.SetData();
+                    playerManager.SetTotalData();
+                }
+                
                 break;
             case 5:
-                PlusLevelCritDMG();
-                PlusCritDMG();
-                PlusDaTiTanCritDMG();
-                PlusDaShaphiaCritDMG();
-                PlusDaLucBaoCritDMG();
-                PlusGoldCritDMG();
-                PlusDiamondCritDMG();
-                playerManager.SetData();
-                playerManager.SetTotalData();
+                if (CheckCritDMG() == true)
+                {
+                    PlusLevelCritDMG();
+                    PlusCritDMG();
+                    PlusDaTiTanCritDMG();
+                    PlusDaShaphiaCritDMG();
+                    PlusDaLucBaoCritDMG();
+                    PlusGoldCritDMG();
+                    PlusDiamondCritDMG();
+                    playerManager.SetData();
+                    playerManager.SetTotalData();
+                }
+                
                 break;
             case 6:
-                PlusLevelStamina();
-                PlusStamina();
-                PlusDaTiTanSta();
-                PlusDaThachAnhSta();
-                PlusDaShaphiaSta();
-                PlusGoldStamina();
-                PlusDiamondStamina();
-                playerManager.SetData();
-                playerManager.SetTotalData();
+                if (CheckStamina() == true)
+                {
+                    PlusLevelStamina();
+                    PlusStamina();
+                    PlusDaTiTanSta();
+                    PlusDaThachAnhSta();
+                    PlusDaShaphiaSta();
+                    PlusGoldStamina();
+                    PlusDiamondStamina();
+                    playerManager.SetData();
+                    playerManager.SetTotalData();
+                }
+               
                 break;
         }
     }
+    public bool CheckHP()
+    {
+        if(GetLevelHP() < _maxLevel&& itemController.GetGold()>=GetGoldHP()&& itemController.GetDiamond()>=GetDiamondHP()&&itemController.GetDaRuby()>=GetDaRubyHP()&&
+            itemController.GetDaTiTan() >= GetDaTiTanHP() && itemController.GetDaThachAnh() >= GetDaThachAnhHP())
+        {
+            itemController.MinusGold(GetGoldHP());
+            itemController.MinusDiamond(GetDiamondHP());
+            itemController.MinusDaRuby(GetDaRubyHP());
+            itemController.MinusDaTiTan(GetDaTiTanHP());
+            itemController.MinusThachAnh(GetDaTiTanHP());
+            upFinish.SetActive(true);
+            return true;
+        }else upFail.SetActive(true); return false;
+    }
 
+    public bool CheckKI()
+    {
+        if (GetLevelKI() < _maxLevel && 
+            itemController.GetGold() >= GetGoldKI() && 
+            itemController.GetDiamond() >= GetDiamondKI() && 
+            itemController.GetDaRuby() >= GetDaRubyKI() &&
+            itemController.GetDaTiTan() >= GetDaTiTanKI() && 
+            itemController.GetDaShaphia() >= GetDaShaphiaKI())
+        {
+            itemController.MinusGold(GetGoldKI());
+            itemController.MinusDiamond(GetDiamondKI());
+            itemController.MinusDaRuby(GetDaRubyKI());
+            itemController.MinusDaTiTan(GetDaTiTanKI());
+            itemController.MinusDaShaphia(GetDaShaphiaKI());
+            upFinish.SetActive(true);
+            return true;
+        }
+        else upFail.SetActive(true); return false;
+    }
+
+    public bool CheckATK()
+    {
+        if (GetLevelATK() < _maxLevel &&
+            itemController.GetGold() >= GetGoldATK() &&
+            itemController.GetDiamond() >= GetDiamondATK() &&
+            itemController.GetDaThachAnh() >= GetDaThachAnhATK() &&
+            itemController.GetDaShaphia() >= GetDaShaphiaATK() &&
+            itemController.GetDaLucBao() >= GetDaLucBaoATK())
+        {
+            itemController.MinusGold(GetGoldATK());
+            itemController.MinusDiamond(GetDiamondATK());
+            itemController.MinusDaLucBao(GetDaLucBaoATK());
+            itemController.MinusDaShaphia(GetDaShaphiaATK());
+            itemController.MinusThachAnh(GetDaThachAnhATK());
+            upFinish.SetActive(true);
+            return true;
+        }
+        else upFail.SetActive(true); return false;
+    }
+
+    public bool CheckDEF()
+    {
+        if (GetLevelDEF() < _maxLevel &&
+            itemController.GetGold() >= GetGoldDEF() &&
+            itemController.GetDiamond() >= GetDiamondDEF() &&
+            itemController.GetDaThachAnh() >= GetDaThachAnhDEF() &&
+            itemController.GetDaRuby() >= GetDaRubyDEF() &&
+            itemController.GetDaLucBao() >= GetDaLucBaoDEF())
+        {
+            itemController.MinusGold(GetGoldDEF());
+            itemController.MinusDiamond(GetDiamondDEF());
+            itemController.MinusDaLucBao(GetDaLucBaoDEF());
+            itemController.MinusDaRuby(GetDaRubyDEF());
+            itemController.MinusThachAnh(GetDaThachAnhDEF());
+            upFinish.SetActive(true);
+            return true;
+        }
+        else upFail.SetActive(true); return false;
+    }
+
+    public bool CheckCrit()
+    {
+        if (GetLevelCrit() < _maxLevel &&
+            itemController.GetGold() >= GetGoldCrit() &&
+            itemController.GetDiamond() >= GetDiamondCrit() &&
+            itemController.GetDaShaphia() >= GetDaShaphiaCrit() &&
+            itemController.GetDaRuby() >= GetDaRubyCrit() &&
+            itemController.GetDaLucBao() >= GetDaLucBaoCrit())
+        {
+            itemController.MinusGold(GetGoldCrit());
+            itemController.MinusDiamond(GetDiamondCrit());
+            itemController.MinusDaLucBao(GetDaLucBaoCrit());
+            itemController.MinusDaRuby(GetDaRubyCrit());
+            itemController.MinusDaShaphia(GetDaShaphiaCrit());
+            upFinish.SetActive(true);
+            return true;
+        }
+        else upFail.SetActive(true); return false;
+    }
+
+    public bool CheckCritDMG()
+    {
+        if (GetLevelCritDMG() < _maxLevel &&
+            itemController.GetGold() >= GetGoldCritDMG() &&
+            itemController.GetDiamond() >= GetDiamondCritDMG() &&
+            itemController.GetDaShaphia() >= GetDaShaphiaCritDMG() &&
+            itemController.GetDaTiTan() >= GetDaTiTanCritDMG() &&
+            itemController.GetDaLucBao() >= GetDaLucBaoCritDMG())
+        {
+            itemController.MinusGold(GetGoldCritDMG());
+            itemController.MinusDiamond(GetDiamondCritDMG());
+            itemController.MinusDaLucBao(GetDaLucBaoCritDMG());
+            itemController.MinusDaShaphia(GetDaShaphiaCritDMG());
+            itemController.MinusDaTiTan(GetDaTiTanCritDMG());
+            upFinish.SetActive(true);
+            return true;
+        }
+        else upFail.SetActive(true); return false;
+    }
+    public bool CheckStamina()
+    {
+        if (GetLevelStamina() < _maxLevel &&
+            itemController.GetGold() >= GetGoldStamina() &&
+            itemController.GetDiamond() >= GetDiamondStamina() &&
+            itemController.GetDaShaphia() >= GetDaShaphiaSta() &&
+            itemController.GetDaTiTan() >= GetDaTiTanSta() &&
+            itemController.GetDaThachAnh() >= GetDaThachAnhSta())
+        {
+            itemController.MinusGold(GetGoldStamina());
+            itemController.MinusDiamond(GetDiamondStamina());
+            itemController.MinusDaTiTan(GetDaTiTanSta());
+            itemController.MinusDaShaphia(GetDaShaphiaSta());
+            itemController.MinusThachAnh(GetDaThachAnhSta());
+            upFinish.SetActive(true);
+            return true;
+        }
+        else upFail.SetActive(true); return false;
+    }
 
 }

@@ -19,12 +19,12 @@ MonoBehaviour:
   _hp: 1000
   _enegy: 2000
   _def: 200
-  _critRate: 5
-  _critDMG: 20
-  _atk: 300
-  _stamina: 500
-  _pricegold: 55000
-  _priceDiamond: 5200
+  _critRate: 15
+  _critDMG: 30
+  _atk: 2000
+  _stamina: 1000
+  _pricegold: 255000
+  _priceDiamond: 7500
   equipmentType: 0
   _backPack:
   - {fileID: 21300000, guid: dd1bac61c8b378348a6a1be8c4332c17, type: 3}

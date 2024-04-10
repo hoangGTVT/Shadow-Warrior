@@ -18,11 +18,11 @@ MonoBehaviour:
   _itemType: 2
   _hp: 25
   _enegy: 25
-  _def: 25
-  _critRate: 10
-  _critDMG: 20
+  _def: 5
+  _critRate: 5
+  _critDMG: 15
   _atk: 25
-  _stamina: 25
+  _stamina: 5
   _pricegold: 0
   _priceDiamond: 0
   equipmentType: 0
