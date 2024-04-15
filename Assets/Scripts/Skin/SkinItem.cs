@@ -11,7 +11,7 @@ public class SkinItem : MonoBehaviour
     public float doubleClickTimeThreshold = 1f;
     protected float lastClickTime = 0f;
     public LayerMask playerLayer;
-    public float detectionRadius = 5f;
+    public float detectionRadius = 1f;
     public bool playerDetected;
     public int indexSkin;
     void Start()
@@ -23,25 +23,19 @@ public class SkinItem : MonoBehaviour
     void Update()
     {
         CheckPlayer();
+        PlayerTakeSkin();
     }
-    public void OnMouseDown()
+    
+    public void PlayerTakeSkin()
     {
-
-        if (Time.time - lastClickTime < doubleClickTimeThreshold)
+        if (playerDetected)
         {
-            if (playerDetected)
-            {
-                skinManager.PlusSkin(indexSkin);
-                Inform.instance.ShowInformClother(skinController.skinSO[indexSkin+11].GetName());
+            skinManager.PlusSkin(indexSkin);
+            Inform.instance.ShowInformClother(skinController.skinSO[indexSkin + 11].GetName());
 
-                Destroy(gameObject, 0.1f);
-            }
-
-
+            Destroy(gameObject);
         }
-
-
-        lastClickTime = Time.time;
+        
     }
     public bool CheckPlayer()
     {

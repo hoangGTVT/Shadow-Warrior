@@ -41,6 +41,12 @@ public class Inform : MonoBehaviour
         _informText.text = "Bạn Nhận Được " + text;
         Invoke("TurnOffInForm", 1f);
     }
+    public void ShowFail(string text)
+    {
+        _inform.SetActive(true);
+        _informText.text = "Bạn Phải đạt cấp "+ text;
+        Invoke("TurnOffInForm", 1f);
+    }
 
     public void TurnOffInForm()
     {

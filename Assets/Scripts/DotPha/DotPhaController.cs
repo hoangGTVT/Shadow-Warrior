@@ -237,31 +237,31 @@ public class DotPhaController : MonoBehaviour
                 spriteinfo2.sprite = sprites[2];
                 text2[0].text = "Cấp " + GetLevelATK();
                 text2[1].text = "Ngọc Đột Phá " + GetName();
-                text2[2].text = "ATK + " + GetAtkDotPha();
+                text2[2].text = "Tấn Công + " + GetAtkDotPha();
                 break;
             case 3:
                 spriteinfo2.sprite = sprites[3];
                 text2[0].text = "Cấp " + GetLevelDEF();
                 text2[1].text = "Ngọc Đột Phá " + GetName();
-                text2[2].text = "DEF + " + GetDefDotPha();
+                text2[2].text = "Giáp + " + GetDefDotPha();
                 break;
             case 4:
                 spriteinfo2.sprite = sprites[4];
                 text2[0].text = "Cấp " + GetLevelCrit();
                 text2[1].text = "Ngọc Đột Phá " + GetName();
-                text2[2].text = "Crit + " + GetCritDotPha()+"%";
+                text2[2].text = "Chí Mạng + " + GetCritDotPha()+"%";
                 break;
             case 5:
                 spriteinfo2.sprite = sprites[5];
                 text2[0].text = "Cấp " + GetLevelCritDMG();
                 text2[1].text = "Ngọc Đột Phá " + GetName();
-                text2[2].text = "CritDMG + " + GetCritDMGDotPha()+"%";
+                text2[2].text = "Sát Thương Chí Mạng + " + GetCritDMGDotPha()+"%";
                 break;
             case 6:
                 spriteinfo2.sprite = sprites[6];
                 text2[0].text = "Cấp " + GetLevelStamina();
                 text2[1].text = "Ngọc Đột Phá " + GetName();
-                text2[2].text = "Stamina + " + GetStaminaDotPha();
+                text2[2].text = "Thể Lực + " + GetStaminaDotPha();
                 break;
             
         }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.Mathematics;
-using UnityEditor.Timeline.Actions;
+
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
@@ -15,6 +15,8 @@ public class PlayerManager : MonoBehaviour
     public PlayerLife playerLife;
     public BackPack backPack;
     public PlayerAura playerAura;
+    public PlayerAnimation playerAnimation;
+    public SkillController skillController;
     [Header("GameObject")]
     public GameObject[] _textPopUp;
     public Transform pointPopUP;
@@ -39,6 +41,7 @@ public class PlayerManager : MonoBehaviour
         hoMenh=GetComponentInChildren<SaoHoMenhController>();
         dotPha=GetComponentInChildren<DotPhaController>();
         playerAura = GetComponentInChildren<PlayerAura>();
+        playerAnimation=GetComponentInChildren<PlayerAnimation>();
     }
     public void SetTotalData()
     {
@@ -163,7 +166,7 @@ public class PlayerManager : MonoBehaviour
        
         if (Input.GetKeyDown(KeyCode.K))
         {
-            PlayerTakeDamage(20000);
+            PlayerTakeDamage(200);
         }
         if (Input.GetKeyDown(KeyCode.L))
         {
@@ -178,7 +181,7 @@ public class PlayerManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.B))
         {
-            PlayerTakeEXP(10000);
+            PlayerTakeEXP(5000);
 
         }
         if (Input.GetKeyDown(KeyCode.V))
@@ -213,23 +216,32 @@ public class PlayerManager : MonoBehaviour
 
     protected virtual void IgnorePlayer()
     {
-        
+        Physics2D.IgnoreLayerCollision(9, 11);
         Physics2D.IgnoreLayerCollision(8, 11);
         Physics2D.IgnoreLayerCollision(8, 9);
         Physics2D.IgnoreLayerCollision(9, 9);
         Physics2D.IgnoreLayerCollision(8, 10);
+        Physics2D.IgnoreLayerCollision(11, 12);
         
-        
+        Physics2D.IgnoreLayerCollision(11, 11);
+
+
     }
 
     public void PlayerTakeDamage(int damage)
     {
-        playerLife.MinusHPCurrent(damage);
-        CreateTextPopUp(0, playerLife.HPMinus(damage),"-");
-        if (playerLife.GetHPCurrent() <= 0)
+        if (skillController.isSkill2 == false)
         {
-            PlayerDeath();
+            playerAnimation.SetAnimationState("Block");
+            playerAnimation.SetStateSkill(false);
+            playerLife.MinusHPCurrent(damage);
+            CreateTextPopUp(0, playerLife.HPMinus(damage), "-");
+            if (playerLife.GetHPCurrent() <= 0)
+            {
+                PlayerDeath();
+            }
         }
+        
     }
 
     public void PlayerTakeEXP(int exp)

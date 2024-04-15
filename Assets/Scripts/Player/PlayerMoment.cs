@@ -16,20 +16,17 @@ public class PlayerMoment : KameScript
     [SerializeField] private LayerMask[] _jumpableGround;
     float _moveHorizontal;
     float _moveVertical;
-    private Rigidbody2D _rigidbody;
-    private BoxCollider2D _boxCollider;
+    public Rigidbody2D _rigidbody;
+    public BoxCollider2D _boxCollider;
     
 
     void Start()
     {
-
-    }
-
-    private void OnValidate()
-    {
         _rigidbody = GetComponent<Rigidbody2D>();
         _boxCollider = GetComponent<BoxCollider2D>();
     }
+
+    
 
     // Update is called once per frame
     void Update()

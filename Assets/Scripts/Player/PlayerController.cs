@@ -28,27 +28,16 @@ public class PlayerController : KameScript
     {
         CallCoroutine();
     }
-    private void OnValidate()
+   
+
+    
+    private void Start()
     {
         this._playAnimation = GetComponentInChildren<PlayerAnimation>();
         this._playerMoment = GetComponent<PlayerMoment>();
         this._playerAura = GetComponentInChildren<PlayerAura>();
         this._playerManager = GetComponent<PlayerManager>();
-        this._playerLife=GetComponentInChildren<PlayerLife>();
-        LoadEff();
-    }
-
-    protected virtual void LoadEff()
-    {
-        if (this._efffly != null)
-        {
-            _efffly = FindObject("Fly");
-
-            _effRun = FindObject("Run");
-        }
-    }
-    private void Start()
-    {
+        this._playerLife = GetComponentInChildren<PlayerLife>();
         CallCoroutine();
     }
 

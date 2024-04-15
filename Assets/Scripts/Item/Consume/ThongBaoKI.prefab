@@ -69,8 +69,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Kh\xF4ng \u0111\u1EE7 KI"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3414f6a1eb487a34aaa3634a01af564b, type: 2}
-  m_sharedMaterial: {fileID: 80456952273580574, guid: 3414f6a1eb487a34aaa3634a01af564b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -190,7 +190,7 @@ RectTransform:
   m_Children:
   - {fileID: 3391069323417004966}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

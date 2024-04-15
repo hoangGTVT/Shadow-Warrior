@@ -17,6 +17,6 @@ MonoBehaviour:
   _description: "Qu\u1EA3 c\u1EA7u l\u1EEDa g\xE2y s\xE1t th\u01B0\u01A1ng t\u1EDBi
     m\u1EE5c ti\xEAu"
   _currentDMG: 100
-  _percentDMG: 0
-  _energy: 15000
-  _time: 3
+  _percentDMG: 10
+  _energy: 15
+  _time: 12

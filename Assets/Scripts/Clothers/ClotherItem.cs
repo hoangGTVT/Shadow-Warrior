@@ -29,26 +29,18 @@ public class ClotherItem : MonoBehaviour
     {
 
         CheckPlayer();
-
+        PlayerTakeClother();
 
     }
-    public void OnMouseDown()
+    public void PlayerTakeClother()
     {
-
-        if (Time.time - lastClickTime < doubleClickTimeThreshold)
+        if (playerDetected)
         {
-            if (playerDetected)
-            {
-                CheckType();
-                Destroy(gameObject, 0.1f);
-            }
-            
-
+            CheckType();
+            Destroy(gameObject);
         }
-
-
-        lastClickTime = Time.time;
     }
+    
     
     public bool CheckPlayer()
     {

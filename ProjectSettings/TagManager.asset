@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Player01
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -18,8 +19,8 @@ TagManager:
   - Player01
   - Item
   - Boss
-  - enemy
-  - 
+  - Enemy
+  - BulletEnemy
   - 
   - 
   - 

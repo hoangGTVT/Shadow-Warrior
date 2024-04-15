@@ -13,7 +13,7 @@ public class SkillSO : ScriptableObject
     public int _currentDMG;
     public int _percentDMG;
     public int _energy;
-    public int _time;
+    public float _time;
     
 
     public string GetName() { return _name; }
@@ -21,7 +21,7 @@ public class SkillSO : ScriptableObject
     public int GetCurrentDMG() { return _currentDMG; }
     public int GetPercentDMG() { return _percentDMG;}
     public int GetEnergy() { return _energy;}
-    public int GetTime() { return _time;}
+    public float GetTime() { return _time;}
 
 
 

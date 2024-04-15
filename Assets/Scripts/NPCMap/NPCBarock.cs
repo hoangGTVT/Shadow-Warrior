@@ -14,14 +14,26 @@ public class NPCBarock : MonoBehaviour
         player = GameObject.Find("Player");
         if (player !=null)
         {
-            CheckPlayer();
+            if (player.activeInHierarchy)
+            {
+                CheckPlayer();
+            }
+           
         }
         
     }
 
     public void OnMouseDown()
     {
-        CheckPlayer2();
+        if (player != null)
+        {
+            if (player.activeInHierarchy)
+            {
+                CheckPlayer2();
+            }
+
+        }
+       
     }
     public void CheckPlayer2()
     {

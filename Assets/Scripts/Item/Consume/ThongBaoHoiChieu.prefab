@@ -172,8 +172,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u0110ang h\u1ED3i chi\xEAu"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3414f6a1eb487a34aaa3634a01af564b, type: 2}
-  m_sharedMaterial: {fileID: 80456952273580574, guid: 3414f6a1eb487a34aaa3634a01af564b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

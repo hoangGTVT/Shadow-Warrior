@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -21,6 +21,7 @@ public class ShopController : MonoBehaviour
     public BackPack backPack;
     public ClotherManager clotherManager;
     public SkinManager skinManager;
+    public BackPackManager backPackManager;
     [Header("everythings")]
     public int indexSkin;
     public int indexClother;
@@ -90,26 +91,26 @@ public class ShopController : MonoBehaviour
     {
         iconskin.sprite = skinController.skinSO[indexSkin].GetSprite();
         textskin[0].text = skinController.skinSO[indexSkin].GetName();
-        textskin[1].text = "ATK + "+skinController.skinSO[indexSkin].GetATK().ToString()+"%";
-        textskin[2].text = "DEF + " + skinController.skinSO[indexSkin].GetDef().ToString() + "%";
+        textskin[1].text = "Tấn Công + " + skinController.skinSO[indexSkin].GetATK().ToString()+"%";
+        textskin[2].text = "Giáp + " + skinController.skinSO[indexSkin].GetDef().ToString() + "%";
         textskin[3].text = "KI + " + skinController.skinSO[indexSkin].GetKI().ToString() + "%";
         textskin[4].text = "HP + " + skinController.skinSO[indexSkin].GetHP().ToString() + "%";
-        textskin[5].text = "Crit + " + skinController.skinSO[indexSkin].GetCritRate().ToString() + "%";
-        textskin[6].text = "CritDMG + " + skinController.skinSO[indexSkin].GetCritDMG().ToString() + "%";
-        textskin[7].text = "Stamina + " + skinController.skinSO[indexSkin].GetStamina().ToString() + "%";
+        textskin[5].text = "Chí Mạng + " + skinController.skinSO[indexSkin].GetCritRate().ToString() + "%";
+        textskin[6].text = "Sát Thương Chí Mạng + " + skinController.skinSO[indexSkin].GetCritDMG().ToString() + "%";
+        textskin[7].text = "Thể Lực + " + skinController.skinSO[indexSkin].GetStamina().ToString() + "%";
     }
 
     public void ShowInfoBackPack()
     {
         iconskin.sprite = backPack.backPackSOs[indexBackpack].GetSprite();
         textskin[0].text = backPack.backPackSOs[indexBackpack].GetName();
-        textskin[1].text = "ATK + " + backPack.backPackSOs[indexBackpack].GetATK().ToString();
-        textskin[2].text = "DEF + " + backPack.backPackSOs[indexBackpack].GetDef().ToString() ;
+        textskin[1].text = "Tấn Công + " + backPack.backPackSOs[indexBackpack].GetATK().ToString();
+        textskin[2].text = "Giáp + " + backPack.backPackSOs[indexBackpack].GetDef().ToString() ;
         textskin[3].text = "KI + " + backPack.backPackSOs[indexBackpack].GetKI().ToString();
         textskin[4].text = "HP + " + backPack.backPackSOs[indexBackpack].GetHP().ToString();
-        textskin[5].text = "Crit + " + backPack.backPackSOs[indexBackpack].GetCritRate().ToString() + "%";
-        textskin[6].text = "CritDMG + " + backPack.backPackSOs[indexBackpack].GetCritDMG().ToString() + "%";
-        textskin[7].text = "Stamina + " + backPack.backPackSOs[indexBackpack].GetStamina().ToString();
+        textskin[5].text = "Chí Mạng + " + backPack.backPackSOs[indexBackpack].GetCritRate().ToString() + "%";
+        textskin[6].text = "Sát Thương Chí Mạng + " + backPack.backPackSOs[indexBackpack].GetCritDMG().ToString() + "%";
+        textskin[7].text = "Thể Lực + " + backPack.backPackSOs[indexBackpack].GetStamina().ToString();
     }
 
     public void ShowInfoClother()
@@ -120,7 +121,7 @@ public class ShopController : MonoBehaviour
                 iconclother.sprite = clothersController.clothesSOs[indexAo].GetSprite();
                 textclother[0].text = clothersController.clothesSOs[indexAo].GetName();
                 textclother[1].text = "";
-                textclother[2].text = "DEF + "+clothersController.clothesSOs[indexAo].GetDef().ToString(); 
+                textclother[2].text = "Giáp + " + clothersController.clothesSOs[indexAo].GetDef().ToString(); 
                 textclother[3].text = "";
                 break;
             case 1:
@@ -134,7 +135,7 @@ public class ShopController : MonoBehaviour
                 iconclother.sprite = clothersController.gang[indexGang].GetSprite();
                 textclother[0].text = clothersController.gang[indexGang].GetName();
                 textclother[1].text = "";
-                textclother[2].text = "ATK + " + clothersController.gang[indexAo].GetATK().ToString(); 
+                textclother[2].text = "Tấn Công + " + clothersController.gang[indexAo].GetATK().ToString(); 
                 textclother[3].text = "";
                 break;
             case 3:
@@ -147,9 +148,9 @@ public class ShopController : MonoBehaviour
             case 4:
                 iconclother.sprite = clothersController.rada[indexRada].GetSprite();
                 textclother[0].text = clothersController.rada[indexRada].GetName();
-                textclother[1].text = "Crit + " + clothersController.rada[indexRada].GetCritRate().ToString()+"%";
-                textclother[2].text = "CritDMG + " + clothersController.rada[indexRada].GetCritDMG().ToString()+"%"; 
-                textclother[3].text = "Stamina + " + clothersController.rada[indexRada].GetStamina().ToString();
+                textclother[1].text = "Chí Mạng + " + clothersController.rada[indexRada].GetCritRate().ToString()+"%";
+                textclother[2].text = "Sát Thương Chí Mạng + " + clothersController.rada[indexRada].GetCritDMG().ToString()+"%"; 
+                textclother[3].text = "Thể Lực + " + clothersController.rada[indexRada].GetStamina().ToString();
                 break;
         }
     }
@@ -298,6 +299,7 @@ public class ShopController : MonoBehaviour
                         if (itemController.GetGold() >= backPack.backPackSOs[indexBackpack].GetPriceGold())
                         {
                             itemController.MinusGold(backPack.backPackSOs[indexBackpack].GetPriceGold());
+                            backPackManager.PlusBackPack(indexBackpack);
                             buyFinish.SetActive(true);
                         }else buyFail.SetActive(true);
                         break;
@@ -385,6 +387,7 @@ public class ShopController : MonoBehaviour
                         if (itemController.GetDiamond() >= backPack.backPackSOs[indexBackpack].GetPriceDiamond())
                         {
                             itemController.MinusDiamond(backPack.backPackSOs[indexBackpack].GetPriceDiamond());
+                            backPackManager.PlusBackPack(indexBackpack);
                             buyFinish.SetActive(true);
                         }
                         else buyFail.SetActive(true);

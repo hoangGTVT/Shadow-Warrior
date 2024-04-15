@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 6
   _name: "L\u1ED1c Xo\xE1y Cu\u1ED3ng N\u1ED9"
-  _description: "G\xE2y s\xE1t th\u01B0\u01A1ng l\xEAn m\u1EE5c ti\xEAu ch\xEDnh
-    v\xE0 2 m\u1EE5c ti\xEAu ph\u1EE5"
+  _description: "T\u1EA5t c\u1EA3  k\u1EBB \u0111ich xung quanh m\u1EE5c ti\xEAu
+    ch\u1ECBu S\xE1t th\u01B0\u01A1ng b\u1EB1ng 20%HP, \u0111\u1ED3ng th\u1EDDi h\u1ED3i
+    HP cho  b\u1EA3n th\xE2n"
   _currentDMG: 500
-  _percentDMG: 0
-  _energy: 300
-  _time: 8
+  _percentDMG: 50
+  _energy: 1
+  _time: 1

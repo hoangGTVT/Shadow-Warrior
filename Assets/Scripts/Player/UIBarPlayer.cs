@@ -10,7 +10,7 @@ public class UIBarPlayer : MonoBehaviour
 {
     public static UIBarPlayer Instance;
     public Slider[] _slide;
-    public GameObject[] _textPopUp;
+    
 
     private void Awake()
     {

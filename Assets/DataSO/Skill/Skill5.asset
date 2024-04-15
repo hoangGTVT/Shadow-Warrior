@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04851459257252f42b5aa1eb663f6114, type: 3}
   m_Name: Skill5
   m_EditorClassIdentifier: 
-  _id: 5
-  _name: "R\u1ED3ng l\u1EEDa tr\u1ED7i d\u1EADy"
-  _description: "G\xE2y s\xE1t th\u01B0\u01A1ng \u0111\u01A1n m\u1EE5c ti\xEAu"
-  _currentDMG: 300
-  _percentDMG: 0
-  _energy: 100
-  _time: 10
+  _id: 10
+  _name: "\u0110\xF4i C\xE1nh C\u1EE7a Thi\xEAn Long"
+  _description: "G\xE2y s\xE1t th\u01B0\u01A1ng l\xEAn to\xE0n b\u1ED9 \u0111\u1ECBch
+    xung quanh m\u1EE5c ti\xEAu"
+  _currentDMG: 1500
+  _percentDMG: 20
+  _energy: 1
+  _time: 2

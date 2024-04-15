@@ -78,7 +78,7 @@ public class PlayerLife : MonoBehaviour
     private const long _defMax = 7000;
     //Get Value
     //SM
-    public long GetSM() { return _smPlayer = GetHPTotal() * 100*GetLevel() + GetKITotal() * GetLevel()*100 + GetATKTotal() * 300 * GetLevel() + GetDEFTotal() * 100*GetLevel() + GetCritTotal() * 10000*GetLevel() + GetCritDMGTotal() * 1000*GetLevel() + GetStaminaTotal() * 1000; }
+    public long GetSM() { return _smPlayer = GetHPTotal() * 25 + GetKITotal() *25 + GetATKTotal() * 100  + GetDEFTotal() * 150 + GetCritTotal() * 1000 + GetCritDMGTotal() * 500 + GetStaminaTotal() * 100; }
     //Level
     public long GetLevel() { return _level; }
     public long GetExpCurrent() { return _expCurrent; }

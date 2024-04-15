@@ -1,24 +1,27 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skill4 : SkillController
+public class Skill4 : SkillActivie
 {
-
-    public float detectionRadius = 10f;
-    
-    public Rigidbody2D _rigidbody;
-    void Start()
+    private void Start()
     {
-        
-       
+        base.FindPlayer();
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-
-        
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            string enemyname = collision.gameObject.name;
+            if (enemyname == playerSelect.nameEnemy1)
+            {
+                enemyManager = collision.GetComponentInParent<EnemyManager>();
+                enemyManager.EnemyTakeDame(atk);
+                enemyManager.KillEnemy();
+                base.CreateImpack(collision.gameObject);
+               
+                Destroy(gameObject);
+            }
+        }
     }
 }

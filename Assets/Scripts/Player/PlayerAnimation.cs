@@ -6,6 +6,9 @@ public class PlayerAnimation : MonoBehaviour
 {
     private Animator _animator;
     public SkillController skill;
+    public PlayerLife playerLife;
+    public PlayerSelect playerSelect;
+    
     public int _skillID;
     public bool _isSkill;
     void Start()
@@ -34,6 +37,11 @@ public class PlayerAnimation : MonoBehaviour
     {
         
         skill.CreateSkill(_skillID);
+    }
+
+    public void Skill1Attack()
+    {
+        playerSelect.PlayerCauseDamage((int)playerLife.GetATKTotal()*skill.GetLevelSkill(0));
     }
 
 }

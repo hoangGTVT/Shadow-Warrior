@@ -39,37 +39,9 @@ public class ItemManager : MonoBehaviour
         indexItem = index;
     }
     
-    protected virtual void CreateTextPopUp(int index,Vector3 vector3, long number)
-    {
+   
 
-        GameObject pos = Instantiate(texts[index], vector3, quaternion.identity);
-        pos.GetComponentInChildren<TextMeshProUGUI>().text = "+" + number;
-        Destroy(pos,0.7f);
-    }
-
-    protected virtual void CheckPlayer()
-    {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, checkRadius);
-
-        foreach (Collider2D collider in colliders)
-        {
-            // Kiểm tra tag của đối tượng
-            if (collider.CompareTag("Player01"))
-            {
-                GameObject point= GameObject.Find("PonitPopUP");
-                 vector3 = new Vector3(point.transform.position.x,point.transform.position.y,point.transform.position.z);
-                
-                controller = collider.GetComponentInChildren<ItemController>();
-                playerLife=collider.GetComponentInChildren<PlayerLife>();
-                
-                if (controller != null)
-                {
-                    PlusItem();
-
-                }
-            }
-        }
-    }
+    
 
     protected virtual Vector3 GetPos() { return vector3; }
     protected virtual void PlusItem(){ }

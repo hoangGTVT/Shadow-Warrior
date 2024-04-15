@@ -1,4 +1,4 @@
-using JetBrains.Annotations;
+﻿using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -12,6 +12,9 @@ public class MenuPlayer : MonoBehaviour
     public PlayerManager playerManager;
     public PlayerLife playerLife;
     public BackPack backpack;
+    public SkinManager skinManager;
+    public BackPackManager backPackManager;
+    public ClotherManager clotherManager;
     [Header("Icon")]
     public Image iconAo;
     public Image iconQuan;
@@ -54,7 +57,7 @@ public class MenuPlayer : MonoBehaviour
             ShowInfoClother.SetActive(true);
             iconClother.sprite = clothersController.GetSpriteAo();
             nameClother.text = clothersController.GetNameAo().ToString();
-            descriptionClother[1].text = "DEF + " + clothersController.GetDefAo().ToString();
+            descriptionClother[1].text = "Giáp + " + clothersController.GetDefAo().ToString();
             descriptionClother[0].text = "";
             descriptionClother[2].text = "";
         }
@@ -80,7 +83,7 @@ public class MenuPlayer : MonoBehaviour
             ShowInfoClother.SetActive(true);
             iconClother.sprite = clothersController.GetSpriteGang();
             nameClother.text = clothersController.GetNameGang().ToString();
-            descriptionClother[1].text = "ATK + " + clothersController.GetATKGang().ToString();
+            descriptionClother[1].text = "Tấn Công + " + clothersController.GetATKGang().ToString();
             descriptionClother[0].text = "";
             descriptionClother[2].text = "";
         }
@@ -106,9 +109,9 @@ public class MenuPlayer : MonoBehaviour
             ShowInfoClother.SetActive(true);
             iconClother.sprite = clothersController.GetSpriteRaDa();
             nameClother.text = clothersController.GetNameRaDa().ToString();
-            descriptionClother[0].text = "Crit + " + clothersController.GetCritRada().ToString();
-            descriptionClother[1].text = "CritDMG + " + clothersController.GetCritDMGRada().ToString();
-            descriptionClother[2].text = "Stamina + " + clothersController.GetStaminaRaDa().ToString();
+            descriptionClother[0].text = "Chí Mạng + " + clothersController.GetCritRada().ToString()+"%";
+            descriptionClother[1].text = "Sát Thương Chí Mạng + " + clothersController.GetCritDMGRada().ToString() + "%";
+            descriptionClother[2].text = "Thể Lực + " + clothersController.GetStaminaRaDa().ToString();
         }
         
     }
@@ -120,32 +123,36 @@ public class MenuPlayer : MonoBehaviour
             showInfoSkin.SetActive(true);
             iconskin.sprite = skinController.skinSO[skinController.skinIndex].GetSprite();
             nameSkin.text = skinController.skinSO[skinController.skinIndex].GetName();
-            atk.text = "ATK + " + skinController.skinSO[skinController.skinIndex].GetATK().ToString() + "%";
-            def.text = "DEF + " + skinController.skinSO[skinController.skinIndex].GetDef().ToString() + "%";
+            atk.text = "Tấn Công + " + skinController.skinSO[skinController.skinIndex].GetATK().ToString() + "%";
+            def.text = "Giáp + " + skinController.skinSO[skinController.skinIndex].GetDef().ToString() + "%";
             hp.text = "HP + " + skinController.skinSO[skinController.skinIndex].GetHP().ToString() + "%";
             ki.text = "KI + " + skinController.skinSO[skinController.skinIndex].GetKI().ToString() + "%";
-            crit.text = "Crit + " + skinController.skinSO[skinController.skinIndex].GetCritRate().ToString() + "%";
-            critDMG.text = "CritDMG + " + skinController.skinSO[skinController.skinIndex].GetCritDMG().ToString() + "%";
-            Stamina.text = "Stamina + " + skinController.skinSO[skinController.skinIndex].GetStamina().ToString() + "%";
+            crit.text = "Chí Mạng + " + skinController.skinSO[skinController.skinIndex].GetCritRate().ToString() + "%";
+            critDMG.text = "Sát Thương Chí Mạng + " + skinController.skinSO[skinController.skinIndex].GetCritDMG().ToString() + "%";
+            Stamina.text = "Thể Lực + " + skinController.skinSO[skinController.skinIndex].GetStamina().ToString() + "%";
         }
         
     }
     public void SetIndexRomove(int index) { indexRemove = index; }
     public void RemoveSkin()
     {
+        skinManager.PlusSkin(skinController.GetSkinIndex()-11);
         skinController.SetIsSkin(false);
         skinController.SetSkinIndex(skinController.GetSkinIndexLevel());
+        
         playerManager.SetData();
         playerManager.SetTotalData();
     }
     public void RemoveBackPack()
     {
+        backPackManager.PlusBackPack(backpack.GetIndexBP());
         backpack.SetIsBackPack(false);
         playerManager.SetData();
         playerManager.SetTotalData();
     }
     public void RemoveAo()
     {
+        clotherManager.PlusAo(clothersController.GetIndexClother());
         clothersController.SetIsAo(false);
         playerManager.SetData();
         playerManager.SetTotalData();
@@ -154,6 +161,7 @@ public class MenuPlayer : MonoBehaviour
     
     public void RemoveQuan()
     {
+        clotherManager.PlusQuan(clothersController.GetIndexQuan());
         clothersController.SetIsQuan(false);
         playerManager.SetData();
         playerManager.SetTotalData();
@@ -161,6 +169,7 @@ public class MenuPlayer : MonoBehaviour
     }
     public void RemoveGang()
     {
+        clotherManager.PlusGang(clothersController.GetIndexgang());
         clothersController.SetIsGang(false);
         playerManager.SetData();
         playerManager.SetTotalData();
@@ -168,6 +177,7 @@ public class MenuPlayer : MonoBehaviour
     }
     public void RemoveGiay()
     {
+        clotherManager.PlusGiay(clothersController.GetIndexgiay());
         clothersController.SetIsGiay(false);
         playerManager.SetData();
         playerManager.SetTotalData();
@@ -175,6 +185,7 @@ public class MenuPlayer : MonoBehaviour
     }
     public void RemoveRada()
     {
+        clotherManager.PlusRada(clothersController.GetIndexRada());
         clothersController.SetIsRaDa(false);
         playerManager.SetData();
         playerManager.SetTotalData();
@@ -268,13 +279,13 @@ public class MenuPlayer : MonoBehaviour
             showInfoSkin.SetActive(true);
             iconskin.sprite = backpack.GetSprite();
             nameSkin.text = backpack.GetName();
-            atk.text = "ATK + " + backpack.GetATK();
-            def.text = "DEF + " + backpack.GetDEF();
+            atk.text = "Tấn Công + " + backpack.GetATK();
+            def.text = "Giáp + " + backpack.GetDEF();
             hp.text = "HP + " + backpack.GetHP();
             ki.text = "KI + " + backpack.GetKI();
-            crit.text = "Crit + " + backpack.GetCrit();
-            critDMG.text = "CritDMG + " + backpack.GetCritDMG();
-            Stamina.text = "Stamina + " + backpack.GetSta();
+            crit.text = "Chí Mạng + " + backpack.GetCrit()+"%";
+            critDMG.text = "Sát Thương Chí Mạng + " + backpack.GetCritDMG()+"%";
+            Stamina.text = "Thể Lực + " + backpack.GetSta();
         }
        
     }

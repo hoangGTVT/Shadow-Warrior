@@ -18,5 +18,12 @@ public class SkinManager : MonoBehaviour
     {
         skin[index]++;
     }
+
+    public void MinusSkin(int index)
+    {
+        skin[index]--;
+    }
+
+    
    
 }

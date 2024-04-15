@@ -234,31 +234,31 @@ public class SaoHoMenhController : MonoBehaviour
                 spriteinfo2.sprite = sprites[2];
                 text2[0].text = "Cấp " + GetLevelATK();
                 text2[1].text = "Sao Hộ Mệnh " + GetName();
-                text2[2].text = "ATK + " + GetAtkSaoHoMenh() + "%";
+                text2[2].text = "Tấn Công + " + GetAtkSaoHoMenh() + "%";
                 break;
             case 3:
                 spriteinfo2.sprite = sprites[3];
                 text2[0].text = "Cấp " + GetLevelDEF();
                 text2[1].text = "Sao Hộ Mệnh " + GetName();
-                text2[2].text = "DEF + " + GetDefSaoHoMenh() + "%";
+                text2[2].text = "Giáp + " + GetDefSaoHoMenh() + "%";
                 break;
             case 4:
                 spriteinfo2.sprite = sprites[4];
                 text2[0].text = "Cấp " + GetLevelCrit();
                 text2[1].text = "Sao Hộ Mệnh " + GetName();
-                text2[2].text = "Crit + " + GetCritSaoHoMenh() + "%";
+                text2[2].text = "Chí Mạng + " + GetCritSaoHoMenh() + "%";
                 break;
             case 5:
                 spriteinfo2.sprite = sprites[5];
                 text2[0].text = "Cấp " + GetLevelCritDMG();
                 text2[1].text = "Sao Hộ Mệnh " + GetName();
-                text2[2].text = "CritDMG + " + GetCritDMGSaoHoMenh() + "%";
+                text2[2].text = "Sát Thương Chí Mạng + " + GetCritDMGSaoHoMenh() + "%";
                 break;
             case 6:
                 spriteinfo2.sprite = sprites[6];
                 text2[0].text = "Cấp " + GetLevelStamina();
                 text2[1].text = "Sao Hộ Mệnh " + GetName();
-                text2[2].text = "Stamina + " + GetStaminaSaoHoMenh()+"%";
+                text2[2].text = "Thể lực + " + GetStaminaSaoHoMenh()+"%";
                 break;
         }
     }
