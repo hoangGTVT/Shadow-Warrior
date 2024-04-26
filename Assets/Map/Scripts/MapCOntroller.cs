@@ -13,6 +13,7 @@ public class MapController : MonoBehaviour
     public GameObject[] pos;
     public GameObject[] posBoss;
     public GameObject loading;
+    public int distance;
     void Start()
     {
         
@@ -21,8 +22,8 @@ public class MapController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        
+
+        distance = Mathf.Abs((int)(player.transform.position.x - transform.position.x));
     }
 
     public int GetMapIndex() { return _mapIndex; }
@@ -63,7 +64,7 @@ public class MapController : MonoBehaviour
 
     public void ActiveMapBoss(int mapboss)
     {
-        if (player != null)
+        if (player != null )
         {
             loading.SetActive(true);
             _mapIndex = mapboss;

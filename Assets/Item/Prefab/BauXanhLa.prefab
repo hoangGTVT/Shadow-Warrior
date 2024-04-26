@@ -278,34 +278,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df545d85f77fd141b4ecdade4327f5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLife: {fileID: 0}
+  itemManager: {fileID: 0}
   controller: {fileID: 0}
-  itemConsumeSOs:
-  - {fileID: 11400000, guid: 5d20074163457124e91e8a4dfcab7ffb, type: 2}
-  - {fileID: 11400000, guid: fcd06d821d7922b45a75d0464b323e04, type: 2}
-  - {fileID: 11400000, guid: 9271b4a1028881e4b86cc42e988f3809, type: 2}
-  - {fileID: 11400000, guid: aa509c4187b36954ab6eb7810fa5630b, type: 2}
-  - {fileID: 11400000, guid: 419d9eca5acdd154b84cbea686e705de, type: 2}
-  - {fileID: 11400000, guid: 6ea44ea318e611b439b1df9822854d86, type: 2}
-  - {fileID: 11400000, guid: a50334af2b6d25248857a30e54f4155c, type: 2}
-  - {fileID: 11400000, guid: 6c117cb49080a8f4cb16a83a93767536, type: 2}
-  - {fileID: 11400000, guid: 2659278914c56e64c9b919921c4e6a87, type: 2}
-  - {fileID: 11400000, guid: d03efc83eca2216479f57dc7e834f617, type: 2}
-  - {fileID: 11400000, guid: 51498182813508449920c3a8f2a17f25, type: 2}
-  - {fileID: 11400000, guid: 4a163928eb78c874aa4cc1598e5fc749, type: 2}
-  - {fileID: 11400000, guid: 078299f98ac7b02429b3a1d23a95e056, type: 2}
-  - {fileID: 11400000, guid: f7c6f074475f80148aad1e97148d123c, type: 2}
-  - {fileID: 11400000, guid: d411f91558d8ce243836ce213b7f96dc, type: 2}
-  - {fileID: 11400000, guid: 4f356c4b8727f59468c20fd42aa4821c, type: 2}
-  - {fileID: 11400000, guid: c102e6b67203d5f40bdd23033fd653a2, type: 2}
-  texts:
-  - {fileID: 7008933783722679409, guid: d999d0b813c0a07418b0155f170030ae, type: 3}
-  indexItem: 10
-  vector3: {x: 0, y: 0, z: 0}
-  checkRadius: 5
-  doubleClickTimeThreshold: 1
+  playerLife: {fileID: 0}
+  player: {fileID: 0}
   _Itemcount: 10
   _minrandom: 1
   _maxrandom: 5
   goldnumber: 0
   diamondnumber: 0
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  detectionRadius: 1
+  playerDetected: 0

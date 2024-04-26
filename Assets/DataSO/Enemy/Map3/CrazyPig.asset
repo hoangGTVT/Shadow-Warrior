@@ -17,4 +17,5 @@ MonoBehaviour:
   _sprite: {fileID: 0}
   _exp: 75
   _hp: 1500
-  _atk: 350
+  _atk: 45
+  _timeAttack: 4

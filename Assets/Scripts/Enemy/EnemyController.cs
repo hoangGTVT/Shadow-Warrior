@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
     [Header("Scripts")]
+    public bool isCrit;
     private Animator animator;
     public EnemyManager enemyManager;
     public EnemySO enemySO;
@@ -17,6 +19,7 @@ public class EnemyController : MonoBehaviour
     public int _move;
     public bool _isRight;
     public float _timeAttack;
+    public bool canAttack;
     public int distancePlayer;
 
     public GameObject bullet;
@@ -30,11 +33,19 @@ public class EnemyController : MonoBehaviour
         _isRight = true;
         _move = 1;
         _timeAttack=enemySO.GetTimeAttack();
+        canAttack = false;
     }
     public void OnEnable()
     {
         FindPlayer();
-
+        canAttack = false;
+    }
+    public int GetCritDMGPlayerToEnemy() { return playerManager.GetCritDMGPlayer(); }
+    public bool GetIsCrit()
+    {
+        if (playerManager.GetCritRateAttack() <= playerManager.GetCritRatePlayer()) { return isCrit = true; } else { return isCrit= false; }
+       
+        
     }
     private void OnDisable()
     {
@@ -75,7 +86,7 @@ public class EnemyController : MonoBehaviour
             }
             else if(distance <= distancePlayer && distanceY<=distancePlayer&& player.activeSelf)
             {
-                if (_timeAttack <= 0)
+                if (_timeAttack <= 0 && canAttack == true)
                 {
                     //animator.SetTrigger("IsAttack");
                     animator.Play("Attack");
@@ -101,6 +112,10 @@ public class EnemyController : MonoBehaviour
         if (player == null)
         {
             player = GameObject.Find("Player");
+            if (player != null)
+            {
+                playerManager = player.GetComponent<PlayerManager>();
+            }
         }
         else return;
         
@@ -132,7 +147,7 @@ public class EnemyController : MonoBehaviour
         _timeAttack = enemySO.GetTimeAttack();
         GameObject bullet1= Instantiate(bullet, pointbullet.transform.position, Quaternion.identity);
         Test test = bullet1.GetComponent<Test>();
-        test.SetATK(enemySO.GetAtk());
+        test.SetATK(enemyManager.GetAtkEnemy());
 
     }
     protected virtual void SetState()
@@ -156,7 +171,7 @@ public class EnemyController : MonoBehaviour
         if(player != null)
         {
             playerSelect=player.GetComponent<PlayerSelect>();
-
+            playerSelect.isBoss = false;
             playerSelect.SetArrow(gameObject);
         }
     }
@@ -166,7 +181,12 @@ public class EnemyController : MonoBehaviour
         if(player != null)
         {
             playerManager=player.GetComponent<PlayerManager>();
-            playerManager.PlayerTakeEXP(enemySO.GetExp());
+            if (enemyManager.istransform == true)
+            {
+                playerManager.PlayerTakeEXP(enemySO.GetExp()*2);
+            }
+            else { playerManager.PlayerTakeEXP(enemySO.GetExp()); }
+            
         }
     }
     public int GetHpCurrentEnemy()

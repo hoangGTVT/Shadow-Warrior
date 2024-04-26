@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerSelect : MonoBehaviour
@@ -10,6 +11,8 @@ public class PlayerSelect : MonoBehaviour
     public DataEnemy dataEnemy1;
     public GameObject a;
     public GameObject b;
+    [Header("Boss")]
+    public bool isBoss;
     public GameObject infoEnemy;
     public TextMeshProUGUI nameEnemy;
     public TextMeshProUGUI maxHP;
@@ -17,10 +20,24 @@ public class PlayerSelect : MonoBehaviour
     public string nameEnemy1;
     public float time1;
     public int distancePlayer;
+    public int distancePlayerY;
+    public GameObject impact;
 
     public GameObject GetA()
     {
         return a;
+    }
+    public int GetPositionx()
+    {
+        return (int)(a.transform.position.x);
+    }
+    public void SetBoss(GameObject gameObject)
+    {
+        a= gameObject;
+        dataEnemy = gameObject.GetComponent<DataEnemy>();
+        nameEnemy1 = a.name;
+        dataEnemy.TurnOnArrow();
+        infoEnemy.SetActive(true);
     }
     public void SetArrow(GameObject gameObject1)
     {
@@ -45,9 +62,22 @@ public class PlayerSelect : MonoBehaviour
 
     public void PlayerCauseDamage(int dame)
     {
-        if (dataEnemy != null)
+        if (dataEnemy != null )
         {
-            dataEnemy.EnemyTakeD(dame);
+            if (isBoss == false)
+            {
+                dataEnemy.EnemyTakeD(dame);
+                GameObject imp = Instantiate(impact, a.transform.position, Quaternion.identity);
+                Destroy(imp, 0.2f);
+            }
+            else
+            {
+                dataEnemy.BossTakeDamege(dame);
+                GameObject imp = Instantiate(impact, a.transform.position, Quaternion.identity);
+                Destroy(imp, 0.2f);
+
+            }
+           
         }
     }
 
@@ -64,10 +94,11 @@ public class PlayerSelect : MonoBehaviour
         if (dataEnemy != null)
         {
             distancePlayer=(int)Mathf.Abs(transform.position.x-a.transform.position.x);
+            distancePlayerY= (int)Mathf.Abs(transform.position.y - a.transform.position.y);
         }
         
         ShowInfoEnemy();
-        if (dataEnemy != null)
+        if (dataEnemy != null&& isBoss==false)
         {
             if (dataEnemy.GetHP() <= 0)
             {
@@ -79,16 +110,22 @@ public class PlayerSelect : MonoBehaviour
         }
         else return;
         
-        
+
     }
 
     public void ShowInfoEnemy()
     {
-        if (dataEnemy != null)
+        if (dataEnemy != null&& isBoss==false)
         {
             nameEnemy.text = dataEnemy  .enemySO.GetName();
-            maxHP.text = "/" + dataEnemy.enemySO.GetHp().ToString("#,#");
+            maxHP.text = "/" + dataEnemy.GetMaxHP().ToString("#,#");
             currentHP.text = dataEnemy.GetHP().ToString("#,#");
+        }
+        else if(dataEnemy !=null && isBoss==true)
+        {
+            nameEnemy.text = dataEnemy.GetNameBoss();
+            maxHP.text = "/" + dataEnemy.GetMaxHPBoss().ToString("#,#");
+            currentHP.text = dataEnemy.GetHPBossCurrent().ToString("#,#");
         }
     }
 
@@ -97,4 +134,6 @@ public class PlayerSelect : MonoBehaviour
             infoEnemy.SetActive(false);
 
     }
+
+    
 }

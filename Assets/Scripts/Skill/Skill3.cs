@@ -22,5 +22,15 @@ public class Skill3 : SkillActivie
                 Destroy(gameObject);
             }
         }
+        if (collision.gameObject.CompareTag("Boss"))
+        {
+            string bossname=collision.gameObject.name;
+            if (bossname == playerSelect.nameEnemy1)
+            {
+                bossManager = collision.GetComponent<BossManager>();
+                bossManager.BossTakeDamge(atk);
+                base.CreateImpack(collision.gameObject); Destroy(gameObject);
+            }
+        }
     }
 }

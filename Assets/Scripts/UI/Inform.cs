@@ -8,6 +8,7 @@ public class Inform : MonoBehaviour
     public static Inform instance;
     public GameObject _inform;
     public TextMeshProUGUI _informText;
+    
     private void Awake()
     {
 
@@ -32,20 +33,20 @@ public class Inform : MonoBehaviour
     {
         _inform.SetActive(true);
         _informText.text = "Bạn nhận được "+ number +" "+text;
-        Invoke("TurnOffInForm", 1f);
+        Invoke("TurnOffInForm", 3);
     }
 
     public void ShowInformClother(string text)
     {
         _inform.SetActive(true);
         _informText.text = "Bạn Nhận Được " + text;
-        Invoke("TurnOffInForm", 1f);
+        Invoke("TurnOffInForm", 3);
     }
     public void ShowFail(string text)
     {
         _inform.SetActive(true);
         _informText.text = "Bạn Phải đạt cấp "+ text;
-        Invoke("TurnOffInForm", 1f);
+        Invoke("TurnOffInForm", 3);
     }
 
     public void TurnOffInForm()

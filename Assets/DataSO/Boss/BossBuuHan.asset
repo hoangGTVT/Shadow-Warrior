@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29697426af264524db9bee9648b05869, type: 3}
+  m_Name: BossBuuHan
+  m_EditorClassIdentifier: 
+  _id: 0
+  _name: "\xC1c Nh\xE2n BuuHan"
+  _exp: 50000
+  _hp: 20000
+  _atk: 5
+  _ki: 10
+  _def: 70
+  _timeskill: 3
+  _timeAttack: 1

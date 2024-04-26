@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class DataEnemy : MonoBehaviour
 {
+    [Header("Enemy")]
     public EnemySO enemySO;
-    public BossSO bossSO;
-    public bool isBoss;
     public EnemyManager enemyManager;
+    [Header("Boss")]
     public BossManager bossManager;
     public GameObject arrow;
     void Start()
@@ -31,19 +31,19 @@ public class DataEnemy : MonoBehaviour
 
     public string Getname()
     {
-        if (isBoss==true) { return bossSO.GetName(); }
-        else { return enemySO.GetName(); }
+        
+         return enemySO.GetName();
     }
 
     public int GetMaxHP()
     {
-        if (isBoss == true) { return bossSO.GetHp(); }
-        else { return enemySO.GetHp(); }
+       
+         return enemyManager.GetMaxHealth(); 
     }
     public int GetHP()
     {
-        if (isBoss == true) { return bossManager.hp; }
-        else { return enemyManager.hp; }
+       
+         return enemyManager.hp; 
     }
     public void TurnOnArrow()
     {
@@ -52,5 +52,13 @@ public class DataEnemy : MonoBehaviour
     public void TurnOffArrow()
     {
         arrow.SetActive(false);
+    }
+    //bosss
+    public string GetNameBoss() { return bossManager.GetName(); }
+    public int GetMaxHPBoss() { return bossManager.GetHPBoss(); }
+    public int GetHPBossCurrent() { return bossManager.GetHPBossCurrent(); }
+    public void BossTakeDamege(int dame)
+    {
+        bossManager.BossTakeDamge(dame);
     }
 }

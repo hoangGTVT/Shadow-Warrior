@@ -19,6 +19,7 @@ public class SkillController : MonoBehaviour
     public bool isSkill2;
 
     [Header("Scripts")]
+    public GameObject player;
     public PlayerMoment playerMoment;
     public PlayerAnimation playerAnimation;
     public PlayerSelect playerSelect;
@@ -29,10 +30,10 @@ public class SkillController : MonoBehaviour
     public SkillSO[] skillsos;
     public float timeSkill;
     public int timeoffSkill2;
-    //
-    
-    
    
+
+
+
     public int[] levelSkill;
     
     public const int levelmax = 7;
@@ -57,8 +58,8 @@ public class SkillController : MonoBehaviour
     //skill
     public string GetSkillName(int index) { return  skillsos[index].GetName(); }
     public string GetSkillDes(int index) { return  skillsos[index].GetDescription(); }
-    public int GetCurrentDMG(int index) { return  skillsos[index].GetCurrentDMG() * GetLevelSkill(index) ; }
-    public int GetPercentDMG(int index) { return  skillsos[index].GetPercentDMG() + GetLevelSkill(index) *2; ; }
+    public int GetCurrentDMG(int index) { return  skillsos[index].GetCurrentDMG() * GetLevelSkill(index) + (int)playerLife.GetATKTotal()*2 ; }
+    public int GetPercentDMG(int index) { return  skillsos[index].GetPercentDMG() + GetLevelSkill(index) *3; ; }
     public float GetTimeSkill(int index) { 
         if (index > 0) {
             return skillsos[index].GetTime() - levelSkill[index];
@@ -98,11 +99,14 @@ public class SkillController : MonoBehaviour
         timeoffSkill2=GetLevelSkill(1)+5;
         isSkill2 = false;
 
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+       
         timeoffSkill2 = GetLevelSkill(1)+5;
         CheckInPut();
         MinusTime();
@@ -110,6 +114,8 @@ public class SkillController : MonoBehaviour
         
     }
    
+
+    
     public void MinusTime()
     {
         for(int i = 0; i <= 5; i++)
@@ -173,8 +179,10 @@ public class SkillController : MonoBehaviour
                 {
                     if (timeSkill <= 0)
                     {
-                        if (index > 1 && playerSelect.distancePlayer <= 5)
+                        if (index > 1 && playerSelect.distancePlayer <= 5&& playerSelect.distancePlayerY<=3)
                         {
+                            
+                            playerManager.RandomCrit();
                             playerManager.MinusStamina(playerLife.GetStaminaTotal() / 50);
                             playerAnimation.SetStateSkill(true);
                             playerAnimation.SetAnimationState("Skill");
@@ -212,20 +220,25 @@ public class SkillController : MonoBehaviour
             {
 
                 GetTimeCool(0);
-                if (playerSelect.a != null && playerSelect.distancePlayer <= 2)
+                if (playerSelect.a != null && playerSelect.distancePlayer <= 0.7 && playerSelect.distancePlayerY <= 3)
                 {
                     if (playerLife.GetKICurrent() >= GetKISkill(0) && playerLife.GetStaminaCurrent() > 0 )
                     {
                         if (timeSkill <= 0)
                         {
-                            playerManager.MinusStamina(playerLife.GetStaminaTotal() / 50);
+                            playerManager.RandomCrit();
+                            if (playerLife.GetLevel() > 5)
+                            {
+                                playerManager.MinusStamina(1);
+                            }
+                            
                             SetTimeCoolDown(0);
                             GetTimeCool(0);
                             uibar.setMaxValue(timeSkill, 0);
-                            playerAnimation.SetStateSkill(true);
+                            
                             playerManager.MinusKI(GetKISkill(0));
                             playerAnimation.SetAnimationState("Attack");
-                            playerAnimation.SetStateSkill(false);
+                            
 
                         }
                         else return;
@@ -250,20 +263,24 @@ public class SkillController : MonoBehaviour
     public void Skill1()
     {
         GetTimeCool(0);
-        if (playerSelect.a != null && playerSelect.distancePlayer <= 2)
+        if (playerSelect.a != null && playerSelect.distancePlayer <= 0.7 && playerSelect.distancePlayerY <= 3)
         {
             if (playerLife.GetKICurrent() >= GetKISkill(0) && playerLife.GetStaminaCurrent() > 0)
             {
                 if (timeSkill <= 0)
                 {
-                    playerManager.MinusStamina(playerLife.GetStaminaTotal() / 50);
-                    playerAnimation.SetStateSkill(true);
+                    playerManager.RandomCrit();
+                    if (playerLife.GetLevel() > 5)
+                    {
+                        playerManager.MinusStamina(1);
+                    }
+                   
                     SetTimeCoolDown(0);
                     GetTimeCool(0);
                     uibar.setMaxValue(timeSkill, 0);
                     playerAnimation.SetAnimationState("Attack");
                     playerManager.MinusKI(GetKISkill(0));
-                    playerAnimation.SetStateSkill(false);
+                   
                 }
                 else return;
             }
@@ -271,6 +288,11 @@ public class SkillController : MonoBehaviour
         }
         else TurnOnTB(3);
 
+    }
+
+    public void SetIsSkill()
+    {
+        playerAnimation.SetStateSkill(false);
     }
 
     public void SetSkill(int index)
@@ -281,8 +303,10 @@ public class SkillController : MonoBehaviour
             {
                 if (timeSkill <= 0)
                 {
-                    if (index > 1 && playerSelect.distancePlayer <= 5)
+                    if (index > 1 && playerSelect.distancePlayer <= 5 && playerSelect.distancePlayerY <= 3)
                     {
+                        
+                        playerManager.RandomCrit();
                         playerManager.MinusStamina(playerLife.GetStaminaTotal() / 50);
                         playerAnimation.SetAnimationState("Skill");
                         playerAnimation._skillID = index;

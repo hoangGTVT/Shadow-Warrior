@@ -103,6 +103,10 @@ public class PlayerController : KameScript
         {
             PlayerJump();
         }
+        if (_moveVertical < 0)
+        {
+            PlayerFall();
+        }
     }
     protected virtual void PlayerRun()
     {

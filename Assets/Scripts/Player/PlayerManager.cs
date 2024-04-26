@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.Mathematics;
-
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
@@ -21,6 +19,7 @@ public class PlayerManager : MonoBehaviour
     public GameObject[] _textPopUp;
     public Transform pointPopUP;
     public GameObject textBoxDeath;
+    public int critRateAttack;
     
 
     private void Awake()
@@ -158,19 +157,17 @@ public class PlayerManager : MonoBehaviour
         //exp
         playerLife.SetEXPLevel();
     }
-
-
-
+    public int GetCritDMGPlayer() { return (int)playerLife.GetCritDMGTotal(); }
+    public int GetCritRateAttack() { return critRateAttack; }
+    public int GetCritRatePlayer() { return (int)playerLife.GetCritTotal(); }
+    public int RandomCrit() { return critRateAttack = Random.Range(1, 100); }
     void Update()
     {
        
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            PlayerTakeDamage(200);
-        }
+        
         if (Input.GetKeyDown(KeyCode.L))
         {
-            HealHP(200);
+            HealHP(20000);
             
         }
         if (Input.GetKeyDown(KeyCode.N))
@@ -181,7 +178,7 @@ public class PlayerManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.B))
         {
-            PlayerTakeEXP(5000);
+            PlayerTakeEXP(50000);
 
         }
         if (Input.GetKeyDown(KeyCode.V))
@@ -222,7 +219,7 @@ public class PlayerManager : MonoBehaviour
         Physics2D.IgnoreLayerCollision(9, 9);
         Physics2D.IgnoreLayerCollision(8, 10);
         Physics2D.IgnoreLayerCollision(11, 12);
-        
+        Physics2D.IgnoreLayerCollision(10, 10);
         Physics2D.IgnoreLayerCollision(11, 11);
 
 
@@ -232,8 +229,8 @@ public class PlayerManager : MonoBehaviour
     {
         if (skillController.isSkill2 == false)
         {
-            playerAnimation.SetAnimationState("Block");
-            playerAnimation.SetStateSkill(false);
+            
+            
             playerLife.MinusHPCurrent(damage);
             CreateTextPopUp(0, playerLife.HPMinus(damage), "-");
             if (playerLife.GetHPCurrent() <= 0)
@@ -284,13 +281,15 @@ public class PlayerManager : MonoBehaviour
                     if (skin.GetIsSkin() == false) { skin.SetSkinIndex(3); }
                     SetData();
                     SetTotalData();
+                    playerAura.SetIndexAura(1);
+                    playerAura.SetIsAura(true);
                     break;
                 case 4:
                     skin.SetSkinIndexLevel(4);
                     if (skin.GetIsSkin() == false) { skin.SetSkinIndex(4); }
                     SetData();
                     SetTotalData();
-                    playerAura.SetIndexAura(1);
+                    playerAura.SetIndexAura(2);
                     playerAura.SetIsAura(true);
                     break;
                 case 5:
@@ -298,13 +297,15 @@ public class PlayerManager : MonoBehaviour
                     if (skin.GetIsSkin() == false) { skin.SetSkinIndex(5); }
                     SetData();
                     SetTotalData();
+                    playerAura.SetIndexAura(3);
+                    playerAura.SetIsAura(true);
                     break;
                 case 6:
                     skin.SetSkinIndexLevel(6);
                     if (skin.GetIsSkin() == false) { skin.SetSkinIndex(6); }
                     SetData();
                     SetTotalData();
-                    playerAura.SetIndexAura(2);
+                    playerAura.SetIndexAura(4);
                     playerAura.SetIsAura(true);
                     break;
                 case 7:
@@ -312,13 +313,15 @@ public class PlayerManager : MonoBehaviour
                     if (skin.GetIsSkin() == false) { skin.SetSkinIndex(7); }
                     SetData();
                     SetTotalData();
+                    playerAura.SetIndexAura(5);
+                    playerAura.SetIsAura(true);
                     break;
                 case 8:
                     skin.SetSkinIndexLevel(8);
                     if (skin.GetIsSkin() == false) { skin.SetSkinIndex(8); }
                     SetData();
                     SetTotalData();
-                    playerAura.SetIndexAura(3);
+                    playerAura.SetIndexAura(6);
                     playerAura.SetIsAura(true);
                     break;
                 case 9:
@@ -326,13 +329,15 @@ public class PlayerManager : MonoBehaviour
                     if (skin.GetIsSkin() == false) { skin.SetSkinIndex(9); }
                     SetData();
                     SetTotalData();
+                    playerAura.SetIndexAura(7);
+                    playerAura.SetIsAura(true);
                     break;
                 case 10:
                     skin.SetSkinIndexLevel(10);
                     if (skin.GetIsSkin() == false) { skin.SetSkinIndex(10); }
                     SetData();
                     SetTotalData();
-                    playerAura.SetIndexAura(4);
+                    playerAura.SetIndexAura(8);
                     playerAura.SetIsAura(true);
                     break;
 
@@ -385,7 +390,7 @@ public class PlayerManager : MonoBehaviour
     public void CreateTextPopUp(int index, long number, string t)
     {
 
-        GameObject pos = Instantiate(_textPopUp[index], new Vector3(pointPopUP.transform.position.x,pointPopUP.transform.position.y, pointPopUP.transform.position.z), quaternion.identity);
+        GameObject pos = Instantiate(_textPopUp[index], new Vector3(pointPopUP.transform.position.x,pointPopUP.transform.position.y, pointPopUP.transform.position.z), Quaternion.identity);
         pos.GetComponentInChildren<TextMeshProUGUI>().text = t + number;
         Destroy(pos, 0.7f);
         

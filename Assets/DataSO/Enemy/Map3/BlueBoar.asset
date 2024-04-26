@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: BlueBoar
   m_EditorClassIdentifier: 
   _id: 0
-  _name: "L\u1EE3n R\xF9ng KuKI"
+  _name: "L\u1EE3n R\xF9ng KuKi"
   _sprite: {fileID: 0}
   _exp: 70
   _hp: 1800
-  _atk: 350
+  _atk: 50
+  _timeAttack: 2

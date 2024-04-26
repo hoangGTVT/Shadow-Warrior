@@ -75,9 +75,6 @@ public class BackPack : MonoBehaviour
             
 
         }
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            SetBackPack(7);
-        }
+        
     }
 }

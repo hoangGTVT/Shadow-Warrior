@@ -10,6 +10,7 @@ public class SkillActivie : MonoBehaviour
     public PlayerSelect playerSelect;
     public EnemyManager enemyManager;
     public PlayerManager playerManager;
+    public BossManager bossManager;
     public int atk;
     public int index;
     public GameObject impack;

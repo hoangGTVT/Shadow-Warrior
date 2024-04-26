@@ -23,5 +23,16 @@ public class Skill4 : SkillActivie
                 Destroy(gameObject);
             }
         }
+        if (collision.gameObject.CompareTag("Boss"))
+        {
+            string bossname = collision.gameObject.name;
+            if (bossname == playerSelect.nameEnemy1)
+            {
+                bossManager = collision.GetComponent<BossManager>();
+                bossManager.BossTakeDamge(atk);
+                bossManager.KillBoss();
+                base.CreateImpack(collision.gameObject); Destroy(gameObject);
+            }
+        }
     }
 }
