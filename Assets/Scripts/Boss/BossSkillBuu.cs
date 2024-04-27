@@ -6,6 +6,7 @@ public class BossSkillBuu : BossSkill
 {
     public GameObject pointSkillSpecial1;
     public GameObject bulletBossBuu;
+    public GameObject aura;
     public BossAnimator animator;
     public bool isHenshin;
     public float scaleDuration = 200f;
@@ -16,6 +17,10 @@ public class BossSkillBuu : BossSkill
     void Start()
     {
 
+    }
+    private void OnDisable()
+    {
+        aura.SetActive(false);
     }
     private void OnEnable()
     {
@@ -53,6 +58,7 @@ public class BossSkillBuu : BossSkill
         bossLife.setUIHP();
         bossController.canSkill4 = false;
         isHenshin = true;
+        aura.SetActive(true);
     }
     IEnumerator ScaleOverTime()
     {

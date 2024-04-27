@@ -212,7 +212,7 @@ public class BossManager : MonoBehaviour
         {
             Instantiate(skin[indexSkin], pointItem[3].transform.position, Quaternion.identity);
         }
-        Invoke("CreateNewBoss", 5);
+        Invoke("CreateNewBoss", 15);
     }
 
     public void CreateNewBoss()
