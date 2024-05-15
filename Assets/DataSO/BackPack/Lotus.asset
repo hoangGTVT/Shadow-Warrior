@@ -16,15 +16,15 @@ MonoBehaviour:
   name: Lotus
   _icon: {fileID: 21300000, guid: d66ee8febbd257648a7200c756f29dac, type: 3}
   _itemType: 2
-  _hp: 4000
-  _enegy: 5000
+  _hp: 20000
+  _enegy: 23000
   _def: 300
   _critRate: 20
   _critDMG: 20
-  _atk: 1300
+  _atk: 1000
   _stamina: 600
-  _pricegold: 110000
-  _priceDiamond: 8000
+  _pricegold: 400000
+  _priceDiamond: 40000
   equipmentType: 0
   _backPack:
   - {fileID: 21300000, guid: d66ee8febbd257648a7200c756f29dac, type: 3}

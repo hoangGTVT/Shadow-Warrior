@@ -15,7 +15,7 @@ MonoBehaviour:
   _id: 0
   _name: "L\xEDnh Ti\xEAn Phong 03"
   _sprite: {fileID: 0}
-  _exp: 300
-  _hp: 15000
-  _atk: 1200
+  _exp: 500
+  _hp: 50000
+  _atk: 3500
   _timeAttack: 3

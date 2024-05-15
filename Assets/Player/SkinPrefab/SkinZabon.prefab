@@ -119,6 +119,7 @@ GameObject:
   - component: {fileID: 3497348292770176459}
   - component: {fileID: 2322961584146682915}
   - component: {fileID: 4908715568627595166}
+  - component: {fileID: -4345214299184423561}
   m_Layer: 9
   m_Name: SkinZabon
   m_TagString: Untagged
@@ -288,3 +289,16 @@ MonoBehaviour:
   detectionRadius: 1
   playerDetected: 0
   indexSkin: 39
+--- !u!114 &-4345214299184423561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2938811145568106287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b689d245436b12439a64b38b8695dbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberEnemyMission: 11

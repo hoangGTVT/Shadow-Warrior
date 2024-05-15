@@ -15,7 +15,7 @@ MonoBehaviour:
   _id: 0
   _name: "Chi\u1EBFn Binh C\xE1 S\u1EA5u"
   _sprite: {fileID: 0}
-  _exp: 125
-  _hp: 5500
+  _exp: 180
+  _hp: 9000
   _atk: 670
   _timeAttack: 2

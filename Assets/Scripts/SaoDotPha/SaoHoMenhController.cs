@@ -18,6 +18,10 @@ public class SaoHoMenhController : MonoBehaviour
     [Header("TextInfo")]
     public TextMeshProUGUI[] text2;
     public Image spriteinfo2;
+    [Header("Nâng cấp")]
+    public int goldNC;
+    public int diamondNC;
+    public int daNC;
     [Header("Level")]
     public int _levelHP;
     public int _levelKI;
@@ -94,58 +98,58 @@ public class SaoHoMenhController : MonoBehaviour
     public int GetLevelCrit() { return _levelCrit; }
     public int GetLevelCritDMG() { return _levelCritDMG; }
     public int GetLevelStamina() { return _levelStamina; }
-    public int GetHpSaoHoMenh() { return _hpSaoHoMenh; }
-    public int GetKiSaoHoMenh() { return _kiSaoHoMenh; }
-    public int GetAtkSaoHoMenh() { return +_atkSaoHoMenh; }
-    public int GetDefSaoHoMenh() { return _defSaoHoMenh; }
-    public int GetCritSaoHoMenh() { return _critSaoHoMenh; }
-    public int GetCritDMGSaoHoMenh() { return _critDMGSaoHoMenh; }
-    public int GetStaminaSaoHoMenh() { return _staminaSaoHoMenha; }
+    public int GetHpSaoHoMenh() { return _hpSaoHoMenh=_levelHP*5; }
+    public int GetKiSaoHoMenh() { return _kiSaoHoMenh=_levelKI*5; }
+    public int GetAtkSaoHoMenh() { return _atkSaoHoMenh=_levelATK*5; }
+    public int GetDefSaoHoMenh() { return _defSaoHoMenh=_levelDEF*2; }
+    public int GetCritSaoHoMenh() { return _critSaoHoMenh=_levelCrit*1; }
+    public int GetCritDMGSaoHoMenh() { return _critDMGSaoHoMenh=_levelCritDMG*2; }
+    public int GetStaminaSaoHoMenh() { return _staminaSaoHoMenha=_levelStamina*3; }
 
     //HP
-    public int GetDaRubyHP() { return _daRubyHP; }
-    public int GetDaThachAnhHP() { return _daThachAnhHP; }
-    public int GetDaTiTanHP() { return _daTitanHP; }
+    public int GetDaRubyHP() { return _daRubyHP=_levelHP*daNC+daNC; }
+    public int GetDaThachAnhHP() { return _daThachAnhHP = _levelHP*daNC +daNC ; }
+    public int GetDaTiTanHP() { return _daTitanHP = _levelHP * daNC + daNC; }
     //Ki
-    public int GetDaRubyKI() { return _daRubyKI; }
-    public int GetDaTiTanKI() { return _daTiTanKI; }
-    public int GetDaShaphiaKI() { return _daShaphiaKI; }
+    public int GetDaRubyKI() { return _daRubyKI = _levelKI * daNC + daNC; }
+    public int GetDaTiTanKI() { return _daTiTanKI = _levelKI * daNC + daNC; }
+    public int GetDaShaphiaKI() { return _daShaphiaKI = _levelKI * daNC + daNC; }
     //ATK
-    public int GetDaShaphiaATK() { return _daShaphiaATK; }
-    public int GetDaThachAnhATK() { return _daThachAnhATK; }
-    public int GetDaLucBaoATK() { return (_daLucBaoATK); }
+    public int GetDaShaphiaATK() { return _daShaphiaATK = _levelATK * daNC + daNC; }
+    public int GetDaThachAnhATK() { return _daThachAnhATK = _levelATK * daNC +    daNC; }
+    public int GetDaLucBaoATK() { return _daLucBaoATK = _levelATK * daNC + daNC; }
     //Def
-    public int GetDaRubyDEF() { return _daRubyDEF; }
-    public int GetDaThachAnhDEF() { return _daThachAnhDEF; }
-    public int GetDaLucBaoDEF() { return (_daLucBaoDef); }
+    public int GetDaRubyDEF() { return _daRubyDEF = _levelDEF * daNC + daNC; }
+    public int GetDaThachAnhDEF() { return _daThachAnhDEF = _levelDEF * daNC + daNC; }
+    public int GetDaLucBaoDEF() { return _daLucBaoDef = _levelDEF * daNC + daNC; }
     //Crit
-    public int GetDaRubyCrit() { return _daRubyCrit; }
-    public int GetDaShaphiaCrit() { return _daShaphiaCrit; }
-    public int GetDaLucBaoCrit() { return (_daLucBaoCrit); }
+    public int GetDaRubyCrit() { return _daRubyCrit = _levelCrit * daNC + daNC; }
+    public int GetDaShaphiaCrit() { return _daShaphiaCrit = _levelCrit * daNC +   daNC; }
+    public int GetDaLucBaoCrit() { return _daLucBaoCrit = _levelCrit * daNC + daNC; }
     //CritDMG
-    public int GetDaTiTanCritDMG() { return _daTitanCritDMG; }
-    public int GetDaShaphiaCritDMG() { return _daShaphiaCritDMG; }
-    public int GetDaLucBaoCritDMG() { return (_daLucBaoCritDMG); }
+    public int GetDaTiTanCritDMG() { return _daTitanCritDMG = _levelCritDMG * daNC + daNC; }
+    public int GetDaShaphiaCritDMG() { return _daShaphiaCritDMG = _levelCritDMG * daNC + daNC; }
+    public int GetDaLucBaoCritDMG() { return (_daLucBaoCritDMG) = _levelCritDMG * daNC + daNC; }
     //Stamina
-    public int GetDaTiTanSta() { return _daTitanStamina; }
-    public int GetDaShaphiaSta() { return _daShaphiaStamina; }
-    public int GetDaThachAnhSta() { return _daThachAnhStamina; }
+    public int GetDaTiTanSta() { return _daTitanStamina = _levelStamina * daNC + daNC; }
+    public int GetDaShaphiaSta() { return _daShaphiaStamina = _levelStamina * daNC + daNC; }
+    public int GetDaThachAnhSta() { return _daThachAnhStamina = _levelStamina * daNC + daNC; }
 
-    public int GetGoldHP() { return _goldHP; }
-    public int GetGoldKI() { return _goldKI; }
-    public int GetGoldATK() { return _goldATK; }
-    public int GetGoldDEF() { return _goldDEF; }
-    public int GetGoldCrit() { return _goldCrit; }
-    public int GetGoldCritDMG() { return _goldCritDMG; }
-    public int GetGoldStamina() { return _goldStamina; }
+    public int GetGoldHP() { return _goldHP = _levelHP * goldNC + goldNC; }
+    public int GetGoldKI() { return _goldKI = _levelKI * goldNC + goldNC; }
+    public int GetGoldATK() { return _goldATK = _levelATK * goldNC + goldNC; }
+    public int GetGoldDEF() { return _goldDEF = _levelDEF * goldNC + goldNC; }
+    public int GetGoldCrit() { return _goldCrit =   _levelCrit * goldNC + goldNC; }
+    public int GetGoldCritDMG() { return _goldCritDMG = _levelCritDMG * goldNC + goldNC; }
+    public int GetGoldStamina() { return _goldStamina = _levelStamina * goldNC + goldNC; }
 
-    public int GetDiamondHP() { return _diamondHP; }
-    public int GetDiamondKI() { return _diamondKI; }
-    public int GetDiamondATK() { return _diamondATK; }
-    public int GetDiamondDEF() { return _diamondDEF; }
-    public int GetDiamondCrit() { return _diamondCrit; }
-    public int GetDiamondCritDMG() { return _diamondCritDMG; }
-    public int GetDiamondStamina() { return _diamondStamina; }
+    public int GetDiamondHP() { return _diamondHP = _levelHP * diamondNC + diamondNC; }
+    public int GetDiamondKI() { return _diamondKI = _levelKI * diamondNC + diamondNC; }
+    public int GetDiamondATK() { return _diamondATK = _levelATK * diamondNC + diamondNC; }
+    public int GetDiamondDEF() { return _diamondDEF = _levelDEF * diamondNC + diamondNC; }
+    public int GetDiamondCrit() { return _diamondCrit =     _levelCrit * diamondNC + diamondNC; }
+    public int GetDiamondCritDMG() { return _diamondCritDMG = _levelCritDMG * diamondNC + diamondNC; }
+    public int GetDiamondStamina() { return _diamondStamina = _levelStamina * diamondNC + diamondNC; }
 
     public int GetIndexDotPha() { return indexSaoHoMenh; }
     public Sprite GetSpriteDotPha() { return sprites[indexSaoHoMenh]; }
@@ -158,60 +162,10 @@ public class SaoHoMenhController : MonoBehaviour
     public void PlusLevelCrit() { _levelCrit++; }
     public void PlusLevelCritDMG() { _levelCritDMG++; }
     public void PlusLevelStamina() { _levelStamina++; }
-    public void PlusHP() { _hpSaoHoMenh += 4; }
-    public void PlusKi() { _kiSaoHoMenh += 4; }
-    public void PlusATK() { _atkSaoHoMenh += 4; }
-    public void PlusDef() { _defSaoHoMenh += 2; }
-    public void PlusCrit() { _critSaoHoMenh += 1; }
-    public void PlusCritDMG() { _critDMGSaoHoMenh += 2; }
-    public void PlusStamina() { _staminaSaoHoMenha += 2; }
-
-    public void PlusGoldHP() { _goldHP += 5000; }
-    public void PlusGoldKI() { _goldKI += 5000; }
-    public void PlusGoldATK() { _goldATK += 5000; }
-    public void PlusGoldDEF() { _goldDEF += 5000; }
-    public void PlusGoldCrit() { _goldCrit += 5000; }
-    public void PlusGoldCritDMG() { _goldCritDMG += 5000; }
-    public void PlusGoldStamina() { _goldStamina += 5000; }
-
-    public void PlusDiamondHP() { _diamondHP += 300; }
-    public void PlusDiamondKI() { _diamondKI += 300; }
-    public void PlusDiamondATK() { _diamondATK += 300; }
-    public void PlusDiamondDEF() { _diamondDEF += 300; }
-    public void PlusDiamondCrit() { _diamondCrit += 300; }
-    public void PlusDiamondCritDMG() { _diamondCritDMG += 300; }
-    public void PlusDiamondStamina() { _diamondStamina += 300; }
+    
     public void SetIndex(int index) { indexSaoHoMenh = index; }
 
-    //NguyenLieu
-    //HP
-    public void PlusDaRubyHP() { _daRubyHP += 25; }
-    public void PlusDaThachAnhHP() { _daThachAnhHP+= 25; }
-    public void PlusDaTiTanHP() { _daTitanHP += 25; }
-    //KI
-    public void PlusDaRubyKI() { _daRubyKI += 25; }
-    public void PlusDaTiTanKI() { _daTiTanKI += 25; }
-    public void PlusDaShaphiaKI() { _daShaphiaKI += 25; }
-    //ATK
-    public void PlusDaShaphiaATK() { _daShaphiaKI += 25; }
-    public void PlusDaThachAnhATK() { _daThachAnhHP += 25; }
-    public void PlusDaLucBaoATK() { _daLucBaoATK += 25; }
-    //DEF
-    public void PlusDaRubyDEF() { _daRubyDEF += 25; }
-    public void PlusDaThachAnhDEF() { _daThachAnhDEF += 25; }
-    public void PlusDaLucBaoDEF() { _daLucBaoDef += 25; }
-    //Crit
-    public void PlusDaRubyCrit() { _daRubyCrit += 25; }
-    public void PlusDaShaphiaCrit() { _daShaphiaCrit += 25; }
-    public void PlusDaLucBaoCrit() { _daLucBaoCrit += 25; }
-    //CritDMG
-    public void PlusDaTiTanCritDMG() { _daTitanCritDMG += 25; }
-    public void PlusDaShaphiaCritDMG() { _daShaphiaCritDMG += 25; }
-    public void PlusDaLucBaoCritDMG() { _daLucBaoCritDMG += 25; }
-    //Stamina
-    public void PlusDaTiTanSta() { _daTitanStamina += 25; }
-    public void PlusDaShaphiaSta() { _daShaphiaStamina += 25; }
-    public void PlusDaThachAnhSta() { _daThachAnhStamina += 25; }
+    
     //ShowInfo
 
     public void ShowInfoSaoHoMenh()
@@ -365,12 +319,7 @@ public class SaoHoMenhController : MonoBehaviour
                 if (CheckHP()==true)
                 {
                     PlusLevelHP();
-                    PlusHP();
-                    PlusDaRubyHP();
-                    PlusDaTiTanHP();
-                    PlusDaThachAnhHP();
-                    PlusGoldHP();
-                    PlusDiamondHP();
+                    
                     playerManager.SetData();
                     playerManager.SetTotalData();
                 }
@@ -380,12 +329,7 @@ public class SaoHoMenhController : MonoBehaviour
                 if (CheckKI() == true)
                 {
                     PlusLevelKI();
-                    PlusKi();
-                    PlusDaRubyKI();
-                    PlusDaTiTanKI();
-                    PlusDaShaphiaKI();
-                    PlusGoldKI();
-                    PlusDiamondKI();
+                    
                     playerManager.SetData();
                     playerManager.SetTotalData();
                 }
@@ -395,12 +339,7 @@ public class SaoHoMenhController : MonoBehaviour
                 if (CheckATK() == true)
                 {
                     PlusLevelATK();
-                    PlusATK();
-                    PlusDaThachAnhATK();
-                    PlusDaShaphiaATK();
-                    PlusDaLucBaoATK();
-                    PlusGoldATK();
-                    PlusDiamondATK();
+                    
                     playerManager.SetData();
                     playerManager.SetTotalData();
                 }
@@ -410,12 +349,7 @@ public class SaoHoMenhController : MonoBehaviour
                 if (CheckDEF() == true)
                 {
                     PlusLevelDEF();
-                    PlusDef();
-                    PlusDaRubyDEF();
-                    PlusDaThachAnhDEF();
-                    PlusDaLucBaoDEF();
-                    PlusGoldDEF();
-                    PlusDiamondDEF();
+                    
                     playerManager.SetData();
                     playerManager.SetTotalData();
                 }
@@ -425,12 +359,7 @@ public class SaoHoMenhController : MonoBehaviour
                 if (CheckCrit() == true)
                 {
                     PlusLevelCrit();
-                    PlusCrit();
-                    PlusDaRubyCrit();
-                    PlusDaShaphiaCrit();
-                    PlusDaLucBaoCrit();
-                    PlusGoldCrit();
-                    PlusDiamondCrit();
+                    
                     playerManager.SetData();
                     playerManager.SetTotalData();
                 }
@@ -440,12 +369,7 @@ public class SaoHoMenhController : MonoBehaviour
                 if (CheckCritDMG() == true)
                 {
                     PlusLevelCritDMG();
-                    PlusCritDMG();
-                    PlusDaTiTanCritDMG();
-                    PlusDaShaphiaCritDMG();
-                    PlusDaLucBaoCritDMG();
-                    PlusGoldCritDMG();
-                    PlusDiamondCritDMG();
+                    
                     playerManager.SetData();
                     playerManager.SetTotalData();
                 }
@@ -455,12 +379,7 @@ public class SaoHoMenhController : MonoBehaviour
                 if (CheckStamina() == true)
                 {
                     PlusLevelStamina();
-                    PlusStamina();
-                    PlusDaTiTanSta();
-                    PlusDaThachAnhSta();
-                    PlusDaShaphiaSta();
-                    PlusGoldStamina();
-                    PlusDiamondStamina();
+                   
                     playerManager.SetData();
                     playerManager.SetTotalData();
                 }

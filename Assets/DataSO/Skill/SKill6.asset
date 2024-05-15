@@ -19,5 +19,5 @@ MonoBehaviour:
     HP cho  b\u1EA3n th\xE2n"
   _currentDMG: 500
   _percentDMG: 50
-  _energy: 1
-  _time: 1
+  _energy: 40000
+  _time: 20

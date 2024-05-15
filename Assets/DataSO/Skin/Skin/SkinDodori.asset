@@ -23,8 +23,8 @@ MonoBehaviour:
   _critDMG: 9
   _atk: 9
   _stamina: 9
-  _pricegold: 55555
-  _priceDiamond: 5555
+  _pricegold: 20000
+  _priceDiamond: 2000
   equipmentType: 0
   _headIdle:
   - {fileID: 21300000, guid: c7f3f06866aa1ca4d8b556680d7d5d8f, type: 3}

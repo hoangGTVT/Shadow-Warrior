@@ -19,5 +19,5 @@ MonoBehaviour:
     ti\xEAu"
   _currentDMG: 700
   _percentDMG: 70
-  _energy: 1
-  _time: 1
+  _energy: 4000
+  _time: 100

@@ -16,6 +16,6 @@ MonoBehaviour:
   _name: BlueTachi
   _sprite: {fileID: 0}
   _exp: 200
-  _hp: 5000
-  _atk: 1000
-  _timeAttack: 4
+  _hp: 20000
+  _atk: 1200
+  _timeAttack: 3

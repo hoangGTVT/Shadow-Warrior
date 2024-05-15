@@ -12,7 +12,7 @@ public class BackPack : MonoBehaviour
 
     private void Awake()
     {
-        indexBackPack = 0;
+        backpack[0] = GameObject.Find("BackPack1");
     }
     public void SetBackPack(int index)
     {
@@ -39,11 +39,16 @@ public class BackPack : MonoBehaviour
 
     public void ChangeBackPack()
     {
-        if (backpack != null)
+        if (backpack[0]!=null)
         {
-            PlayerCustomization(backpack, backPackSOs[indexBackPack].GetSpriteHeadIdle);
-            if (GetIsBackPack() == true) { backpack[0].SetActive(true); } else { backpack[0].SetActive(false);}
+            if (backpack != null)
+            {
+                PlayerCustomization(backpack, backPackSOs[indexBackPack].GetSpriteHeadIdle);
+                if (GetIsBackPack() == true) { backpack[0].SetActive(true); } else { backpack[0].SetActive(false); }
+            }
         }
+        
+       
     }
     private void PlayerCustomization(GameObject[] outfits, Sprite[] sprites)
     {
@@ -65,16 +70,7 @@ public class BackPack : MonoBehaviour
     private void Update()
     {
         ChangeBackPack();
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            if (indexBackPack < backPackSOs.Length)
-            {
-                indexBackPack++;
-            }
-            else { indexBackPack=0; }
-            
-
-        }
+        
         
     }
 }

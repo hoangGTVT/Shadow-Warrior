@@ -12,7 +12,7 @@ public class PlayerAura : MonoBehaviour
     
     void Start()
     {
-        SetIsAura(false);
+        
     }
 
     // Update is called once per frame
@@ -46,21 +46,7 @@ public class PlayerAura : MonoBehaviour
         
         
     }
-    /*public void CheckAua()
-    {
-        for (int i = 0; i < aura.Length; i++)
-        {
-            if (aura[i].activeSelf)
-            {
-                return;
-            }
-            else
-            {
-                SetAura();
-                return;
-            }
-        }
-    }*/
+    
     
 
     public void TurnOffAura(int index)

@@ -18,5 +18,5 @@ MonoBehaviour:
     xung quanh m\u1EE5c ti\xEAu"
   _currentDMG: 500
   _percentDMG: 20
-  _energy: 1
-  _time: 2
+  _energy: 15000
+  _time: 50

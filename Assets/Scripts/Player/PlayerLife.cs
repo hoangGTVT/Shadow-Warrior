@@ -3,11 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using System.Numerics;
+using Unity.VisualScripting;
 
 public class PlayerLife : MonoBehaviour
 {
     [Header("Name")]
-    public string _namePlayer;
+    [SerializeField] private string _namePlayer;
     [Header("HPPlayer")]
     public long _hpLevel;
     public long _hpEquip;
@@ -76,8 +77,15 @@ public class PlayerLife : MonoBehaviour
     public long  _smPlayer;
 
     private const long _defMax = 7000;
+    private void Awake()
+    {
+        
+
+    }
+    
     //Get Value
     //SM
+
     public long GetSM() { return _smPlayer = GetHPTotal() * 25 + GetKITotal() *25 + GetATKTotal() * 100  + GetDEFTotal() * 150 + GetCritTotal() * 1000 + GetCritDMGTotal() * 500 + GetStaminaTotal() * 100; }
     //Level
     public long GetLevel() { return _level; }
@@ -305,7 +313,7 @@ public class PlayerLife : MonoBehaviour
     }
     void Start()
     {
-        
+        _namePlayer = PlayerPrefs.GetString("NamePlayer");
     }
     
     // Update is called once per frame

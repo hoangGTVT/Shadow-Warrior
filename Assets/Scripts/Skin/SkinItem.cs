@@ -17,6 +17,7 @@ public class SkinItem : MonoBehaviour
     void Start()
     {
         FindPlayer();
+        Destroy(gameObject, 5);
     }
 
     // Update is called once per frame

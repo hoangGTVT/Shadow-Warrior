@@ -7,6 +7,7 @@ public class Skill3 : SkillActivie
     private void Start()
     {
         base.FindPlayer();
+        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

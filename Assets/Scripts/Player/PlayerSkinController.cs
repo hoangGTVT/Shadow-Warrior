@@ -11,6 +11,7 @@ public class PlayerSkinController : KameScript
     [SerializeField] private PlayerAura _playerAura;
     [SerializeField] private PlayerMoment _playerMoment;
     [SerializeField] private PlayerManager _playerManager;
+    [SerializeField] private PlayerLife _playerLife;
     [Header("Thay đổi trang phục khi mặc trang bị")]
     [SerializeField] public ItemSO[] skinSO;
     public int skinIndex = 0;
@@ -18,8 +19,7 @@ public class PlayerSkinController : KameScript
     public bool isSkin;
     private void Awake()
     {
-        skinIndex = 0;
-        skinIndexLevel=0;
+        
         
     }
     private void OnValidate()
@@ -39,9 +39,12 @@ public class PlayerSkinController : KameScript
     public void SetSkinIndexLevel(int index) { skinIndexLevel = index;}
     public bool GetIsSkin() { return isSkin; }
     public void SetIsSkin(bool skin) { isSkin= skin; }
-    
 
 
+    private void Start()
+    {
+       
+    }
     public void SetSkin(int index)
     {
         SetSkinIndex(index);
@@ -51,70 +54,13 @@ public class PlayerSkinController : KameScript
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            SetSkin(50);
-        }
+        
         ChangeSkin();
         if (_playerAura.GetIsAura() == true)
         {
             TurnOnAura();
         }
-        
-
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            if (!(skinIndex < skinSO.Length-1)) skinIndex = 0;
-            {
-                skinIndex++;
-
-                if (skinIndex >= 0 && skinIndex <= 10)
-                {
-                    skinIndexLevel=skinIndex;
-                    _playerManager.SetData();
-                    _playerManager.SetTotalData();
-                }
-                if (skinIndex > 10)
-                {
-                    isSkin = true;
-                }
-                else
-                {
-                    isSkin = false;
-                }
-                _playerManager.SetData();
-                _playerManager.SetTotalData();
-            }
-            
-            
-        }
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            if (!(skinIndex>0)) skinIndex = skinSO.Length;
-            {
-                skinIndex--;
-                if (skinIndex >= 0 && skinIndex <= 10)
-                {
-                    skinIndexLevel = skinIndex;
-                    _playerManager.SetData();
-                    _playerManager.SetTotalData();
-                }
-                if (skinIndex > 10)
-                {
-                    isSkin = true;
-                }
-                else
-                {
-                    isSkin = false;
-                }
-                
-                _playerManager.SetData();
-                _playerManager.SetTotalData();
-            }
-            
-        }
-        
-        
+  
     }
 
     public void TurnOnAura()
@@ -132,7 +78,7 @@ public class PlayerSkinController : KameScript
     
     public void ChangeSkin()
     {
-        if (skinSO != null)
+        if (skinSO != null&& _playerHead!=null&& _playerBody!=null&& _playerLeg!=null)
         {
 
             PlayerCustomization(_playerHead._headIdle, skinSO[skinIndex].GetSpriteHeadIdle);

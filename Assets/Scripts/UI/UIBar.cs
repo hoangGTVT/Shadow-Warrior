@@ -7,6 +7,10 @@ public class UIBar : MonoBehaviour
 {
     public Slider[] slide;
     public GameObject[] slide1;
+    private void Awake()
+    {
+        
+    }
     public void setMaxValue(float value,int index)
     {
         SetCoolDowTime(index, true);
@@ -29,6 +33,10 @@ public class UIBar : MonoBehaviour
 
     public void SetCoolDowTime(int index,bool state)
     {
-        slide1[index].SetActive(state);
+        if (slide1!=null)
+        {
+            slide1[index].SetActive(state);
+        }
+        
     }
 }

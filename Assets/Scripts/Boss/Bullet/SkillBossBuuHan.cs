@@ -17,6 +17,7 @@ public class SkillBossBuuHan : MonoBehaviour
     public int indexBoss;
     public GameObject bossClone;
     public int numberClone;
+    public int numberBossCreate;
 
     void Start()
     {
@@ -41,6 +42,10 @@ public class SkillBossBuuHan : MonoBehaviour
     {
         Fly();
         CreateBoss();
+        if (bossClone != null)
+        {
+            numberClone = bossClone.transform.childCount;
+        }
     }
     public void CreateBoss()
     {
@@ -48,7 +53,7 @@ public class SkillBossBuuHan : MonoBehaviour
         {
             if (t >= maxScale - 1)
             {
-                if (numberClone < 6)
+                if (numberClone < numberBossCreate)
                 {
                     GameObject boss1 = Instantiate(bossPrefab[indexBoss], transform.position, Quaternion.identity);
                     BossManager bossManager1 = boss1.GetComponent<BossManager>();

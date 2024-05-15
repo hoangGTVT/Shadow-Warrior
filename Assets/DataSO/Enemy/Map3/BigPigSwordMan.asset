@@ -16,6 +16,6 @@ MonoBehaviour:
   _name: "Ki\u1EBFm S\u0129 L\u01A1n Ti\xEAn Phong"
   _sprite: {fileID: 0}
   _exp: 80
-  _hp: 2000
-  _atk: 60
+  _hp: 3000
+  _atk: 100
   _timeAttack: 3

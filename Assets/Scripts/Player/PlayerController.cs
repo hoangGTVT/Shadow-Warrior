@@ -11,6 +11,7 @@ public class PlayerController : KameScript
     public PlayerLife _playerLife;
     public GameObject _efffly;
     public GameObject _effRun;
+    private PlayerMove1 _playerMove1;
     [Header("Activity")]
     private bool _isJump;
     private bool _isFly;
@@ -19,7 +20,8 @@ public class PlayerController : KameScript
     public float _moveVertical;
     public float _timecoolDow;
     public float _timecoolDow2;
-
+    public float inputVer;
+    public float inputHori;
     public bool IsJump() { return _isJump; }
     public bool IsFly() { return _isFly; }
     public bool IsSkill() { return _isSkill; }
@@ -28,9 +30,21 @@ public class PlayerController : KameScript
     {
         CallCoroutine();
     }
-   
 
-    
+
+    private void Awake()
+    {
+        _playerMove1= new PlayerMove1();
+        _playerMove1.Enable();
+        _playerMove1.Land.Run.performed += ctx =>
+        {
+            inputHori=ctx.ReadValue<float>();
+        };
+        _playerMove1.Land.Jump.performed += ctx =>
+        {
+            inputVer=ctx.ReadValue<float>();
+        };
+    }
     private void Start()
     {
         this._playAnimation = GetComponentInChildren<PlayerAnimation>();
@@ -51,6 +65,7 @@ public class PlayerController : KameScript
     private void Update()
     {
         PlayerActive();
+       /* PlayerActive1();*/
         _timecoolDow  += Time.deltaTime;
         _timecoolDow2 += Time.deltaTime;
         
@@ -63,6 +78,14 @@ public class PlayerController : KameScript
         if (_playerMoment.GetIsRight() == true && _moveHorizontal < 0) { _playerMoment.PlayerRotate(1); }
         else
         if (_playerMoment.GetIsRight() == false && _moveHorizontal > 0) { _playerMoment.PlayerRotate(-1); }
+    }
+    protected virtual void PlayerActive1()
+    {
+        _isSkill = _playAnimation.GetSkill();
+        PlayerMoment1();
+        if (_playerMoment.GetIsRight() == true && inputHori < 0) { _playerMoment.PlayerRotate(1); }
+        else
+        if (_playerMoment.GetIsRight() == false && inputHori > 0) { _playerMoment.PlayerRotate(-1); }
     }
 
     private void PlayerMoment()
@@ -86,30 +109,74 @@ public class PlayerController : KameScript
             }
             else
             {
-                if (!(_moveHorizontal == 0)&& _playerLife.GetKICurrent()>0)
+                if (!(_moveHorizontal == 0)  && _playerLife.GetKICurrent()>0)
                 {
                     
                     PlayerFly();
 
                 }
-                else if (_moveVertical == 0||_playerLife.GetKICurrent()<=0)
+                else if (_moveVertical == 0  || _playerLife.GetKICurrent()<=0)
                 {
                     
                     PlayerFall();
                 }
             }
         }
-        if (_moveVertical > 0.3 && _isSkill == false&& _playerLife.GetKICurrent() > 0)
+        if (_moveVertical > 0.3  && _isSkill == false&& _playerLife.GetKICurrent() > 0)
         {
             PlayerJump();
         }
-        if (_moveVertical < 0)
+        if (_moveVertical < 0 )
+        {
+            PlayerFall();
+        }
+    }
+    private void PlayerMoment1()
+    {
+        _moveHorizontal = InputManager.instance.SetHorizontal();
+        _moveVertical = InputManager.instance.SetVertica();
+        if (inputVer == 0 && _isSkill == false)
+        {
+            if (_playerMoment.IsGrounded())
+            {
+                _isFly = false;
+                _isJump = false;
+                if (!(inputHori == 0))
+                {
+                    PlayerRun();
+                }
+                else
+                {
+                    PlayerIdle();
+                }
+            }
+            else
+            {
+                if (!(inputHori == 0) && _playerLife.GetKICurrent() > 0)
+                {
+
+                    PlayerFly();
+
+                }
+                else if (inputVer == 0 || _playerLife.GetKICurrent() <= 0)
+                {
+
+                    PlayerFall();
+                }
+            }
+        }
+        if (inputVer > 0.3 && _isSkill == false && _playerLife.GetKICurrent() > 0)
+        {
+            PlayerJump();
+        }
+        if (inputVer < 0)
         {
             PlayerFall();
         }
     }
     protected virtual void PlayerRun()
     {
+        _playerMoment.Move(inputHori);
         _playerMoment.Move(_moveHorizontal);
         _playAnimation.SetAnimationState1(1);
         _efffly.SetActive(false);
@@ -123,6 +190,7 @@ public class PlayerController : KameScript
     protected virtual void PlayerFly()
     {
         _playerMoment.SetGarvity(0);
+        _playerMoment.Fly(inputHori);
         _playerMoment.Fly(_moveHorizontal);
         _playAnimation.SetAnimationState1(2);
 
@@ -138,6 +206,7 @@ public class PlayerController : KameScript
     }
     protected virtual void PlayerJump()
     {
+        _playerMoment.Jump(inputVer);
         _playerMoment.Jump(_moveVertical);
         _efffly.SetActive(false);
         _playAnimation.SetAnimationState1(3);

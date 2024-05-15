@@ -38,7 +38,7 @@ public class BossSkillBuu : BossSkill
         if (bossLife.hpBossCurrent <= bossLife.hpBoss / 2&& isHenshin==false)
         {
             bossController.canSkill4 = true;
-            
+            AudioManager.instance.Play("Buu");
             animator.SetAnimationBoss("Block");
             StartCoroutine(ScaleOverTime());
         }
@@ -64,6 +64,7 @@ public class BossSkillBuu : BossSkill
     {
         while (timer < scaleDuration)
         {
+            
             timer += Time.deltaTime;
             float progress = timer / scaleDuration;
             buu.transform.localScale = Vector3.Lerp(initialScale, targetScale, progress);

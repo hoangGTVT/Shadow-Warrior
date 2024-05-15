@@ -124,7 +124,7 @@ public class EnemyController : MonoBehaviour
 
     public void CheckMovePoint()
     {
-        if (transform.position.x >= _movePointRight.transform.position.x || transform.position.x <= _movePointLeft.transform.position.x)
+        if (transform.position.x >= _movePointRight.transform.position.x-0.2 || transform.position.x <= _movePointLeft.transform.position.x+0.2)
         {
             Rotate();
 
@@ -145,6 +145,7 @@ public class EnemyController : MonoBehaviour
    protected virtual void EnemyAttack()
     {
         _timeAttack = enemySO.GetTimeAttack();
+        AudioManager.instance.Play("EnemyAttack");
         GameObject bullet1= Instantiate(bullet, pointbullet.transform.position, Quaternion.identity);
         Test test = bullet1.GetComponent<Test>();
         test.SetATK(enemyManager.GetAtkEnemy());

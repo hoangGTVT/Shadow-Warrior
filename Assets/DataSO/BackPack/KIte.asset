@@ -16,15 +16,15 @@ MonoBehaviour:
   name: Kite
   _icon: {fileID: 21300000, guid: d49a5cb5eb031eb4a961ee606ec96206, type: 3}
   _itemType: 2
-  _hp: 1000
-  _enegy: 500
+  _hp: 2000
+  _enegy: 2000
   _def: 200
   _critRate: 10
   _critDMG: 20
-  _atk: 300
+  _atk: 600
   _stamina: 500
-  _pricegold: 70000
-  _priceDiamond: 6000
+  _pricegold: 130000
+  _priceDiamond: 13000
   equipmentType: 0
   _backPack:
   - {fileID: 21300000, guid: d49a5cb5eb031eb4a961ee606ec96206, type: 3}

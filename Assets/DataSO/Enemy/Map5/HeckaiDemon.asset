@@ -15,7 +15,7 @@ MonoBehaviour:
   _id: 0
   _name: "Qu\u1EF7 Heckai"
   _sprite: {fileID: 0}
-  _exp: 100
-  _hp: 3000
-  _atk: 500
+  _exp: 226
+  _hp: 12000
+  _atk: 600
   _timeAttack: 3

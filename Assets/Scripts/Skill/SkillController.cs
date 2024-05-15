@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using TMPro;
-
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -142,6 +142,7 @@ public class SkillController : MonoBehaviour
 
     public void CreateSkill(int skill)
     {
+        SoundEffSkill(skill);
         SetTimeCoolDown(skill);
         GetTimeCool(skill);
         uibar.setMaxValue(timeSkill, skill);
@@ -172,6 +173,11 @@ public class SkillController : MonoBehaviour
         if (InputManager.instance.CheckInput() is int)
         {
             int index = (int)InputManager.instance.CheckInput();
+            if(CheckLevel(index, (int)playerLife.GetLevel()) == false)
+            {
+                return;
+            }
+            
             GetTimeCool(index);
             if(playerSelect.a != null)
             {
@@ -220,7 +226,7 @@ public class SkillController : MonoBehaviour
             {
 
                 GetTimeCool(0);
-                if (playerSelect.a != null && playerSelect.distancePlayer <= 0.7 && playerSelect.distancePlayerY <= 3)
+                if (playerSelect.a != null && playerSelect.distancePlayer <= 1 && playerSelect.distancePlayerY <= 3)
                 {
                     if (playerLife.GetKICurrent() >= GetKISkill(0) && playerLife.GetStaminaCurrent() > 0 )
                     {
@@ -254,16 +260,40 @@ public class SkillController : MonoBehaviour
 
 
     }
-
+    public bool CheckLevel(int number,int level)
+    {
+        if (level >= (number * (number +2)))
+        {
+            return true;
+        }else { return false; }
+    }
     public void SetSkillIndex(int index)
     {
         _skillIndex = index;
     }
-
+    public void SoundEffSkill(int index)
+    {
+        switch (index)
+        {
+            case 2:
+                AudioManager.instance.Play("Skill3");
+                break;
+            case 3:
+                AudioManager.instance.Play("Skill4");
+                break;
+            case 4:
+                AudioManager.instance.Play("Skill5");
+                break;
+            case 5:
+                AudioManager.instance.Play("Skill6");
+                break;
+            default: return;
+        }
+    }
     public void Skill1()
     {
         GetTimeCool(0);
-        if (playerSelect.a != null && playerSelect.distancePlayer <= 0.7 && playerSelect.distancePlayerY <= 3)
+        if (playerSelect.a != null && playerSelect.distancePlayer <= 1 && playerSelect.distancePlayerY <= 3)
         {
             if (playerLife.GetKICurrent() >= GetKISkill(0) && playerLife.GetStaminaCurrent() > 0)
             {

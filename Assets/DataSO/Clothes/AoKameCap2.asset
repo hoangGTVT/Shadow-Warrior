@@ -18,11 +18,11 @@ MonoBehaviour:
   _itemType: 2
   _hp: 0
   _enegy: 0
-  _def: 100
+  _def: 300
   _critRate: 0
   _critDMG: 0
   _atk: 0
   _stamina: 0
-  _pricegold: 10000
-  _priceDiamond: 1000
+  _pricegold: 100000
+  _priceDiamond: 10000
   equipmentType: 1

@@ -15,9 +15,9 @@ MonoBehaviour:
   _id: 0
   _name: "Th\u1ED1ng Ch\u1EBF Cooler"
   _exp: 2500
-  _hp: 20000
-  _atk: 1
-  _ki: 50
-  _def: 40
+  _hp: 50000
+  _atk: 500
+  _ki: 100
+  _def: 50
   _timeskill: 3
   _timeAttack: 1

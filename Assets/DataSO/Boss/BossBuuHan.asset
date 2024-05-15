@@ -15,9 +15,9 @@ MonoBehaviour:
   _id: 0
   _name: "\xC1c Nh\xE2n BuuHan"
   _exp: 50000
-  _hp: 20000
-  _atk: 5
-  _ki: 10
+  _hp: 1000000
+  _atk: 7000
+  _ki: 120
   _def: 70
   _timeskill: 3
   _timeAttack: 1

@@ -15,7 +15,7 @@ MonoBehaviour:
   _id: 0
   _name: "Qu\u1EF7 Beky"
   _sprite: {fileID: 0}
-  _exp: 100
-  _hp: 3200
+  _exp: 150
+  _hp: 10000
   _atk: 500
   _timeAttack: 4

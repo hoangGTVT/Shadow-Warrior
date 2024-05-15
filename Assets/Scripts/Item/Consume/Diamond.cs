@@ -17,9 +17,11 @@ public class Diamond : MonoBehaviour
     public LayerMask playerLayer;
     public float detectionRadius = 5f;
     public bool playerDetected;
+    public bool cantake;
     private void Start()
     {
         FindPlayer();
+        Destroy(gameObject, 5);
         
     }
 
@@ -33,6 +35,7 @@ public class Diamond : MonoBehaviour
         if (playerDetected)
         {
             PlusItem();
+            AudioManager.instance.Play("Item");
             Destroy(gameObject);
         }
         
@@ -182,10 +185,15 @@ public class Diamond : MonoBehaviour
 
 
     }
+    
     public bool CheckPlayer1()
     {
-        playerDetected = Physics2D.OverlapCircle(transform.position, detectionRadius, playerLayer);
-        return playerDetected;
+       
+        
+            playerDetected = Physics2D.OverlapCircle(transform.position, detectionRadius, playerLayer);
+            return playerDetected;
+       
+
     }
     private void OnDrawGizmosSelected()
     {

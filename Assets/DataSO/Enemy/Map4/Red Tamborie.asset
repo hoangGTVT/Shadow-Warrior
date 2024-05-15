@@ -16,6 +16,6 @@ MonoBehaviour:
   _name: Red Tamborie
   _sprite: {fileID: 0}
   _exp: 100
-  _hp: 2000
-  _atk: 3
+  _hp: 6000
+  _atk: 200
   _timeAttack: 5

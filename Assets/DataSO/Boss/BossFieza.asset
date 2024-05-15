@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 0
   _name: "\u0110\u1EA1i \u0111\u1EBF Fieza"
-  _exp: 5000
-  _hp: 20000
-  _atk: 1
-  _ki: 50
+  _exp: 500
+  _hp: 12000
+  _atk: 100
+  _ki: 100
   _def: 30
   _timeskill: 3
   _timeAttack: 1

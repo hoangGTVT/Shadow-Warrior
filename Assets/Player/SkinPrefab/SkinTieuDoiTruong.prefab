@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7143717835127975762}
   - component: {fileID: 3607003607711932483}
   - component: {fileID: 6747330638770369164}
+  - component: {fileID: -1761822265027818526}
   m_Layer: 9
   m_Name: SkinTieuDoiTruong
   m_TagString: Untagged
@@ -182,6 +183,19 @@ MonoBehaviour:
   detectionRadius: 1
   playerDetected: 0
   indexSkin: 37
+--- !u!114 &-1761822265027818526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6669998837381383977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b689d245436b12439a64b38b8695dbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberEnemyMission: 15
 --- !u!1 &7533346115939077541
 GameObject:
   m_ObjectHideFlags: 0

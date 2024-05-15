@@ -135,14 +135,14 @@ public class ShopController : MonoBehaviour
                 iconclother.sprite = clothersController.gang[indexGang].GetSprite();
                 textclother[0].text = clothersController.gang[indexGang].GetName();
                 textclother[1].text = "";
-                textclother[2].text = "Tấn Công + " + clothersController.gang[indexAo].GetATK().ToString(); 
+                textclother[2].text = "Tấn Công + " + clothersController.gang[indexGang].GetATK().ToString(); 
                 textclother[3].text = "";
                 break;
             case 3:
                 iconclother.sprite = clothersController.giay[indexGiay].GetSprite();
                 textclother[0].text = clothersController.giay[indexGiay].GetName();
                 textclother[1].text = "";
-                textclother[2].text = "KI + " + clothersController.clothesSOs[indexGiay].GetKI().ToString(); 
+                textclother[2].text = "KI + " + clothersController.giay[indexGiay].GetKI().ToString(); 
                 textclother[3].text = "";
                 break;
             case 4:
@@ -259,6 +259,7 @@ public class ShopController : MonoBehaviour
                         if (itemController.GetGold() >= clothersController.pan[indexQuan].GetPriceGold())
                         {
                             itemController.MinusGold(clothersController.pan[indexQuan].GetPriceGold());
+                            clotherManager.PlusQuan(indexQuan);
                             buyFinish.SetActive(true);
                         }
                         else buyFail.SetActive(true);

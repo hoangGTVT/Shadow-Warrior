@@ -16,6 +16,6 @@ MonoBehaviour:
   _name: Alien
   _sprite: {fileID: 0}
   _exp: 125
-  _hp: 1000
-  _atk: 1
+  _hp: 5000
+  _atk: 150
   _timeAttack: 2

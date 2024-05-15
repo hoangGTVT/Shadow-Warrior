@@ -17,14 +17,7 @@ public class SkillManager : MonoBehaviour
     public TextMeshProUGUI[] textLevel;
     public TextMeshProUGUI[] textName;
     public TextMeshProUGUI[] textDescription;
-    [Header("Gold")]
-    public int[] goldSkill;
     
-    [Header("Diamond")]
-    public int[] diamondSkill;
-    
-    [Header("DaNguSac")]
-    public int[] dangusacSkill;
     
     [Header("UPLevel")]
     public int goldUP;
@@ -34,15 +27,15 @@ public class SkillManager : MonoBehaviour
 
     public void SetSkillIndex(int index) { skillIndex = index; }
     //GetValue
-    public int GetGoldSkill(int index) { return goldSkill[index] =skillController.GetLevelSkill(index)* goldUP; }
+    public int GetGoldSkill(int index) { return skillController.GetLevelSkill(index)* goldUP; }
    
 
 
-    public int GetDiamondSkill(int index) { return diamondSkill[index] = skillController.GetLevelSkill(index) * diamondUP; }
+    public int GetDiamondSkill(int index) { return  skillController.GetLevelSkill(index) * diamondUP; }
    
 
 
-    public int GetDaNguSac(int index) { return dangusacSkill[index] = skillController.GetLevelSkill(index) * dangusacUP; }
+    public int GetDaNguSac(int index) { return skillController.GetLevelSkill(index) * dangusacUP; }
     
     //UP level
 
@@ -86,17 +79,29 @@ public class SkillManager : MonoBehaviour
     }
     public void ShowUpLevel()
     {
-        textupLevel[0].text = "Bạn có muốn nâng cấp chiêu " + skillController.GetSkillName(skillIndex) + " không?";
-        textupLevel[1].text = GetGoldSkill(skillIndex).ToString();
-        textupLevel[2].text = GetDiamondSkill(skillIndex).ToString();
-        textupLevel[3].text = GetDaNguSac(skillIndex).ToString();
+        if (skillController.GetLevelSkill(skillIndex) < 7)
+        {
+            textupLevel[0].text = "Bạn có muốn nâng cấp chiêu " + skillController.GetSkillName(skillIndex) + " không?";
+            textupLevel[1].text = GetGoldSkill(skillIndex).ToString();
+            textupLevel[2].text = GetDiamondSkill(skillIndex).ToString();
+            textupLevel[3].text = GetDaNguSac(skillIndex).ToString();
+        }
+        else
+        {
+            textupLevel[0].text = "Chiêu " + skillController.GetSkillName(skillIndex) + " đã đạt cấp tối đa";
+            textupLevel[1].text = "0";
+            textupLevel[2].text = "0";
+            textupLevel[3].text = "0";
+
+        }
+        
         
         
     }
 
     public void PlusLevel()
     {
-        if (CheckSkill(skillIndex) == true)
+        if (CheckSkill(skillIndex) == true&& skillController.GetLevelSkill(skillIndex)<7)
         {
             itemController.MinusGold(GetGoldSkill(skillIndex));
             itemController.MinusDiamond(GetDiamondSkill(skillIndex));

@@ -25,10 +25,10 @@ public class PlayerManager : MonoBehaviour
     private void Awake()
     {
         IgnorePlayer();
-        SetData();
+        /*SetData();
         SetTotalData();
         playerLife.SetHPCurrent(playerLife.GetHPTotal());
-        playerLife.SetKICurrent(playerLife.GetKITotal());
+        playerLife.SetKICurrent(playerLife.GetKITotal());*/
        
     }
     private void OnValidate()
@@ -165,50 +165,8 @@ public class PlayerManager : MonoBehaviour
     {
        
         
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            HealHP(20000);
-            
-        }
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            PlayerDeath();
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            PlayerTakeEXP(50000);
-
-        }
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            clothers.SetIsAo(true);
-            clothers.SetIsQuan(true);
-            clothers.SetIsGang(true);
-            clothers.SetIsGiay(true);
-            clothers.SetIsRaDa(true);
-            backPack.SetIsBackPack(true);
-            SetData();
-            SetTotalData();
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            clothers.SetAo(1);
-            clothers.SetGiay(2);
-            clothers.SetGang(3);
-            clothers.SetGiay(4);
-            clothers.SetRada(3);
-            backPack.SetBackPack(5);
-            SetData();
-            SetTotalData();
-
-        }
-
-
-
+        
+ 
     }
 
     protected virtual void IgnorePlayer()
@@ -229,8 +187,8 @@ public class PlayerManager : MonoBehaviour
     {
         if (skillController.isSkill2 == false)
         {
-            
-            
+
+            AudioManager.instance.Play("PlayerTake");
             playerLife.MinusHPCurrent(damage);
             CreateTextPopUp(0, playerLife.HPMinus(damage), "-");
             if (playerLife.GetHPCurrent() <= 0)
@@ -248,7 +206,7 @@ public class PlayerManager : MonoBehaviour
             playerLife.PlusEXPCurrent(exp);
             CreateTextPopUp(2, exp, "EXP + ");
             playerLife.PlusLevel();
-
+            AudioManager.instance.Play("HealHP");
             SetData();
             SetTotalData();
             long level = playerLife.GetLevel() / 10;
@@ -351,6 +309,7 @@ public class PlayerManager : MonoBehaviour
         if (playerLife.GetStaminaCurrent() < playerLife.GetStaminaTotal())
         {
             playerLife.PlusStaCurrent(index);
+            AudioManager.instance.Play("HealHP");
             CreateTextPopUp(2, index, "+");
         }
         else return;
@@ -360,6 +319,7 @@ public class PlayerManager : MonoBehaviour
         if (playerLife.GetHPCurrent() < playerLife.GetHPTotal())
         {
             playerLife.PlusHPCurrent(index);
+            AudioManager.instance.Play("HealHP");
             CreateTextPopUp(0, index, "+");
         }
         else return;
@@ -371,6 +331,7 @@ public class PlayerManager : MonoBehaviour
         if (playerLife.GetKICurrent() < playerLife.GetKITotal())
         {
             playerLife.PlusKICurrent(index);
+            AudioManager.instance.Play("HealHP");
             CreateTextPopUp(1, index, "+");
 
         }

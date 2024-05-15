@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.Progress;
+
 
 public class EnemyManager : MonoBehaviour
 {
@@ -98,10 +98,7 @@ public class EnemyManager : MonoBehaviour
             enemyController.PlusEXPPlayer();
             EnemyDeath();
         }
-        if (Input.GetKeyDown(KeyCode.F)){
-
-            MinusHP5S();
-        }
+        
         barEnemy.SetHealth(hp);
         if (istransform == true)
         {

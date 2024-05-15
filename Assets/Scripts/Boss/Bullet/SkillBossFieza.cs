@@ -65,10 +65,15 @@ public class SkillBossFieza : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player01"))
         {
-            
+
+            if (boss != null)
+            {
+                bossLife.kiBossCurrent = 0;
+                bossManager.BlastActive();
+            }
             bossLife.kiBossCurrent = 0;
+            AudioManager.instance.Play("SkillBossBall");
             
-            bossManager.BlastActive();
             PlayerManager playerManager=player.GetComponent<PlayerManager>();
             PlayerLife playerLife = player.GetComponentInChildren <PlayerLife>();
             playerManager.PlayerTakeDamage((int)playerLife.GetHPTotal() / 2);

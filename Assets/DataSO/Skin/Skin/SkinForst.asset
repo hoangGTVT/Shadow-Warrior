@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SkinForst
   m_EditorClassIdentifier: 
   _id: 0
-  name: "C\u1EA3i tang Forst"
+  name: "C\u1EA3i trang Forst"
   _icon: {fileID: 21300000, guid: 87e3739a2efeb5a41be284b823fcc138, type: 3}
   _itemType: 2
   _hp: 30
@@ -23,8 +23,8 @@ MonoBehaviour:
   _critDMG: 10
   _atk: 23
   _stamina: 22
-  _pricegold: 80000
-  _priceDiamond: 8000
+  _pricegold: 200000
+  _priceDiamond: 20000
   equipmentType: 0
   _headIdle:
   - {fileID: 21300000, guid: 87e3739a2efeb5a41be284b823fcc138, type: 3}

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class MapController : MonoBehaviour
 {
@@ -14,17 +15,33 @@ public class MapController : MonoBehaviour
     public GameObject[] posBoss;
     public GameObject loading;
     public int distance;
+    public GameObject[] pannel;
+    public int indexpannel;
+    public Vector2 positionPlayer;
     void Start()
     {
-        
-    }
+        SetIndexPannel();
+        ActivePannel();
+        _map[_mapIndex].SetActive(true);
+        player.transform.position = positionPlayer;
 
+    }
+    private void FixedUpdate()
+    {
+        SetIndexPannel();
+        ActivePannel();
+        if (player != null)
+        {
+            positionPlayer = new Vector2(player.transform.position.x, player.transform.position.y);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
 
-        distance = Mathf.Abs((int)(player.transform.position.x - transform.position.x));
+       
     }
+    
 
     public int GetMapIndex() { return _mapIndex; }
     public void SetMapIndex(int index) { _mapIndex = index; }
@@ -94,6 +111,48 @@ public class MapController : MonoBehaviour
 
                 }
            
+        }
+    }
+    public void ActivePannel()
+    {
+        
+        for(int i = 0; i < indexpannel; i++)
+        {
+            pannel[i].SetActive(false);
+        }
+    }
+    public void SetIndexPannel()
+    {
+        switch (Mission.instance.indexMission)
+        {
+            case 1:
+                indexpannel = 1;
+                break;
+            case 2:
+                indexpannel = 2;
+                break;
+            case 3:
+                indexpannel = 3;
+                break;
+            case 4:
+                indexpannel = 4;
+                break;
+            case 5:
+                indexpannel = 5;
+                break;
+            case 6:
+                indexpannel = 6;
+                break;
+            case 7:
+                indexpannel = 7;
+                break;
+            case 8:
+                indexpannel = 8;
+                break;
+            case 9:
+                    indexpannel = 9;
+                break;
+            
         }
     }
 

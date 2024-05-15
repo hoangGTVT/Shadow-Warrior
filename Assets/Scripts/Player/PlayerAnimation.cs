@@ -30,6 +30,12 @@ public class PlayerAnimation : MonoBehaviour
             FindEnemy();
             
         }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            Teleport();
+
+        }
+        
     }
     public void FindEnemy()
     {
@@ -92,5 +98,27 @@ public class PlayerAnimation : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(player.transform.position, 15);
+    }
+
+    public void Teleport()
+    {
+        if (playerSelect.a != null)
+        {
+            player.transform.position=new Vector3( playerSelect.a.transform.position.x+1,playerSelect.a.transform.position.y+1, playerSelect.a.transform.position.z);
+            playerLife.MinusKICurrent(playerLife.GetKICurrent() / 20);
+        }
+    }
+
+    public void SoundEffectAttack1()
+    {
+        AudioManager.instance.Play("Attack1");
+    }
+    public void SoundEffectAttack2()
+    {
+        AudioManager.instance.Play("Attack2");
+    }
+    public void SoundEffectAttack3()
+    {
+        AudioManager.instance.Play("Attack3");
     }
 }

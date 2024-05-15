@@ -16,15 +16,15 @@ MonoBehaviour:
   name: CarpLantern
   _icon: {fileID: 21300000, guid: dd1bac61c8b378348a6a1be8c4332c17, type: 3}
   _itemType: 2
-  _hp: 1000
-  _enegy: 2000
-  _def: 200
+  _hp: 2000
+  _enegy: 4000
+  _def: 400
   _critRate: 15
   _critDMG: 30
   _atk: 2000
-  _stamina: 1000
+  _stamina: 3000
   _pricegold: 255000
-  _priceDiamond: 7500
+  _priceDiamond: 25000
   equipmentType: 0
   _backPack:
   - {fileID: 21300000, guid: dd1bac61c8b378348a6a1be8c4332c17, type: 3}

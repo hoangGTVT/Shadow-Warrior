@@ -12,9 +12,10 @@ public class GamePlayManager : MonoBehaviour
     public ItemController itemController;
     public MapController mapController;
     public GameObject textTb;
+    public GameObject Loading;
     void Start()
     {
-       
+        Loading.SetActive(true);
     }
 
     // Update is called once per frame

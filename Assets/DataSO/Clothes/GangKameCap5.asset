@@ -21,8 +21,8 @@ MonoBehaviour:
   _def: 0
   _critRate: 0
   _critDMG: 0
-  _atk: 2000
+  _atk: 5000
   _stamina: 0
-  _pricegold: 70000
-  _priceDiamond: 7000
+  _pricegold: 550000
+  _priceDiamond: 60000
   equipmentType: 1

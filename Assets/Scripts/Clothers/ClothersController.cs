@@ -143,15 +143,6 @@ public class ClothersController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            indexClothers++;
-            indexgang++;
-            indexgiay++;
-            indexquan++;
-            indexrada++;
-            playerManager.SetData();
-            playerManager.SetTotalData();
-        }
+        
     }
 }

@@ -19,6 +19,10 @@ public class DotPhaController : MonoBehaviour
     [Header("TextInfo")]
     public TextMeshProUGUI[] text2;
     public Image spriteinfo2;
+    [Header("Nâng cấp")]
+    public int goldNC;
+    public int diamondNC;
+    public int daNC;
     [Header("Level")]
     public int _levelHP;
     public int _levelKI;
@@ -73,37 +77,37 @@ public class DotPhaController : MonoBehaviour
     public int GetLevelCrit() { return _levelCrit; }
     public int GetLevelCritDMG() {  return _levelCritDMG; }
     public int GetLevelStamina() {  return _levelStamina; }
-    public int GetHpDotPha() { return _hpDotPha; }
-    public int GetKiDotPha() { return _kiDotPha; }
-    public int GetAtkDotPha() { return _atkDotPha; }
-    public int GetDefDotPha() { return _defDotPha; }
-    public int GetCritDotPha() { return _critDotPha; }
-    public int GetCritDMGDotPha() { return _critDMGDotPha; }
-    public int GetStaminaDotPha() { return _staminaDotPha; }
+    public int GetHpDotPha() { return _hpDotPha = _levelHP * 1500; }
+    public int GetKiDotPha() { return _kiDotPha= _levelKI * 1500; }
+    public int GetAtkDotPha() { return _atkDotPha = _levelATK * 100; }
+    public int GetDefDotPha() { return _defDotPha = _levelDEF *25; }
+    public int GetCritDotPha() { return _critDotPha = _levelCrit * 1; }
+    public int GetCritDMGDotPha() { return _critDMGDotPha = _levelCritDMG * 2; }
+    public int GetStaminaDotPha() { return _staminaDotPha = _levelStamina * 300; }
 
-    public int GetBuaDoDP() { return _buadoDP; }
-    public int GetBuaCamDP() { return _buacamDP; }
-    public int GetBuaVangDP() { return _buavangDP; }
-    public int GetBuaXamDP() { return _buaxamDP; }
-    public int GetBuaXanhDuongDP() { return _buaxanhduongDP; }
-    public int GetBuaXanhLaDP() { return _buaxanhlaDP; }
-    public int GetBuaTimDP() { return _buatimDP; }
+    public int GetBuaDoDP() { return _buadoDP=_levelHP*daNC+daNC; }
+    public int GetBuaCamDP() { return _buacamDP=_levelCritDMG* daNC + daNC; }
+    public int GetBuaVangDP() { return _buavangDP=_levelCrit * daNC + daNC; }
+    public int GetBuaXamDP() { return _buaxamDP=_levelDEF * daNC + daNC; }
+    public int GetBuaXanhDuongDP() { return _buaxanhduongDP=_levelKI * daNC + daNC; }
+    public int GetBuaXanhLaDP() { return _buaxanhlaDP=_levelStamina * daNC + daNC; }
+    public int GetBuaTimDP() { return _buatimDP=_levelATK * daNC + daNC; }
 
-    public int GetGoldHP() { return _goldHP; }
-    public int GetGoldKI() { return _goldKI; }
-    public int GetGoldATK() { return _goldATK; }
-    public int GetGoldDEF() { return _goldDEF; }
-    public int GetGoldCrit() { return _goldCrit; }
-    public int GetGoldCritDMG() { return _goldCritDMG; }
-    public int GetGoldStamina() { return _goldStamina; }
+    public int GetGoldHP() { return _goldHP = _levelHP * goldNC + goldNC; }
+    public int GetGoldKI() { return _goldKI = _levelKI * goldNC + goldNC; }
+    public int GetGoldATK() { return _goldATK = _levelATK * goldNC + goldNC; }
+    public int GetGoldDEF() { return _goldDEF = _levelDEF * goldNC + goldNC; }
+    public int GetGoldCrit() { return _goldCrit = _levelCrit * goldNC + goldNC; }
+    public int GetGoldCritDMG() { return _goldCritDMG = _levelCritDMG * goldNC + goldNC; }
+    public int GetGoldStamina() { return _goldStamina = _levelStamina * goldNC + goldNC; }
 
-    public int GetDiamondHP() { return _diamondHP; }
-    public int GetDiamondKI() { return _diamondKI; }
-    public int GetDiamondATK() { return _diamondATK; }
-    public int GetDiamondDEF() { return _diamondDEF; }
-    public int GetDiamondCrit() { return _diamondCrit; }
-    public int GetDiamondCritDMG() { return _diamondCritDMG; }
-    public int GetDiamondStamina() { return _diamondStamina; }
+    public int GetDiamondHP() { return _diamondHP = _levelHP * diamondNC + diamondNC; }
+    public int GetDiamondKI() { return _diamondKI=_levelKI * diamondNC + diamondNC; }
+    public int GetDiamondATK() { return _diamondATK = _levelATK * diamondNC + diamondNC; }
+    public int GetDiamondDEF() { return _diamondDEF = _levelDEF * diamondNC + diamondNC; }
+    public int GetDiamondCrit() { return _diamondCrit = _levelCrit * diamondNC + diamondNC; }
+    public int GetDiamondCritDMG() { return _diamondCritDMG = _levelCritDMG * diamondNC + diamondNC; }
+    public int GetDiamondStamina() { return _diamondStamina = _levelStamina * diamondNC + diamondNC; }
 
     public int GetIndexDotPha() { return indexDotPha; }
     public Sprite GetSpriteDotPha() { return sprites[indexDotPha]; }    
@@ -116,39 +120,7 @@ public class DotPhaController : MonoBehaviour
     public void PlusLevelCrit() { _levelCrit++; }
     public void PlusLevelCritDMG() { _levelCritDMG++; }
     public void PlusLevelStamina() { _levelStamina++; }
-    public void PlusHP() { if (_hpDotPha < 1) { _hpDotPha = 1000; }else _hpDotPha += (_hpDotPha*50/100); }
-    public void PlusKi() { if (_kiDotPha < 1) { _kiDotPha = 1000; }else _kiDotPha += (_kiDotPha*50/100); }
-    public void PlusATK() { if (_atkDotPha < 1) { _atkDotPha = 100; }else _atkDotPha += (_atkDotPha * 50 / 100); }
-    public void PlusDef() { _defDotPha += 25; }
     
-    public void PlusCrit() {   _critDotPha += 1; }
-    public void PlusCritDMG() { _critDMGDotPha += 2; }
-    public void PlusStamina() { _staminaDotPha += 250; }
-    
-
-    public void PlusBuaDo() { _buadoDP+=30; }
-    public void PlusBuaCam() { _buacamDP += 30; }
-    public void PlusBuaVang() { _buavangDP += 30; }
-    public void PlusBuaTim() { _buatimDP += 30; }
-    public void PlusBuaXam() { _buaxamDP += 30; }
-    public void PlusBuaXanhDuong() { _buaxanhduongDP += 30; }
-    public void PlusBuaXanhLa() { _buaxanhlaDP += 30; }
-
-    public void PlusGoldHP() { _goldHP += 5000; }
-    public void PlusGoldKI() { _goldKI += 5000; }
-    public void PlusGoldATK() { _goldATK += 5000; }
-    public void PlusGoldDEF() { _goldDEF += 5000; }
-    public void PlusGoldCrit() { _goldCrit += 5000; }
-    public void PlusGoldCritDMG() { _goldCritDMG += 5000; }
-    public void PlusGoldStamina() { _goldStamina += 5000; }
-
-    public void PlusDiamondHP() { _diamondHP += 300; }
-    public void PlusDiamondKI() { _diamondKI += 300; }
-    public void PlusDiamondATK() { _diamondATK += 300; }
-    public void PlusDiamondDEF() { _diamondDEF += 300; }
-    public void PlusDiamondCrit() { _diamondCrit += 300; }
-    public void PlusDiamondCritDMG() { _diamondCritDMG += 300; }
-    public void PlusDiamondStamina() { _diamondStamina += 300; }
     public void SetIndex(int index) { indexDotPha = index; }
 
     //ShowInfoDotPha
@@ -273,10 +245,7 @@ public class DotPhaController : MonoBehaviour
             case 0:
                 if (CheckHP()==true) {
                     PlusLevelHP();
-                    PlusHP();
-                    PlusGoldHP();
-                    PlusBuaDo();
-                    PlusDiamondHP();
+                    
                     playerManager.SetData();
                     playerManager.SetTotalData();
                 }
@@ -286,10 +255,7 @@ public class DotPhaController : MonoBehaviour
                 if (CheckKI() == true)
                 {
                     PlusLevelKI();
-                    PlusKi();
-                    PlusGoldKI();
-                    PlusBuaXanhDuong();
-                    PlusDiamondKI();
+                    
                     playerManager.SetData();
                     playerManager.SetTotalData();
                 }
@@ -299,10 +265,7 @@ public class DotPhaController : MonoBehaviour
                 if (CheckATK() == true)
                 {
                     PlusLevelATK();
-                    PlusATK();
-                    PlusGoldATK();
-                    PlusBuaTim();
-                    PlusDiamondATK();
+                    
                     playerManager.SetData();
                     playerManager.SetTotalData();
                 }
@@ -312,10 +275,7 @@ public class DotPhaController : MonoBehaviour
                 if (CheckDEF() == true)
                 {
                     PlusLevelDEF();
-                    PlusDef();
-                    PlusGoldDEF();
-                    PlusBuaXam();
-                    PlusDiamondDEF();
+                   
                     playerManager.SetData();
                     playerManager.SetTotalData();
                 }
@@ -325,10 +285,7 @@ public class DotPhaController : MonoBehaviour
                 if (CheckCrit() == true)
                 {
                     PlusLevelCrit();
-                    PlusCrit();
-                    PlusGoldCrit();
-                    PlusBuaVang();
-                    PlusDiamondCrit();
+                    
                     playerManager.SetData();
                     playerManager.SetTotalData();
                 }
@@ -338,10 +295,7 @@ public class DotPhaController : MonoBehaviour
                 if (CheckCritDMG() == true)
                 {
                     PlusLevelCritDMG();
-                    PlusCritDMG();
-                    PlusGoldCritDMG();
-                    PlusBuaCam();
-                    PlusDiamondCrit();
+                    
                     playerManager.SetData();
                     playerManager.SetTotalData();
                 }
@@ -351,10 +305,7 @@ public class DotPhaController : MonoBehaviour
                 if (CheckStamina() == true)
                 {
                     PlusLevelStamina();
-                    PlusStamina();
-                    PlusGoldStamina();
-                    PlusBuaXanhLa();
-                    PlusDiamondStamina();
+                   
                     playerManager.SetData();
                     playerManager.SetTotalData();
                 }

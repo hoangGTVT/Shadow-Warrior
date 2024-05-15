@@ -16,6 +16,6 @@ MonoBehaviour:
   _name: "Kh\u1EC9 \u0111\u1ED9t l\xF4ng v\xE0ng"
   _sprite: {fileID: 0}
   _exp: 1000
-  _hp: 35000
+  _hp: 120000
   _atk: 5000
   _timeAttack: 4

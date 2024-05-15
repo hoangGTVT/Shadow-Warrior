@@ -52,6 +52,7 @@ public class BossSkill : MonoBehaviour
     {
         GameObject bullet = Instantiate(bulletPrefabskill1, bulletpointskill1.transform.position, Quaternion.identity);
         SkillBoss3 skillBoss3 = bullet.GetComponent<SkillBoss3>();
+        AudioManager.instance.Play("Skill3");
         skillBoss3.SetATK(bossLife.GetatkBossCurrent()*3);
 
 

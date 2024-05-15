@@ -289,5 +289,9 @@ public class MenuPlayer : MonoBehaviour
         }
        
     }
+    public void SoundEffButton()
+    {
+        AudioManager.instance.Play("Button");
+    }
 
 }

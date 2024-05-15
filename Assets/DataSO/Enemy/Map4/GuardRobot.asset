@@ -15,7 +15,7 @@ MonoBehaviour:
   _id: 0
   _name: "Robot C\u1EA3nh V\u1EC7"
   _sprite: {fileID: 0}
-  _exp: 200
-  _hp: 1000
-  _atk: 1
+  _exp: 100
+  _hp: 5000
+  _atk: 150
   _timeAttack: 4

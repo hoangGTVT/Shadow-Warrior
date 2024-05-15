@@ -15,7 +15,7 @@ MonoBehaviour:
   _id: 0
   _name: "Qu\u1EF7 Cheki"
   _sprite: {fileID: 0}
-  _exp: 120
-  _hp: 5000
-  _atk: 250
+  _exp: 600
+  _hp: 80000
+  _atk: 6000
   _timeAttack: 2

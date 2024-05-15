@@ -47,10 +47,13 @@ public class DauThan : MonoBehaviour
 
     public void HeathHPDauThan()
     {
-        playerManager.HealHP(playerLife.GetHPTotal()/5);
-        playerManager.HealKi(playerLife.GetKITotal() / 5);
+        playerManager.HealHP(playerLife.GetHPTotal()/4);
+        playerManager.HealKi(playerLife.GetKITotal() / 4);
         playerManager.HealStamina(playerLife.GetStaminaTotal());
+        AudioManager.instance.Play("DauThan");
         timecool = 60;
         dauthan.SetActive(true);
     }
+
+ 
 }

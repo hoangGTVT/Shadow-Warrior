@@ -207,3 +207,4 @@ MonoBehaviour:
   indexBoss: 0
   bossClone: {fileID: 0}
   numberClone: 0
+  numberBossCreate: 2

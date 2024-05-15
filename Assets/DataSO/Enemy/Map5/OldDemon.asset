@@ -15,7 +15,7 @@ MonoBehaviour:
   _id: 0
   _name: "Qu\u1EF7 Gi\xE0"
   _sprite: {fileID: 0}
-  _exp: 110
-  _hp: 4000
+  _exp: 358
+  _hp: 9000
   _atk: 700
   _timeAttack: 4

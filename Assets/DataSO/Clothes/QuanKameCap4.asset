@@ -16,13 +16,13 @@ MonoBehaviour:
   name: "Qu\u1EA7n Kame C\u1EA5p 4"
   _icon: {fileID: 21300000, guid: 781c962597ed7e24e8b3e7f31f283f73, type: 3}
   _itemType: 2
-  _hp: 5000
+  _hp: 10000
   _enegy: 0
   _def: 0
   _critRate: 0
   _critDMG: 0
   _atk: 0
   _stamina: 0
-  _pricegold: 35000
-  _priceDiamond: 3500
+  _pricegold: 350000
+  _priceDiamond: 35000
   equipmentType: 1

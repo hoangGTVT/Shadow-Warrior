@@ -68,10 +68,14 @@ public class SkillBossBuu : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player01"))
         {
-           
-            bossLife.kiBossCurrent = 0;
+            if (boss != null)
+            {
+                bossLife.kiBossCurrent = 0;
+                bossManager.BlastActive();
+            }
             
-            bossManager.BlastActive();
+            AudioManager.instance.Play("SkillBossBall");
+            
             PlayerManager playerManager=player.GetComponent<PlayerManager>();
             PlayerLife playerLife = player.GetComponentInChildren <PlayerLife>();
             playerManager.PlayerTakeDamage((int)playerLife.GetHPTotal() / 2);

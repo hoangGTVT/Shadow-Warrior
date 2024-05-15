@@ -178,7 +178,7 @@ MonoBehaviour:
   player: {fileID: 0}
   _Itemcount: 4
   _minrandom: 1
-  _maxrandom: 10
+  _maxrandom: 3
   goldnumber: 0
   diamondnumber: 0
   playerLayer:
@@ -186,6 +186,7 @@ MonoBehaviour:
     m_Bits: 256
   detectionRadius: 0.5
   playerDetected: 0
+  cantake: 0
 --- !u!1 &8056813667651046432
 GameObject:
   m_ObjectHideFlags: 0
