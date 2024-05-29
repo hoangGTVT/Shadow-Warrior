@@ -168,14 +168,26 @@ public class ItemController : MonoBehaviour
         _danngusac -= index;
     }
 
-    void Start()
+    public void PlusItem()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (PlayerPrefs.GetInt("PlusItem") <1)
+        {
+            PlusGold(5000000);
+            PlusDiamond(50000);
+            PlusBuaCam(2000);
+            PlusBuaDo(2000);
+            PlusBuaTim(2000);
+            PlusBuaVang(2000);
+            PlusBuaXam(2000);
+            PlusBuaXanhDuong(2000);
+            PlusBuaXanhLa(2000);
+            PlusDaLucBao(3000);
+            PlusDaNguSac(3000);
+            PlusDaRuby(3000);
+            PlusDaShaphia(3000);
+            PlusDaThachAnh(3000);
+            PlusDaTiTan(2000);
+            PlayerPrefs.SetInt("PlusItem", 1);
+        }
     }
 }

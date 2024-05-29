@@ -176,7 +176,7 @@ public class PlayerController : KameScript
     }
     protected virtual void PlayerRun()
     {
-        _playerMoment.Move(inputHori);
+        
         _playerMoment.Move(_moveHorizontal);
         _playAnimation.SetAnimationState1(1);
         _efffly.SetActive(false);
@@ -190,7 +190,7 @@ public class PlayerController : KameScript
     protected virtual void PlayerFly()
     {
         _playerMoment.SetGarvity(0);
-        _playerMoment.Fly(inputHori);
+        
         _playerMoment.Fly(_moveHorizontal);
         _playAnimation.SetAnimationState1(2);
 
@@ -206,7 +206,7 @@ public class PlayerController : KameScript
     }
     protected virtual void PlayerJump()
     {
-        _playerMoment.Jump(inputVer);
+        
         _playerMoment.Jump(_moveVertical);
         _efffly.SetActive(false);
         _playAnimation.SetAnimationState1(3);

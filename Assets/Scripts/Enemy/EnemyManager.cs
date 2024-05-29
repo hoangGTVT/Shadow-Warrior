@@ -54,8 +54,8 @@ public class EnemyManager : MonoBehaviour
         int tf= Random.Range(1, 101);
         if (tf <= transformRate)
         {
-            hp = enemySO.GetHp()*5;
-            hpMax = enemySO.GetHp()*5;
+            hp = enemySO.GetHp()*3;
+            hpMax = enemySO.GetHp()*3;
             barEnemy.SetMaxHealth(hp);
             atk=enemySO.GetAtk()*5;
             istransform = true;

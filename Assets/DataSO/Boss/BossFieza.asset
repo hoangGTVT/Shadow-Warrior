@@ -15,8 +15,8 @@ MonoBehaviour:
   _id: 0
   _name: "\u0110\u1EA1i \u0111\u1EBF Fieza"
   _exp: 500
-  _hp: 12000
-  _atk: 100
+  _hp: 50000
+  _atk: 500
   _ki: 100
   _def: 30
   _timeskill: 3

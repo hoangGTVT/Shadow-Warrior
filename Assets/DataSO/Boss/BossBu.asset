@@ -15,8 +15,8 @@ MonoBehaviour:
   _id: 0
   _name: "Ma Nh\xE2n Buu"
   _exp: 5000
-  _hp: 150000
-  _atk: 3000
+  _hp: 200000
+  _atk: 6000
   _ki: 100
   _def: 60
   _timeskill: 3

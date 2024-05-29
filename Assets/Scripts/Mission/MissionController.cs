@@ -101,7 +101,7 @@ public class MissionController : MonoBehaviour
     public void CheckNv5()
     {
 
-        if (playerLife.GetSM() >= 2500000)
+        if (playerLife.GetSM() >= 500000)
         {
             itemController.PlusBuaCam(50);
             itemController.PlusBuaDo(50);
@@ -191,7 +191,7 @@ public class MissionController : MonoBehaviour
         numberBulon.text=Mission.instance.numberBulon.ToString();
         numberUkulele.text = Mission.instance.numberUkulele.ToString();
         numberQuyMap.text=Mission.instance.numberQuyMap.ToString();
-        sm.text=Mission.instance.smPlayer.ToString("#,#");
+        sm.text=playerLife.GetSM().ToString("#,#");
         numBerBoss1.text=Mission.instance.numberBoss1.ToString();
         numBerBoss2.text = Mission.instance.numberBoss2.ToString();
         numBerBoss3.text = Mission.instance.numberBoss3.ToString();

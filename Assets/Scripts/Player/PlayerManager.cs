@@ -25,11 +25,11 @@ public class PlayerManager : MonoBehaviour
     private void Awake()
     {
         IgnorePlayer();
-        /*SetData();
+        SetData();
         SetTotalData();
         playerLife.SetHPCurrent(playerLife.GetHPTotal());
-        playerLife.SetKICurrent(playerLife.GetKITotal());*/
-       
+        playerLife.SetKICurrent(playerLife.GetKITotal());
+
     }
     private void OnValidate()
     {
@@ -161,14 +161,10 @@ public class PlayerManager : MonoBehaviour
     public int GetCritRateAttack() { return critRateAttack; }
     public int GetCritRatePlayer() { return (int)playerLife.GetCritTotal(); }
     public int RandomCrit() { return critRateAttack = Random.Range(1, 100); }
-    void Update()
+    private void Start()
     {
-       
-        
-        
- 
+        PlayerTakeEXP(0);
     }
-
     protected virtual void IgnorePlayer()
     {
         Physics2D.IgnoreLayerCollision(9, 11);
