@@ -181,7 +181,11 @@ public class MissionController : MonoBehaviour
     {
         missionss[missionCurrent].SetActive(false);
         missionCurrent++;
-        missionss[missionCurrent].SetActive(true);
+        if(missionCurrent<11)
+        {
+            missionss[missionCurrent].SetActive(true);
+        }
+       
     }
 
     public void ShowInfoNV()

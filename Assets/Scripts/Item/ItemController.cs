@@ -168,26 +168,43 @@ public class ItemController : MonoBehaviour
         _danngusac -= index;
     }
 
-    public void PlusItem()
+    public void PlusGold()
     {
-        if (PlayerPrefs.GetInt("PlusItem") <1)
+
+        if (GetGold() < 5000000)
         {
-            PlusGold(5000000);
-            PlusDiamond(50000);
-            PlusBuaCam(2000);
-            PlusBuaDo(2000);
-            PlusBuaTim(2000);
-            PlusBuaVang(2000);
-            PlusBuaXam(2000);
-            PlusBuaXanhDuong(2000);
-            PlusBuaXanhLa(2000);
-            PlusDaLucBao(3000);
-            PlusDaNguSac(3000);
-            PlusDaRuby(3000);
-            PlusDaShaphia(3000);
-            PlusDaThachAnh(3000);
-            PlusDaTiTan(2000);
-            PlayerPrefs.SetInt("PlusItem", 1);
+            PlusGold(1000000);
         }
+    }
+    public void PlusDiamond()
+    {
+
+        if (GetDiamond() < 5000000)
+        {
+            PlusDiamond(1000000);
+        }
+    }
+    public void PlusBua()
+    {
+
+        if (GetBuaCam()<5000)
+        {
+            PlusBuaCam(1000);
+        }
+        if (GetBuaDo() < 5000) { PlusBuaDo(1000);}
+        if (GetBuaVang() < 5000) { PlusBuaVang(1000); }
+        if (GetBuaXam() < 5000) { PlusBuaXam(1000); }
+        if (GetBuaTim() < 5000) { PlusBuaTim(1000); }
+        if (GetBuaxanhla() < 5000) { PlusBuaXanhLa(1000); }
+        if (GetBuaXanhDuong() < 5000) { PlusBuaXanhDuong(1000); }
+    }
+    public void PlusDa()
+    {
+        if (GetDaLucBao() < 5000) { PlusDaLucBao(1000); }
+        if (GetDaTiTan() < 5000) { PlusDaTiTan(1000); }
+        if (GetDaThachAnh() < 5000) { PlusDaThachAnh(1000); }
+        if (GetDaShaphia() < 5000) { PlusDaShaphia(1000); }
+        if (GetDaRuby() < 5000) { PlusDaRuby(1000); }
+        if (GetDaNguSac() < 5000) { PlusDaNguSac(1000); }
     }
 }

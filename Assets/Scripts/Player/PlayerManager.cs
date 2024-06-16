@@ -359,6 +359,10 @@ public class PlayerManager : MonoBehaviour
         gameObject.SetActive(false);
     }
     
+    public void PlusEXP()
+    {
+        PlayerTakeEXP(5000);
+    }
 
     
 }
