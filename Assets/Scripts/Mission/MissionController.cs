@@ -58,7 +58,7 @@ public class MissionController : MonoBehaviour
     //nv1
     public void CheckNv1()
     {
-        if(Mission.instance.numberMocNhan>=10)
+        if(Mission.instance.numberMocNhan>=5)
         {
             itemController.PlusGold(10000);
             itemController.PlusDiamond(500);
@@ -68,7 +68,7 @@ public class MissionController : MonoBehaviour
     }
     public void CheckNv2()
     {
-        if (Mission.instance.numberBulon >= 15 && Mission.instance.numberUkulele >= 15 && Mission.instance.numberQuyMap >= 15)
+        if (Mission.instance.numberBulon >= 5 && Mission.instance.numberUkulele >= 5 && Mission.instance.numberQuyMap >= 5)
         {
             itemController.PlusGold(20000);
             itemController.PlusDiamond(2000);
@@ -78,7 +78,7 @@ public class MissionController : MonoBehaviour
     }
     public void CheckNv3()
     {
-        if (playerLife.GetLevel() >= 10)
+        if (playerLife.GetLevel() >= 5)
         {
             itemController.PlusGold(20000);
             itemController.PlusDiamond(1000);
@@ -203,6 +203,6 @@ public class MissionController : MonoBehaviour
         numberKhiDotDotTruong.text = Mission.instance.numberKhiDotDotTruong.ToString();
         numberKhiDotLongDo.text = Mission.instance.numberKhiDotLongDo.ToString();
         numberKhiDotLongVang.text=Mission.instance.numberKhiDotLongVang.ToString();
-
+        numberCTZabon.text=Mission.instance.numberCaiTrangZabon.ToString();
     }
 }
